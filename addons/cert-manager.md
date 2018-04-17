@@ -1,8 +1,6 @@
 # Addon: Cert Manager
 
-TLS certificate automation (including Let's Encrypt).
-
-https://github.com/jetstack/cert-manager
+[Cert Manager](https://github.com/jetstack/cert-manager), TLS certificate automation (including Let's Encrypt).
 
 ```yaml
 cert-manager:

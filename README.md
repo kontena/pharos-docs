@@ -2,9 +2,28 @@
 
 The simple, solid, certified Kubernetes distribution that just works.
 
+![features](https://pharos.sh/images/pharos-features.svg)
+
+
+## Overview
+
+- **Stable foundation** for running Kubernetes at any scale.
+- **Always up-to-date**, built from latest upstream Kubernetes including standardized set of essential features.
+- **Extend with addons** of your own or from any Kubernetes ecosystem project.
+- **Enterprise subscriptions** with SLA and support [available](https://pharos.sh#pricing).
+
 ## Features at a Glance
 
-![features](https://pharos.sh/images/pharos-features.svg)
+- [Simple setup](usage/README.md)
+- Kubernetes v1.9.6
+- Bare metal friendly, infrastructure agnostic
+- Single or multi-master, workloads isolated on workers
+- On-cluster [etcd](https://coreos.com/etcd/) with TLS
+- Support for Docker and [cri-o](https://github.com/kubernetes-incubator/cri-o) container runtimes
+- [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/) enabled
+- [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+- Hardened configuration for enhanced security (follows NIST SP800-190 recommendations)
+- ARM64 support
 
 ## Simple, solid and certified
 
