@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pharos-docs-06
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /docs
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - secretName: pharos-tls
+      hosts:
+      - pharos.sh
+      - www.pharos.sh
+  rules:
+    - host: pharos.sh
+      http: &http_rules
+        paths:
+        - path: /docs
+          backend:
+            serviceName: pharos-docs-06
+            servicePort: 80
+    - host: www.pharos.sh
+      http: *http_rules
+    - host: pharos.run
+      http: *http_rules
+    - host: www.pharos.run
+      http: *http_rules

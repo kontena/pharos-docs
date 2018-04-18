@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pharos-docs-06
+spec:
+  selector:
+    matchLabels:
+      app: pharos-docs-06
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: pharos-docs-06
+    spec:
+      containers:
+        - image: "docker.io/kontena/pharos-docs:master"
+          imagePullPolicy: Always
+          name: gitbook
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "256Mi"
+            requests:
+              cpu: "20m"
+              memory: "128Mi"
