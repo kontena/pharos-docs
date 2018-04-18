@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pharos-docs-06
+  name: pharos-docs-GIT_BRANCH
 spec:
   selector:
     matchLabels:
-      app: pharos-docs-06
+      app: pharos-docs-GIT_BRANCH
   replicas: 2
   template:
     metadata:
       labels:
-        app: pharos-docs-06
+        app: pharos-docs-GIT_BRANCH
+      annotations:
+        build: BUILD_NUMBER
     spec:
       containers:
-        - image: "docker.io/kontena/pharos-docs:master"
+        - image: "docker.io/kontena/pharos-docs:GIT_BRANCH"
           imagePullPolicy: Always
           name: gitbook
           ports:

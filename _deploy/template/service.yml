@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pharos-docs-06
+  name: pharos-docs-GIT_BRANCH
 spec:
   ports:
      -  port: 80
         protocol: TCP
         targetPort: 80
   selector:
-    app: pharos-docs-06
+    app: pharos-docs-GIT_BRANCH
