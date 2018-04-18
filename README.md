@@ -1,9 +1,8 @@
 # Kontena Pharos
 
-The simple, solid, certified Kubernetes distribution that just works.
+> The simple, solid, certified Kubernetes distribution that just works.
 
 ![features](https://pharos.sh/images/pharos-features.svg)
-
 
 ## Overview
 
@@ -11,6 +10,8 @@ The simple, solid, certified Kubernetes distribution that just works.
 - **Always up-to-date**, built from latest upstream Kubernetes including standardized set of essential features.
 - **Extend with addons** of your own or from any Kubernetes ecosystem project.
 - **Enterprise subscriptions** with SLA and support [available](https://pharos.sh#pricing).
+
+
 
 ## Features at a Glance
 
@@ -31,7 +32,7 @@ We believe setting up and maintaining a complex platform like Kubernetes from sc
 
 ## Easy to install, maintain and extend
 
-Kontena Pharos is always up-to-date and built from the latest upstream Kubernetes, including a standardized set of essential features. It is easy to install and maintain with the dedicated CLI tool. The standard deployment may be extended with ready made add-ons for most common use cases, or any extras from the Kubernetes ecosystem!
+Kontena Pharos is always up-to-date and built from the latest upstream Kubernetes, including a standardized set of essential features. It is easy to install and maintain with the dedicated CLI tool. The standard deployment may be extended with ready made [add-ons](addons/README.md) for most common use cases, or any extras from the Kubernetes ecosystem!
 
 ## 100% Open Source, Support Available
 

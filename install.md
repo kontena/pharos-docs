@@ -14,6 +14,8 @@ The following ports are used by the `pharos-cluster` management tool, as well as
 | Protocol    | Port        | Service         | Hosts / Addon         | Notes
 |-------------|-------------|-----------------|-----------------------|-------
 | TCP         | 22          | SSH             | All                   | authenticated management channel for `pharos-cluster` operations using SSH keys
+| TCP         | 2379        | etcd            | Master                | authenticated etcd client API
+| TCP         | 2380        | etcd            | Master                | authenticated etcd peer API
 | TCP         | 6443        | kube-apiserver  | Master                | authenticated kube API for `pharos-cluster`, `kubectl` and worker node `kubelet` access using kube API tokens, RBAC
 | TCP         | 6783        | weave control   | All (weave)           | authenticated Weave peer control connections using the shared weave secret
 | UDP         | 6783        | weave dataplane | All (weave)           | authenticated Weave `sleeve` fallback using the shared weave secret
@@ -47,6 +49,4 @@ The following restricted services are only accessible via localhost the nodes, a
 
 | Protocol    | Port        | Service               | Hosts   | Status          | Notes
 |-------------|-------------|-----------------------|---------|-----------------|------
-| TCP         | 2379        | etcd clients          | Master  | localhost-only  | unauthenticated etcd client API
-| TCP         | 2380        | etcd peers            | Master  | localhost-only  | unauthenticated etcd peers API
 | TCP         | 6784        | weave control         | All     | localhost-only  | unauthenticated weave control API

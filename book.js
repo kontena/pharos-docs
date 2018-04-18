@@ -1,7 +1,7 @@
 module.exports = {
   title: "Kontena Pharos",
   plugins: [
-    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts"
+    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions"
   ],
   pluginsConfig: {
     "edit-link": {
@@ -19,6 +19,16 @@ module.exports = {
             "./_scripts/menu.js"
         ]
     },
+    versions: {
+        //gitbookConfigURL: "https://raw.githubusercontent.com/rackt/history/gh-pages/book.json",
+        options: [
+            {
+                "value": "https://pharos.sh/docs/v0.6/",
+                "text": "Version 0.6.x",
+                "selected": true
+            }
+        ]
+    }
   },
   variables: {
   }
