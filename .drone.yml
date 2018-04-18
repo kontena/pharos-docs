@@ -5,6 +5,11 @@ pipeline:
       - npm i -g gitbook-cli
       - gitbook install
       - gitbook build
+      - ls -al
+  test_build:
+    image: alpine:3.7
+    commands:
+      - ls -la
   build_image:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]
