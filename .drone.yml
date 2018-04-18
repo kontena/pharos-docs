@@ -18,6 +18,7 @@ pipeline:
       - ${DRONE_BRANCH}
     when:
       branch: ['master', '0.6']
+      event: ['push']
   deploy:
     image: lachlanevenson/k8s-kubectl:v1.9.6
     secrets: [ kube_token, kube_ca, kube_server ]
@@ -32,6 +33,7 @@ pipeline:
       - kubectl apply -f _deploy/template/
     when:
       branch: ['master', '0.6']
+      event: ['push']
   default_ingress:
     image: lachlanevenson/k8s-kubectl:v1.9.6
     secrets: [ kube_token, kube_ca, kube_server ]
@@ -44,3 +46,4 @@ pipeline:
       - kubectl apply -f _deploy/ingress.yml
     when:
       branch: ['master']
+      event: ['push']
