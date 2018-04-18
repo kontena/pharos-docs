@@ -5,13 +5,9 @@ pipeline:
       - npm i -g gitbook-cli
       - gitbook install
       - gitbook build
-      - ls -al
-  test_build:
-    image: alpine:3.7
-    commands:
-      - ls -la
   build_image:
     image: plugins/docker
+    storage_driver: overlay
     secrets: [ docker_username, docker_password ]
     repo: kontena/pharos-docs
     tags:
