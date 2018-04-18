@@ -26,6 +26,10 @@ module.exports = {
                 "value": "https://pharos.sh/docs/v0.6/",
                 "text": "Version 0.6.x",
                 "selected": true
+            },
+            {
+                "value": "https://github.com/kontena/pharos-cluster/blob/v0.5.0/README.md#pharos-cluster",
+                "text": "Version 0.5.x"
             }
         ]
     }
