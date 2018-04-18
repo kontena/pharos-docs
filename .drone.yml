@@ -1,0 +1,13 @@
+pipeline:
+  build_book:
+    image: node:8.11
+    commands:
+      - npm i -g gitbook-cli
+      - gitbook install
+      - gitbook build
+  build_image:
+    image: plugins/docker
+    secrets: [ docker_username, docker_password ]
+    repo: kontena/pharos-docs
+    tags:
+      - ${DRONE_BRANCH}
