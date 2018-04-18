@@ -11,3 +11,8 @@
     * [Kured](addons/kured.md)
     * [Kubernetes Dashboard](addons/kube-dashboard.md)
 
+----
+
+* [View on Github](https://github.com/kontena/pharos-cluster)
+* [Issues](https://github.com/kontena/pharos-cluster/issues)
+* [Website](https://pharos.sh)
