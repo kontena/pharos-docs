@@ -5,6 +5,10 @@ pipeline:
       - npm i -g gitbook-cli
       - gitbook install
       - gitbook build
+  test_build:
+    image: alpine:3.7
+    commands:
+      - cat _book/index.html
   build_image:
     image: plugins/docker
     storage_driver: overlay
