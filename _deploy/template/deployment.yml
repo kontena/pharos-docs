@@ -12,7 +12,7 @@ spec:
       labels:
         app: pharos-docs-GIT_BRANCH
       annotations:
-        build: BUILD_NUMBER
+        build: "BUILD_NUMBER"
     spec:
       containers:
         - image: "docker.io/kontena/pharos-docs:GIT_BRANCH"
