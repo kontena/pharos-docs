@@ -6,6 +6,24 @@ Standing up a Kontena Pharos cluster is as simple as creating a cluster.yml conf
 $ pharos-cluster up -c cluster.yml
 ```
 
+Example cluster YAML:
+
+```yaml
+hosts:
+  - address: "1.1.1.1"
+    private_address: "1.0.1.0"
+    user: root
+    ssh_key_path: ~/.ssh/my_key
+    role: master
+  - address: "2.2.2.2"
+    role: worker
+  - address: "3.3.3.3"
+    role: worker
+network:
+  trusted_subnets:
+    - "172.31.0.0/16"
+```
+
 ## cluster.yml
 
 - [Hosts](#hosts)
