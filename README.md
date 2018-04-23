@@ -52,3 +52,9 @@ While most of the managed Kubernetes solutions available today are not yet produ
 * It's certified and up-to-date
 
 If you feel the managed Kubernetes solution from one of the cloud providers is mature enough for you to use and don't have issues with managed services in general, we highly recommend using it over any "self managed" Kubernetes solution. If you have any concerns related to using managed Kubernetes, Kontena Pharos might be ideal solution for you and you should try it out!
+
+## Documentation License
+
+![by-nc-sa](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+
+This documentation is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
