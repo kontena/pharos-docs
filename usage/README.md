@@ -107,11 +107,12 @@ Currently audit events are configured to be emitted at `Metadata` level. See: ht
 
 ### Cloud Provider
 
-Pharos Cluster supports a concept of [cloud providers](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes.
+Pharos Cluster supports a concept of [cloud providers](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider configuration file.
 
 ```yaml
 cloud:
   provider: aws
+  config: ./cloud-config
 ```
 
 #### Options
