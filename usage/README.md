@@ -28,11 +28,12 @@ network:
 
 - [Hosts](#hosts)
 - [API](#api-options)
-- [Network](#network)
+- [Network](#network-options)
 - [External etcd](#using-external-etcd)
 - [Webhook Token Authentication](#webhook-token-authentication)
 - [Audit Webhook](#audit-webhook)
 - [Cloud Provider](#cloud-provider)
+- [Kubernetes Network Proxy](#kubernetes-network-proxy)
 
 ### Hosts
 
@@ -118,3 +119,16 @@ cloud:
 #### Options
 
 - `provider` - specify used cloud provider (default: no cloud provider)
+
+### Kubernetes Network Proxy
+
+The Kubernetes network proxy (`kube-proxy`) can be configured to run in [different operating modes](https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies). If the default `iptables` mode is not appropriate, then this can also be configured to use the `userspace` or [(experimental) `ipvs`](https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs) modes.
+
+```yaml
+kube_proxy:
+  mode: ipvs
+```
+
+#### Options
+
+- `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
