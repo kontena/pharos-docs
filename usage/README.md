@@ -10,8 +10,8 @@ Example cluster YAML:
 
 ```yaml
 hosts:
-  - address: "1.1.1.1"
-    private_address: "1.0.1.0"
+  - address: "192.0.2.1"
+    private_interface: eth1
     user: root
     ssh_key_path: ~/.ssh/my_key
     role: master
@@ -40,6 +40,7 @@ network:
 - `address` - IP address or hostname
 - `role` - One of `master`, `worker`
 - `private_address` - Private IP address or hostname. Prefered for cluster's internal communication where possible (optional)
+- `private_interface` - Discover `private_address` from the configured network interface.
 - `user` - Username with sudo permission to use for logging in (default  `ubuntu`)
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
