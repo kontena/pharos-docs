@@ -20,8 +20,10 @@ hosts:
   - address: "3.3.3.3"
     role: worker
 network:
-  trusted_subnets:
-    - "172.31.0.0/16"
+  provider: weave
+  weave:
+    trusted_subnets:
+      - "172.31.0.0/16"
 ```
 
 ## cluster.yml
@@ -54,7 +56,13 @@ network:
 
 - `service_cidr` - IP address range for service VIPs. (default `10.96.0.0/12`)
 - `pod_network_cidr` - IP address range for the pod network. (default `10.32.0.0/12`)
+- `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`
+
+#### Weave Options
 - `trusted_subnets` - array of trusted subnets where overlay network can be used without IPSEC.
+
+#### Calico Options
+- `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
 
 ### Using External etcd
 
