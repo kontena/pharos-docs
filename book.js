@@ -23,9 +23,13 @@ module.exports = {
         //gitbookConfigURL: "https://raw.githubusercontent.com/rackt/history/gh-pages/book.json",
         options: [
             {
-                "value": "https://pharos.sh/docs/v0.6/",
-                "text": "Version 0.6.x",
+                "value": "https://pharos.sh/docs/1-0/",
+                "text": "Version 1.0.x",
                 "selected": true
+            },
+            {
+                "value": "https://pharos.sh/docs/0-6/",
+                "text": "Version 0.6.x"
             },
             {
                 "value": "https://github.com/kontena/pharos-cluster/blob/v0.5.0/README.md#pharos-cluster",
