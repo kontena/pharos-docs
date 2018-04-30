@@ -24,12 +24,12 @@ module.exports = {
         options: [
             {
                 "value": "https://pharos.sh/docs/1-0/",
-                "text": "Version 1.0.x",
-                "selected": true
+                "text": "Version 1.0.x"
             },
             {
                 "value": "https://pharos.sh/docs/0-6/",
-                "text": "Version 0.6.x"
+                "text": "Version 0.6.x",
+                "selected": true
             },
             {
                 "value": "https://github.com/kontena/pharos-cluster/blob/v0.5.0/README.md#pharos-cluster",
