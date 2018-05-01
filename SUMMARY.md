@@ -4,6 +4,7 @@
 * [Installation](install.md)
 * [Usage](usage/README.md)
     * [Terraform](usage/terraform.md)
+    * [Upgrading](usage/upgrade.md)
 * [Addons](addons/README.md)
     * [Ingress NGINX](addons/ingress-nginx.md)
     * [Cert Manager](addons/cert-manager.md)
