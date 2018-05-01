@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+    * [Kontena Pharos vs ...](comparisons.md)
 * [Installation](install.md)
 * [Usage](usage/README.md)
     * [Terraform](usage/terraform.md)
