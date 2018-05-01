@@ -12,7 +12,7 @@ While most of the managed Kubernetes solutions available today are not yet produ
 
 If you feel the managed Kubernetes solution from one of the cloud providers is mature enough for you to use and don't have issues with managed services in general, we highly recommend using it over any "self managed" Kubernetes solution. If you have any concerns related to using managed Kubernetes, Kontena Pharos might be ideal solution for you and you should try it out!
 
-## Kontena Pharos vs Rancher 2.0
+## Kontena Pharos vs. Rancher 2.0
 
 In essence, [Rancher 2.0](https://rancher.com/) is a high level concept that contains 2 main ingredients: a management tool for managing Kubernetes clusters and Rancher Kubernetes Engine (RKE) installer. They highly complement each other but may be also used stand alone.
 
