@@ -1,7 +1,7 @@
 # How Does Kontena Pharos Compare to Others?
 
 - [Managed Kubernetes Solutions](#managed-kubernetes-solutions)
-- [Rancher 2.0](#rancher-2.0)
+- [Rancher 2.0](#rancher-20)
 
 ## Managed Kubernetes Solutions
 
