@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-    * [Kontena Pharos vs ...](comparisons.md)
 * [Installation](install.md)
 * [Usage](usage/README.md)
     * [Terraform](usage/terraform.md)
@@ -12,6 +11,7 @@
     * [Host Upgrades](addons/host-upgrades.md)
     * [Kured](addons/kured.md)
     * [Kubernetes Dashboard](addons/kube-dashboard.md)
+* [Comparisons](comparisons.md)
 
 ----
 

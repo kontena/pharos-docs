@@ -1,4 +1,9 @@
-## Kontena Pharos vs. Managed Kubernetes Solutions
+# How Does Kontena Pharos Compare to Others?
+
+- [Managed Kubernetes Solutions](#managed-kubernetes-solutions)
+- [Rancher 2.0](#rancher-2.0)
+
+## Managed Kubernetes Solutions
 
 Managed Kubernetes Services such as [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/), [Amazon Elastic Container Service for Kubernetes (EKS)](https://aws.amazon.com/eks/) and [Azure Container Service (AKS)](https://azure.microsoft.com/en-us/services/container-service/) offer Kubernetes-as-a-Service (should we dare to call it KaaS? :)). The cloud provider is hosting a pre-configured Kubernetes infrastructure for you. These solutions promise simplicity, peace of mind and built-in integrations to the underlying cloud infrastructure. In essence, these solutions are Kubernetes distributions tailored to work smoothly on the selected cloud provider's infrastructure.
 
@@ -12,7 +17,7 @@ While most of the managed Kubernetes solutions available today are not yet produ
 
 If you feel the managed Kubernetes solution from one of the cloud providers is mature enough for you to use and don't have issues with managed services in general, we highly recommend using it over any "self managed" Kubernetes solution. If you have any concerns related to using managed Kubernetes, Kontena Pharos might be ideal solution for you and you should try it out!
 
-## Kontena Pharos vs. Rancher 2.0
+## Rancher 2.0
 
 In essence, [Rancher 2.0](https://rancher.com/) is a high level concept that contains 2 main ingredients: a management tool for managing Kubernetes clusters and Rancher Kubernetes Engine (RKE) installer. They highly complement each other but may be also used stand alone.
 
