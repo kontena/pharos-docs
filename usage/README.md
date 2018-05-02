@@ -6,6 +6,8 @@ Standing up a Kontena Pharos cluster is as simple as creating a cluster.yml conf
 $ pharos-cluster up -c cluster.yml
 ```
 
+Configuration changes can be applied to the cluster with the same command.
+
 Example cluster YAML:
 
 ```yaml
@@ -39,10 +41,24 @@ network:
 
 ### Hosts
 
+```yaml
+hosts:
+  - address: 10.10.1.2
+    role: master
+    private_interface: eth1
+    user: root
+  - address: 10.10.1.6
+    role: worker
+    private_interface: eth1
+    user: root
+    labels:
+      disk: ssd
+```
+
 - `address` - IP address or hostname
 - `role` - One of `master`, `worker`
 - `private_address` - Private IP address or hostname. Prefered for cluster's internal communication where possible (optional)
-- `private_interface` - Discover `private_address` from the configured network interface.
+- `private_interface` - Discover `private_address` from the configured network interface (optional)
 - `user` - Username with sudo permission to use for logging in (default  `ubuntu`)
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
@@ -50,18 +66,49 @@ network:
 
 ### API Options
 
+```yaml
+api:
+  endpoint: api-lb.mydomain.com
+```
+
 - `endpoint` - External endpoint address for Kubernetes API (eg loadbalancer or DNS)
 
 ### Network Options
 
+```yaml
+network:
+  provider: weave
+  service_cidr: 172.31.0.0/16
+  pod_network_cidr: 172.32.0.0/16
+  weave:
+    trusted_subnets:
+      - 10.10.0.0/16
+```
+- `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`
 - `service_cidr` - IP address range for service VIPs. (default `10.96.0.0/12`)
 - `pod_network_cidr` - IP address range for the pod network. (default `10.32.0.0/12`)
-- `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`
 
 #### Weave Options
-- `trusted_subnets` - array of trusted subnets where overlay network can be used without IPSEC.
+
+```yaml
+network:
+  provider: weave
+  weave:
+    trusted_subnets:
+      - 10.10.0.0/16
+```
+
+- `trusted_subnets` - array of trusted subnets where overlay network can be used without IPSEC (optional)
 
 #### Calico Options
+
+```yaml
+network:
+  provider: calico
+  calico:
+    ipip_mode: Never
+```
+
 - `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
 
 ### Using External etcd
@@ -78,6 +125,11 @@ etcd:
   key: ./etcd_certs/client-key.pem
   ca_certificate: ./etcd_certs/ca.pem
 ```
+
+- `endpoints` - array of etcd cluster endpoints
+- `certificate` - path to etcd client certificate
+- `key` - path to etcd client certificate key
+- `ca_certificate` - path to etcd client ca certificate
 
 You need to specify all etcd peer endpoints in the list.
 
@@ -111,6 +163,8 @@ audit:
  server: "http://audit.example.com/webhook"
 ```
 
+- `server` - audit webhook receiver URL
+
 Audit events are delivered in batched mode, multiple events in one webhook `POST` request.
 
 Currently audit events are configured to be emitted at `Metadata` level. See: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/auditing.md#levels
@@ -125,9 +179,8 @@ cloud:
   config: ./cloud-config
 ```
 
-#### Options
-
 - `provider` - specify used cloud provider (default: no cloud provider)
+- `config` - path to provider specific cloud configuration file (default: no configuration file)
 
 ### Kubernetes Network Proxy
 
@@ -137,7 +190,5 @@ The Kubernetes network proxy (`kube-proxy`) can be configured to run in [differe
 kube_proxy:
   mode: ipvs
 ```
-
-#### Options
 
 - `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
