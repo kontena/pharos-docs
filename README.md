@@ -16,7 +16,7 @@
 ## Features at a Glance
 
 - [Simple setup](usage/README.md)
-- Kubernetes v1.9.6
+- Kubernetes v1.10.1
 - Bare metal friendly, infrastructure agnostic
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
