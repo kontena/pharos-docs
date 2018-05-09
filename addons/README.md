@@ -6,3 +6,4 @@ Pharos Cluster includes common functionality as addons. Addons can be enabled by
 * [Cert Manager](cert-manager.md)
 * [Kured](kured.md)
 * [Kubernetes Dashboard](kube-dashboard.md)
+* [OpenEBS](openebs.md)

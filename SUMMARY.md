@@ -11,6 +11,7 @@
     * [Host Upgrades](addons/host-upgrades.md)
     * [Kured](addons/kured.md)
     * [Kubernetes Dashboard](addons/kube-dashboard.md)
+    * [OpenEBS](addons/openebs.md)
 * [Comparisons](comparisons.md)
 
 ----
