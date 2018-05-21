@@ -17,9 +17,9 @@ hosts:
     user: root
     ssh_key_path: ~/.ssh/my_key
     role: master
-  - address: "2.2.2.2"
+  - address: "192.0.2.2"
     role: worker
-  - address: "3.3.3.3"
+  - address: "192.0.2.3"
     role: worker
 network:
   provider: weave
@@ -63,6 +63,42 @@ hosts:
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
+- `taints` - A list of taint objects with `key`, `effect` and optional `value`
+
+#### Using node taints
+
+By default, any `role: master` nodes will have a [`NoSchedule` taint](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) with the `node-role.kubernetes.io/master` key, meaning that the master nodes will only run Kubernetes infrastructure pods, and normal workload pods will only be scheduled onto worker nodes. If you wish to run mixed workloads on the master nodes, such as having a cluster with only master nodes, then use `taints: []` to override the default master taints and allow normal workload pods to be scheduled onto the master nodes:
+
+```yaml
+hosts:
+  - address: 192.0.2.1
+    role: master
+    taints: []
+```
+
+You can also use `taints` to set custom taints on other nodes, effectively dedicating those nodes to only running pod workloads that are marked with a toleration for the same taints:
+
+```yaml
+hosts:
+  - address: 192.0.2.2
+    role: worker
+    taints:
+      - key: example.com/test
+        effect: NoSchedule
+```
+
+If you wish to set extra taints on a master node, then you must also include the default `key: node-role.kubernetes.io/master` taint with `effect: NoSchedule`, or it will be removed from the node:
+
+```yaml
+hosts:
+  - address: 192.0.2.2
+    role: master
+    taints:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      - key: example.com/test
+        effect: NoSchedule
+```
 
 ### API Options
 
