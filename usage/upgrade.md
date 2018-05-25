@@ -14,8 +14,8 @@ Download a new version of `pharos-cluster` from [releases](https://github.com/ko
 Example:
 
 ```
-$ curl -o /usr/local/bin/pharos-cluster-1.0.0 https://github.com/kontena/pharos-cluster/releases/download/v1.0.0/pharos-cluster-darwin-amd64
-$ chmod +x /usr/local/bin/pharos-cluster-1.0.0
+$ curl -o /usr/local/bin/pharos-cluster-1.0.2 https://github.com/kontena/pharos-cluster/releases/download/v1.0.0/pharos-cluster-darwin-amd64
+$ chmod +x /usr/local/bin/pharos-cluster-1.0.2
 ```
 
 ### 2. Apply Upgrade
@@ -25,5 +25,5 @@ Run `pharos-cluster up` against the same configuration.
 For example:
 
 ```
-$ /usr/local/bin/pharos-cluster-1.0.0 up -c /path/to/your/project/cluster.yml
+$ /usr/local/bin/pharos-cluster-1.0.2 up -c /path/to/your/project/cluster.yml
 ```
