@@ -17,7 +17,7 @@ pipeline:
     tags:
       - ${DRONE_BRANCH}
     when:
-      branch: ['master', '0-6', '1-0']
+      branch: ['master', '1-0', '1-1']
       event: ['push']
   deploy:
     image: lachlanevenson/k8s-kubectl:v1.9.6
@@ -32,7 +32,7 @@ pipeline:
       - sed -i "s/BUILD_NUMBER/${DRONE_BUILD_NUMBER}/g" _deploy/template/deployment.yml
       - kubectl apply -f _deploy/template/
     when:
-      branch: ['master', '0-6', '1-0']
+      branch: ['master', '1-0', '1-1']
       event: ['push']
   default_ingress:
     image: lachlanevenson/k8s-kubectl:v1.9.6
