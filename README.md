@@ -2,7 +2,7 @@
 
 > The simple, solid, certified Kubernetes distribution that just works.
 
-![features](https://pharos.sh/images/pharos-features.svg)
+![features](https://kontena.io/images/pharos-features.svg)
 
 ## Overview
 
