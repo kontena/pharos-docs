@@ -67,6 +67,7 @@ hosts:
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
 - `taints` - A list of taint objects with `key`, `effect` and optional `value`
+- `http_proxy` - A http(s) proxy address that is used for downloading packages & container images
 
 #### Using node taints
 
