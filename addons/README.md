@@ -8,10 +8,13 @@ Pharos Cluster includes common functionality as addons. Addons can be enabled by
 
 ## Built-in Addons
 
-* [Ingress NGINX](ingress-nginx.md)
+Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are tested to work with the Kubernetes version that Kontena Pharos ships.
+
 * [Cert Manager](cert-manager.md)
-* [Kured](kured.md)
+* [Host Upgrades](host-upgrades.md)
+* [Ingress NGINX](ingress-nginx.md)
 * [Kubernetes Dashboard](kube-dashboard.md)
+* [Kured](kured.md)
 * [OpenEBS](openebs.md)
 
 ## Using External Addons
@@ -56,19 +59,21 @@ Pharos.addon 'hello-world' do
     optional(:tls_secret).filled(:str?)
   }
 
-  # install is optional, it can be used to customize the installation process if needed
-  #install {
-  #  logger.info "this happens before resources are applied to Kubernetes API"
-  #  apply_resources
-  #  logger.info "this happens after resources are applied to Kubernetes API"
-  #}
+  # Install is optional, it can be used to customize the installation process if needed
+  #
+  # install {
+  #   logger.info "this happens before resources are applied to Kubernetes API"
+  #   apply_resources
+  #   logger.info "this happens after resources are applied to Kubernetes API"
+  # }
 
-  # uninstall is optional, it can be used to customize the uninstall process if needed
-  #uninstall {
-  #  logger.info "this happens before resources are deleted from Kubernetes API"
-  #  delete_resources
-  #  logger.info "this happens after resources are deleted from Kubernetes API"
-  #}
+  # Uninstall is optional, it can be used to customize the uninstall process if needed
+  #
+  # uninstall {
+  #   logger.info "this happens before resources are deleted from Kubernetes API"
+  #   delete_resources
+  #   logger.info "this happens after resources are deleted from Kubernetes API"
+  # }
 end
 ```
 
