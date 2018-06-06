@@ -17,7 +17,7 @@ spec:
         paths:
         - path: /docs
           backend:
-            serviceName: pharos-docs-1-0
+            serviceName: pharos-docs-1-1
             servicePort: 80
     - host: www.pharos.sh
       http: *http_rules
