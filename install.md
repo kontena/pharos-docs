@@ -4,8 +4,25 @@ Pharos Cluster executable can be downloaded from [releases](https://github.com/k
 
 ## Host Requirements
 
-- Minimal Ubuntu 16.04 (amd64 / arm64) hosts with SSH access
-- A user with passwordless sudo permission (`echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER`)
+### Supported Host Operating Systems
+
+- Ubuntu 16.04
+    - architectures: amd64, arm64
+    - container runtimes: docker, cri-o
+- Ubuntu 18.04
+    - architectures: amd64, arm64
+    - container runtimes: docker
+- CentOS 7.4 - 7.5
+    - architectures: amd64
+    - container runtimes: docker
+- Redhat Enterprise Linux 7.4 - 7.5
+    - architectures: amd64
+    - container runtimes: docker
+
+### Other Requirements
+
+- hosts need SSH access
+- a user with passwordless sudo permission (`echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER`)
 
 ### Required Open Ports
 
