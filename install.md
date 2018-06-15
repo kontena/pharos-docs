@@ -2,6 +2,8 @@
 
 Pharos Cluster executable can be downloaded from [releases](https://github.com/kontena/pharos-cluster/releases/latest). Binaries should work on any recent 64bit MacOS or Linux machine.
 
+Once downloaded, add the binary location to your `PATH` environment or move the binary to some location already in the `PATH`. Remember to also set executable bit on the binary.
+
 ## Host Requirements
 
 ### Supported Host Operating Systems
