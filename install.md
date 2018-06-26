@@ -10,16 +10,16 @@ Once downloaded, add the binary location to your `PATH` environment or move the 
 
 - Ubuntu 16.04
     - architectures: amd64, arm64
-    - container runtimes: docker, cri-o
+    - container runtimes: docker (amd64, arm64), cri-o (amd64)
 - Ubuntu 18.04
     - architectures: amd64, arm64
-    - container runtimes: docker
+    - container runtimes: docker (amd64, arm64), cri-o (amd64)
 - CentOS 7.4 - 7.5
     - architectures: amd64
-    - container runtimes: docker
+    - container runtimes: docker, cri-o
 - Redhat Enterprise Linux 7.4 - 7.5
     - architectures: amd64
-    - container runtimes: docker
+    - container runtimes: docker, cri-o
 
 ### Other Requirements
 
