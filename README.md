@@ -16,14 +16,14 @@
 ## Features at a Glance
 
 - [Simple setup](usage/README.md)
-- Kubernetes v1.10.4
+- [Kubernetes](https://kubernetes.io/) v1.10.4
 - Bare metal friendly, infrastructure agnostic
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
-- Support for Docker and [cri-o](https://github.com/kubernetes-incubator/cri-o) container runtimes
+- Support for [docker](https://mobyproject.org/) and [cri-o](http://cri-o.io/) container runtimes
 - [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/) enabled
 - [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
-- Hardened configuration for enhanced security (follows NIST SP800-190 recommendations)
+- Hardened configuration for enhanced security (follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
 - ARM64 support
 
 ## Simple, solid and certified
