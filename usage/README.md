@@ -18,8 +18,12 @@ hosts:
     ssh_key_path: ~/.ssh/my_key
     role: master
   - address: "192.0.2.2"
+    user: root
+    ssh_key_path: ~/.ssh/my_key
     role: worker
   - address: "192.0.2.3"
+    user: root
+    ssh_key_path: ~/.ssh/my_key
     role: worker
 network:
   provider: weave
@@ -62,7 +66,7 @@ hosts:
 - `role` - One of `master`, `worker`
 - `private_address` - Private IP address or hostname. Prefered for cluster's internal communication where possible (optional)
 - `private_interface` - Discover `private_address` from the configured network interface (optional)
-- `user` - Username with sudo permission to use for logging in (default  `ubuntu`)
+- `user` - Username with sudo permission to use for logging in
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
