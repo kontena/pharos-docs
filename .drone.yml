@@ -1,6 +1,8 @@
 pipeline:
   build_book:
     image: node:8.11
+    environment:
+      - GA_CODE=UA-60024048-1
     commands:
       - npm i -g gitbook-cli
       - gitbook install
