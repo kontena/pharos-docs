@@ -1,7 +1,8 @@
 module.exports = {
   title: "Kontena Pharos",
   plugins: [
-    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions", "mixpanel"
+    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions",
+    "mikxpanel@git+https://github.com/kontena/gitbook-plugin-mikxpanel.git"
   ],
   pluginsConfig: {
     "edit-link": {
@@ -14,8 +15,9 @@ module.exports = {
     ga: {
       token: process.env.GA_CODE || ""
     },
-    mixpanel: {
-      token: process.env.MIXPANEL_TOKEN || ""
+    mikxpanel: {
+      token: process.env.MIXPANEL_TOKEN || "",
+      event_prefix: "docs.pharos"
     },
     scripts: {
         files: [
