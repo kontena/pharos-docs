@@ -27,7 +27,7 @@ pipeline:
     pull: true
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
-      - mortar -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" "docs-${DRONE_BRANCH}" _deploy/template/
+      - mortar -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" "pharos-docs-${DRONE_BRANCH}" _deploy/template/
     when:
       branch: ['master', '1-0', '1-1', '1-2']
       event: ['push']
@@ -35,7 +35,7 @@ pipeline:
     image: quay.io/kontena/mortar:latest
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
-      - mortar -d "docs-default-ingress" _deploy/ingress.yml
+      - mortar -d "pharos-docs-default-ingress" _deploy/ingress.yml
     when:
       branch: ['master']
       event: ['push']

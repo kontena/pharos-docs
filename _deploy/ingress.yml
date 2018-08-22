@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: pharos-docs
+  namespace: kontena-io
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /docs
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
