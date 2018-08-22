@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Installation](install.md)
+* [Host Requirements](requirements.md)
 * [Usage](usage/README.md)
     * [Terraform](usage/terraform.md)
     * [Upgrading](usage/upgrade.md)
