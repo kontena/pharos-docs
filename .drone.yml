@@ -23,30 +23,19 @@ pipeline:
       branch: ['master', '1-0', '1-1', '1-2']
       event: ['push']
   deploy:
-    image: lachlanevenson/k8s-kubectl:v1.9.6
+    image: quay.io/kontena/mortar:latest
+    pull: true
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
-      - echo $${KUBE_CA} | base64 -d > /tmp/ca.pem
-      - kubectl config set-cluster default-cluster --server=$${KUBE_SERVER} --certificate-authority=/tmp/ca.pem
-      - kubectl config set-credentials default-admin --token=$${KUBE_TOKEN}
-      - kubectl config set-context default-system --cluster=default-cluster --user=default-admin
-      - kubectl config use-context default-system
-      - sed -i "s/GIT_BRANCH/${DRONE_BRANCH}/g" _deploy/template/*.yml
-      - sed -i "s/BUILD_NUMBER/${DRONE_BUILD_NUMBER}/g" _deploy/template/deployment.yml
-      - kubectl apply -f _deploy/template/
+      - mortar -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" "docs-${DRONE_BRANCH}" _deploy/template/
     when:
       branch: ['master', '1-0', '1-1', '1-2']
       event: ['push']
   default_ingress:
-    image: lachlanevenson/k8s-kubectl:v1.9.6
+    image: quay.io/kontena/mortar:latest
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
-      - echo $${KUBE_CA} | base64 -d > /tmp/ca.pem
-      - kubectl config set-cluster default-cluster --server=$${KUBE_SERVER} --certificate-authority=/tmp/ca.pem
-      - kubectl config set-credentials default-admin --token=$${KUBE_TOKEN}
-      - kubectl config set-context default-system --cluster=default-cluster --user=default-admin
-      - kubectl config use-context default-system
-      - kubectl apply -f _deploy/ingress.yml
+      - mortar -d "docs-default-ingress" _deploy/ingress.yml
     when:
       branch: ['master']
       event: ['push']
