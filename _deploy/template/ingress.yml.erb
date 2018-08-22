@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pharos-docs-GIT_BRANCH
+  name: pharos-docs-<%= var.git_branch %>
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /docs
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -15,9 +15,9 @@ spec:
     - host: pharos.sh
       http: &http_rules
         paths:
-        - path: /docs/GIT_BRANCH
+        - path: /docs/<%= var.git_branch %>
           backend:
-            serviceName: pharos-docs-GIT_BRANCH
+            serviceName: pharos-docs-<%= var.git_branch %>
             servicePort: 80
     - host: www.pharos.sh
       http: *http_rules
