@@ -97,5 +97,5 @@ You should see `pharos-cluster x.y.z` in the output matching the version of `pha
 If you have reached this far, you have completed the setup of Kontena Pharos toolchain. Next, you can start spinning up some machines and deploying Kontena Pharos clusters!
 
 * Follow getting started guide for beginners at: https://kontena.io/pharos#get-started.
-* Learn [all features and configuration options](/usage/) of `pharos` CLI tool
+* Learn [all features and configuration options](usage/README.md) of `pharos` CLI tool
 * Share your experience at <a href="https://slack.kontena.io">Kontena community slack</a> channel.
