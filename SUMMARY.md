@@ -13,6 +13,9 @@
     * [Kured](addons/kured.md)
     * [Kubernetes Dashboard](addons/kube-dashboard.md)
     * [OpenEBS](addons/openebs.md)
+* [Command-line Tools](tools/README.md)
+    * [chpharos](tools/chpharos.md)
+    * [pharos](tools/pharos.md)
 * [Comparisons](comparisons.md)
 
 ----
