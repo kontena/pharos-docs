@@ -5,7 +5,7 @@ Pharos Cluster can read information from [Terraform](https://www.terraform.io/) 
 Terraform output json integration can be enabled with `--tf-json` option, for example:
 
 ```bash
-$ pharos-cluster up -c cluster.yml --tf-json tf.json
+$ pharos up -c cluster.yml --tf-json tf.json
 ```
 
 - [Setting Hosts](#setting-hosts)

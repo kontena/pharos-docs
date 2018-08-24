@@ -9,21 +9,20 @@ Unless noted otherwise, worker and masters within a major version are forward an
 
 ### 1. Download a New Version
 
-Download a new version of `pharos-cluster` from [releases](https://github.com/kontena/pharos-cluster/releases).
-
+Install new version using [`chpharos`](/tools/chpharos.md)
 Example:
 
 ```
-$ curl -o /usr/local/bin/pharos-cluster-1.0.2 https://github.com/kontena/pharos-cluster/releases/download/v1.0.0/pharos-cluster-darwin-amd64
-$ chmod +x /usr/local/bin/pharos-cluster-1.0.2
+$ chpharos install 1.2.3
+$ chpharos use 1.2.3
 ```
 
 ### 2. Apply Upgrade
 
-Run `pharos-cluster up` against the same configuration.
+Run `pharos up` against the same configuration.
 
 For example:
 
 ```
-$ /usr/local/bin/pharos-cluster-1.0.2 up -c /path/to/your/project/cluster.yml
+$ pharos up -c /path/to/your/project/cluster.yml
 ```

@@ -3,7 +3,7 @@
 Standing up a Kontena Pharos cluster is as simple as creating a cluster.yml configuration file and running the command:
 
 ```sh
-$ pharos-cluster up -c cluster.yml
+$ pharos up -c cluster.yml
 ```
 
 Configuration changes can be applied to the cluster with the same command.
