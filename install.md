@@ -1,6 +1,6 @@
 # Kontena Pharos CLI Toolchain Installation
 
-Kontena Pharos clusters are deployed, managed and maintained with the `pharos` CLI tool. This tool is updated regularly. Often, the tool is updated when new version of Kubernetes "kernel" is released. The tool is also updated when new Kontena Pharos distro specific features are added. 
+Kontena Pharos clusters are deployed, managed and maintained with the `pharos` CLI tool. This tool is updated regularly. Often, the tool is updated when new version of Kubernetes "kernel" is released. The tool is also updated when new Kontena Pharos distro specific features are added.
 
 In real world production environments, admins often run multiple versions of Kontena Pharos clusters. In order to perform maintenance for these clusters, admins need to juggle with multiple versions of `pharos` CLI tool: each deployed Kontena Pharos cluster will require a specific version of `pharos` tool for maintenance (NOTE: if newer version is used, the entire cluster will be upgraded to this new version). To make life easier for admins, there is a tool called `chpharos`.
 
@@ -97,5 +97,5 @@ You should see `pharos-cluster x.y.z` in the output matching the version of `pha
 If you have reached this far, you have completed the setup of Kontena Pharos toolchain. Next, you can start spinning up some machines and deploying Kontena Pharos clusters!
 
 * Follow getting started guide for beginners at: https://kontena.io/pharos#get-started.
-* Learn [all features and configuration options](/usage) of `pharos` CLI tool
+* Learn [all features and configuration options](/usage/) of `pharos` CLI tool
 * Share your experience at <a href="https://slack.kontena.io">Kontena community slack</a> channel.
