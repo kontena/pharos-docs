@@ -1,21 +1,25 @@
 # Summary
 
 * [Introduction](README.md)
-* [Installation](install.md)
-* [Host Requirements](requirements.md)
-* [Usage](usage/README.md)
-    * [Terraform](usage/terraform.md)
-    * [Upgrading](usage/upgrade.md)
+* [Install CLI Toolchain](install.md)
+* [Deploy Cluster](deploy.md)
+  * [Host Requirements](requirements.md)
+  * [Using Terraform](terraform.md)
+* [Configure Cluster](configuration.md)
 * [Addons](addons/README.md)
-    * [Ingress NGINX](addons/ingress-nginx.md)
-    * [Cert Manager](addons/cert-manager.md)
-    * [Host Upgrades](addons/host-upgrades.md)
-    * [Kured](addons/kured.md)
-    * [Kubernetes Dashboard](addons/kube-dashboard.md)
-    * [OpenEBS](addons/openebs.md)
-* [Command-line Tools](tools/README.md)
-    * [chpharos](tools/chpharos.md)
-    * [pharos](tools/pharos.md)
+  * [Ingress NGINX](addons/ingress-nginx.md)
+  * [Cert Manager](addons/cert-manager.md)
+  * [Host Upgrades](addons/host-upgrades.md)
+  * [Kured](addons/kured.md)
+  * [Kubernetes Dashboard](addons/kube-dashboard.md)
+  * [OpenEBS](addons/openebs.md)
+* [Upgrade Cluster](upgrade.md)
+
+----
+
+* [CLI Tools Reference](tools/README.md)
+  * [chpharos](tools/chpharos.md)
+  * [pharos](tools/pharos.md)
 * [Comparisons](comparisons.md)
 
 ----

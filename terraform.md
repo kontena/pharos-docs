@@ -1,8 +1,8 @@
-# Usage with Terraform
+# Deploying Kontena Pharos Cluster with Terraform
 
-Pharos Cluster can read information from [Terraform](https://www.terraform.io/) json output. In this scenario cluster.yml contents can be partially read from Terraform json output.
+The `pharos` CLI tool can read information from [Terraform](https://www.terraform.io/) JSON output. In this scenario `cluster.yml` contents can be partially read from Terraform JSON output.
 
-Terraform output json integration can be enabled with `--tf-json` option, for example:
+Terraform output JSON integration can be enabled with `--tf-json` option, for example:
 
 ```bash
 $ pharos up -c cluster.yml --tf-json tf.json
@@ -48,16 +48,16 @@ is equal to:
 
 ```yaml
 hosts:
-    - address: "..."
-      private_address: "..."
-      role: "master"
-      user: "ubuntu"
-    - address: "..."
-      private_address: "..."
-      role: "worker"
-      user: "ubuntu"
-      label:
-        ingress: "nginx"
+  - address: "..."
+    private_address: "..."
+    role: "master"
+    user: "ubuntu"
+  - address: "..."
+    private_address: "..."
+    role: "worker"
+    user: "ubuntu"
+    label:
+      ingress: "nginx"
 ```
 
 in `cluster.yml`.

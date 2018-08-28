@@ -9,14 +9,12 @@
 - **Stable foundation** for running Kubernetes at any scale.
 - **Always up-to-date**, built from the latest upstream Kubernetes including a standardized set of essential features.
 - **Extend with addons** of your own or from any Kubernetes ecosystem project.
-- **Enterprise subscriptions** with SLA and support [available](https://pharos.sh#pricing).
-
-
+- **Enterprise subscriptions** with SLA and support [available](https://kontena.io/pharos#pricing).
 
 ## Features at a Glance
 
-- [Simple setup](usage/README.md)
-- [Kubernetes](https://kubernetes.io/) v1.11.1
+- Easy to setup, maintain and upgrade
+- [Kubernetes](https://kubernetes.io/) v1.10.6
 - Bare metal friendly, infrastructure agnostic
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
