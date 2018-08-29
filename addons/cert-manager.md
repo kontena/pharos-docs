@@ -17,7 +17,9 @@ cert-manager:
 - `issuer.server`-  ACME server url
 - `issuer.email` - email address used for ACME registration
 
-By default Pharos Cluster will create an `Issuer` to the `default` namespace. This can be used to obtain Let's Encrypt certificates using `HTTP-01` challenge. For `HTTP-01` challenge to work you need to enable ingress controller, for example [Ingress-NGINX](./ingress-nginx.md)
+By default Pharos Cluster will create an [Issuer](http://docs.cert-manager.io/en/release-0.2/reference/issuers.html) to the `default` namespace. This can be used to obtain Let's Encrypt certificates using `HTTP-01` challenge. For `HTTP-01` challenge to work you need to enable ingress controller, for example [Ingress-NGINX](./ingress-nginx.md). 
+
+If you want to use Let's Encrypt in other namespaces, create an issuer per namespace or create a cluster-wide [ClusterIssuer](http://docs.cert-manager.io/en/release-0.2/reference/clusterissuers.html).
 
 Example:
 
