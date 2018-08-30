@@ -14,7 +14,6 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 * [Host Upgrades](host-upgrades.md)
 * [Ingress NGINX](ingress-nginx.md)
 * [Kubernetes Dashboard](kube-dashboard.md)
-* [Kured](kured.md)
 * [OpenEBS](openebs.md)
 
 ## Using External Addons
