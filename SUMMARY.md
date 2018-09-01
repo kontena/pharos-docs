@@ -10,7 +10,6 @@
   * [Ingress NGINX](addons/ingress-nginx.md)
   * [Cert Manager](addons/cert-manager.md)
   * [Host Upgrades](addons/host-upgrades.md)
-  * [Kured](addons/kured.md)
   * [Kubernetes Dashboard](addons/kube-dashboard.md)
   * [OpenEBS](addons/openebs.md)
 * [Upgrade Cluster](upgrade.md)
