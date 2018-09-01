@@ -13,6 +13,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [audit](#audit) - Specify audit webhook for external audit events collection
   * [cloud](#cloud) - Specify cloud provider
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
+  * [telemetry](#telemetry) - Telemetry options
   * [addons](#addons) - Specify add-ons and their configuration options
   * [addon_paths](#addon_paths) - Specify path for custom add-ons
 * [Examples](#examples)
@@ -243,6 +244,29 @@ kube_proxy:
 The supported configuration options:
 
 * `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
+
+### `telemetry`
+
+To continuously improve the Kontena Pharos experience, the Kontena Pharos telemetry cronjob reports usage data to Kontena, Inc. This data is used to monitor the reliability of Kontena Pharos internal components and installations and to find out which features are most popular. This telemetry data is very helpful to us, so we hope that you will leave it enabled.
+
+```yaml
+telemetry:
+  enabled: true
+```
+
+The supported configuration options:
+
+* `enabled` - `true` (default) or `false`
+
+**Telemetry payload:**
+
+```json
+{
+    "kube_version": "<kubernetes version>",
+    "pharos_version": "<pharos version>",
+    "customer_token": "<token to identify paying customers>"
+}
+```
 
 ### `addons`
 
