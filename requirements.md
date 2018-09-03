@@ -19,6 +19,14 @@
 
 - hosts need SSH access
 - a user with passwordless sudo permission (`echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER`)
+- Ubuntu 16.04
+    - universe (xenial-updates) apt repository enabled for docker.io package
+- Ubuntu 18.04
+    - universe apt repository enabled for docker.io package
+- CentOS 7
+    - extras repository enabled for docker package
+- RHEL 7
+    - rhel-7-server-extras-rpms repository enabled for docker package
 
 ### Required Open Ports
 
