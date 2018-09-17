@@ -2,6 +2,10 @@
 
 [OpenEBS](https://github.com/openebs/openebs), containerized block storage written in Go for cloud native and other environments w/ per container (or pod) QoS SLAs, tiering and replica policies across AZs and environments, and predictable and scalable performance.
 
+- version: `0.5.3`
+- maturity: `alpha`
+
+## Configuration
 
 ```yaml
 openebs:

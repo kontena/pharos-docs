@@ -2,15 +2,21 @@
 
 [NGINX ingress controller](https://github.com/kubernetes/ingress-nginx) daemonset. By default runs on every node on ports 80 & 443.
 
+- version: `0.17.1`
+- maturity: `stable`
+
+## Configuration
+
 ```yaml
-ingress-nginx:
-  enabled: true
-  node_selector:
-    disk: ssd
-  configmap:
-    load-balance: least_conn
-  default_backend:
-    image: my-custom-image:latest
+addons:
+  ingress-nginx:
+    enabled: true
+    node_selector:
+      disk: ssd
+    configmap:
+      load-balance: least_conn
+    default_backend:
+      image: my-custom-image:latest
 ```
 #### Options
 

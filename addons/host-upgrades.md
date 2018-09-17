@@ -1,6 +1,9 @@
 # Addon: Host Security Updates
 
-Automatic host operating system security updates. Performs a rolling upgrade using a kube resource lock to ensure that only one host node upgrades at a time.
+Automatic host operating system security updates provided by [Pharos Host Upgrades](https://github.com/kontena/pharos-host-upgrades/) daemonset. Performs a rolling upgrade using a kube resource lock to ensure that only one host node upgrades at a time.
+
+- version: `0.2.0`
+- maturity: `stable`
 
 ```yaml
 host-upgrades:
