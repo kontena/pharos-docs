@@ -23,11 +23,11 @@ pipeline:
       branch: ['master', '1-1', '1-2', '1-3']
       event: ['push']
   deploy:
-    image: quay.io/kontena/mortar:latest
+    image: quay.io/kontena/mortar:0.2
     pull: true
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
-      - mortar -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" "pharos-docs-${DRONE_BRANCH}" _deploy/template/
+      - mortar fire -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" _deploy/template/ "pharos-docs-${DRONE_BRANCH}"
     when:
       branch: ['master', '1-1', '1-2', '1-3']
       event: ['push']
