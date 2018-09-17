@@ -9,7 +9,7 @@
 * [Addons](addons/README.md)
   * [Ingress NGINX](addons/ingress-nginx.md)
   * [Cert Manager](addons/cert-manager.md)
-  * [Host Upgrades](addons/host-upgrades.md)
+  * [Pharos Host Upgrades](addons/host-upgrades.md)
   * [Kubernetes Dashboard](addons/kube-dashboard.md)
   * [OpenEBS](addons/openebs.md)
 * [Upgrade Cluster](upgrade.md)
