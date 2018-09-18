@@ -14,7 +14,7 @@
 ## Features at a Glance
 
 - Easy to setup, maintain and upgrade
-- [Kubernetes](https://kubernetes.io/) v1.11.1
+- [Kubernetes](https://kubernetes.io/) v1.11.3
 - Bare metal friendly, infrastructure agnostic
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
