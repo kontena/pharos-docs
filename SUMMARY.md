@@ -7,11 +7,12 @@
   * [Using Terraform](terraform.md)
 * [Configure Cluster](configuration.md)
 * [Addons](addons/README.md)
-  * [Ingress NGINX](addons/ingress-nginx.md)
   * [Cert Manager](addons/cert-manager.md)
-  * [Pharos Host Upgrades](addons/host-upgrades.md)
+  * [Helm](addons/helm.md)
+  * [Ingress NGINX](addons/ingress-nginx.md)
   * [Kubernetes Dashboard](addons/kube-dashboard.md)
   * [OpenEBS](addons/openebs.md)
+  * [Pharos Host Upgrades](addons/host-upgrades.md)
 * [Upgrade Cluster](upgrade.md)
 
 ----

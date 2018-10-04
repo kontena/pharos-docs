@@ -12,6 +12,7 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 
 * [Cert Manager](cert-manager.md)
 * [Pharos Host Upgrades](host-upgrades.md)
+* [Helm](helm.md)
 * [Ingress NGINX](ingress-nginx.md)
 * [Kubernetes Dashboard](kube-dashboard.md)
 * [OpenEBS](openebs.md)
