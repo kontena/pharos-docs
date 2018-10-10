@@ -105,9 +105,11 @@ hosts:
     user: root
     labels:
       disk: ssd
+    environment:
+      http_proxy: http://user:password@proxy-server.example.com:3128
 ```
 
-The supported configuration options: 
+The supported configuration options:
 
 - `address` - IP address or hostname
 - `role` - One of `master`, `worker`
@@ -118,7 +120,7 @@ The supported configuration options:
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
 - `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
-- `http_proxy` - A http(s) proxy address that is used for downloading packages & container images
+- `environment` - A list of `key: value` pairs to set into the host's environment (`/etc/environment`). To remove an entry from the configuration, set a null value.
 
 ### `api`
 
@@ -387,3 +389,19 @@ domain-id=2a73b8f597c04551a0fdc8e95544be8a
 
 For more details see [Kubernetes cloud.conf](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/#cloud-conf) documentation.
 
+### Configuring HTTP/HTTPS/FTP proxies
+
+To configure a host to use a proxy for making http/https/ftp connections, use the `environment:` keyword in [host configuration](#hosts). This can also be used to set the `NO_PROXY` variable for addresses or domains for which connections should bypass the proxy. Note that some software expect the variable names in lower case and some in UPPER CASE, so you may need to set both variants.
+
+```yaml
+hosts:
+  - address: 1.1.1.1
+    private_interface: eth1
+    user: root
+    ssh_key_path: ~/.ssh/my_key
+    role: master
+    environment:
+      http_proxy: http://user:password@proxy-server.example.com:3128
+      HTTP_PROXY: http://user:password@proxy-server.example.com:3128
+      NO_PROXY: localhost,127.0.0.1,docker-registry.example.com
+```
