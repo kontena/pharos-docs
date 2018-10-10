@@ -28,9 +28,13 @@ module.exports = {
         //gitbookConfigURL: "https://raw.githubusercontent.com/rackt/history/gh-pages/book.json",
         options: [
             {
-                "value": "https://pharos.sh/docs/",
-                "text": "Version 1.3.x",
+                "value": "https://pharos.sh/docs/master/",
+                "text": "Version 2.0.x",
                 "selected": true
+            },
+            {
+                "value": "https://pharos.sh/docs/1-3/",
+                "text": "Version 1.3.x",
             },
             {
                 "value": "https://pharos.sh/docs/1-2/",
