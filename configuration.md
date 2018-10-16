@@ -5,17 +5,18 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
 **Learn more:**
 
 * [Configuration File Reference](#configuration-file-reference)
-  * [hosts](#hosts) - Specify cluster machines
-  * [api](#api) - Specify Kubernetes API endpoint
-  * [network](#network) - Specify networking options
-  * [etcd](#etcd) - Specify external etcd.
-  * [authentication](#authentication) - Specify webhook token authentication
-  * [audit](#audit) - Specify audit webhook for external audit events collection
-  * [cloud](#cloud) - Specify cloud provider
-  * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
-  * [telemetry](#telemetry) - Telemetry options
   * [addons](#addons) - Specify add-ons and their configuration options
   * [addon_paths](#addon_paths) - Specify path for custom add-ons
+  * [api](#api) - Specify Kubernetes API endpoint
+  * [audit](#audit) - Specify audit webhook for external audit events collection
+  * [authentication](#authentication) - Specify webhook token authentication
+  * [cloud](#cloud) - Specify cloud provider
+  * [etcd](#etcd) - Specify external etcd.
+  * [hosts](#hosts) - Specify cluster machines
+  * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
+  * [network](#network) - Specify networking options
+  * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
+  * [telemetry](#telemetry) - Telemetry options
 * [Examples](#examples)
 
 ## Configuration File Reference
@@ -89,38 +90,13 @@ addons:
 
 In this section, we will list all supported configuration options for Kontena Pharos cluster configuration files.
 
-### `hosts`
+### `addons`
 
-Specify cluster machines. For example:
+Specify add-ons and their configuration options. [Learn more about add-ons](/addons/README.md).
 
-```yaml
-hosts:
-  - address: 10.10.1.2
-    role: master
-    private_interface: eth1
-    user: root
-  - address: 10.10.1.6
-    role: worker
-    private_interface: eth1
-    user: root
-    labels:
-      disk: ssd
-    environment:
-      http_proxy: http://user:password@proxy-server.example.com:3128
-```
+### `addon_paths`
 
-The supported configuration options:
-
-- `address` - IP address or hostname
-- `role` - One of `master`, `worker`
-- `private_address` - Private IP address or hostname. Prefered for cluster's internal communication where possible (optional)
-- `private_interface` - Discover `private_address` from the configured network interface (optional)
-- `user` - Username with sudo permission to use for logging in
-- `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
-- `container_runtime` - One of `docker`, `cri-o` (default `docker`)
-- `labels` - A list of `key: value` pairs to assign to the host (optional)
-- `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
-- `environment` - A list of `key: value` pairs to set into the host's environment (`/etc/environment`). To remove an entry from the configuration, set a null value.
+Specify path for custom add-ons. [Learn more about add-ons](/addons/README.md).
 
 ### `api`
 
@@ -135,29 +111,56 @@ The supported configuration options:
 
 - `endpoint` - External endpoint address for Kubernetes API (eg loadbalancer or DNS)
 
-### `network`
+### `audit`
 
-Specify networking options. For example:
+Specify audit webhook for external audit events collection. For example:
 
 ```yaml
-network:
-  provider: weave
-  service_cidr: 172.31.0.0/16
-  pod_network_cidr: 172.32.0.0/16
-  weave:
-    trusted_subnets:
-      - 10.10.0.0/16
+audit:
+  server: "http://audit.example.com/webhook"
 ```
 
 The supported configuration options:
 
-* `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`
-* `service_cidr` - IP address range for service VIPs. (default `10.96.0.0/12`)
-* `pod_network_cidr` - IP address range for the pod network. (default `10.32.0.0/12`)
-* `weave` - Provide additional configuration options if `weave` is selected as networking provider. The supported configuration options:
-  * `trusted_subnets` - Array of trusted subnets where overlay network can be used without IPSEC (optional)
-* `calico` - Provide additional configuration options if `calico` is selected as networking provider. The supported configuration options:
-  * `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
+- `server` - audit webhook receiver URL
+
+Audit events are delivered in batched mode, multiple events in one webhook `POST` request. Currently audit events are configured to be emitted at `Metadata` level. See: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/auditing.md#levels
+
+### `authentication`
+
+Specify [Webhook Token Authentication](https://kubernetes.io/docs/admin/authentication/#webhook-token-authentication). For example:
+
+```yaml
+authentication:
+  token_webhook:
+    config:
+      cluster:
+        name: token-reviewer
+        server: http://localhost:9292/token
+        certificate_authority: /path/to/ca.pem # optional
+      user:
+        name: kube-apiserver
+        client_key: /path/to/key.pem # optional
+        client_certificate: /path/to/cert.pem # optional
+    cache_ttl: 5m # optional
+```
+
+### `cloud`
+
+Specify cloud provider. Kontena Pharos supports a concept of [cloud providers](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider configuration file. For example:
+
+```yaml
+cloud:
+  provider: openstack
+  config: ./cloud-config
+```
+
+The supported configuration options:
+
+* `provider` - specify used cloud provider (default: no cloud provider)
+* `config` - path to provider specific cloud configuration file (default: no configuration file)
+
+See [using cloud providers](#using-cloud-providers) below for more details.
 
 ### `etcd`
 
@@ -183,56 +186,60 @@ The supported configuration options:
 
 You need to specify all etcd peer endpoints in the list. Certificate and corresponding key is used to authenticate the access to etcd. The paths used are relative to the path where the `cluster.yml` file was loaded from.
 
-### `authentication`
+### `hosts`
 
-Specify [Webhook Token Authentication](https://kubernetes.io/docs/admin/authentication/#webhook-token-authentication). For example:
-
-```yaml
-authentication:
-  token_webhook:
-    config:
-      cluster:
-        name: token-reviewer
-        server: http://localhost:9292/token
-        certificate_authority: /path/to/ca.pem # optional
-      user:
-        name: kube-apiserver
-        client_key: /path/to/key.pem # optional
-        client_certificate: /path/to/cert.pem # optional
-    cache_ttl: 5m # optional
-```
-
-### `audit`
-
-Specify audit webhook for external audit events collection. For example:
+Specify cluster machines. For example:
 
 ```yaml
-audit:
-  server: "http://audit.example.com/webhook"
+hosts:
+  - address: 10.10.1.2
+    role: master
+    private_interface: eth1
+    user: root
+  - address: 10.10.1.6
+    role: worker
+    private_interface: eth1
+    user: root
+    labels:
+      disk: ssd
 ```
 
 The supported configuration options:
 
-- `server` - audit webhook receiver URL
+- `address` - IP address or hostname
+- `role` - One of `master`, `worker`
+- `private_address` - Private IP address or hostname. Prefered for cluster's internal communication where possible (optional)
+- `private_interface` - Discover `private_address` from the configured network interface (optional)
+- `user` - Username with sudo permission to use for logging in
+- `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
+- `container_runtime` - One of `docker`, `cri-o` (default `docker`)
+- `labels` - A list of `key: value` pairs to assign to the host (optional)
+- `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
+- `http_proxy` - A http(s) proxy address that is used for downloading packages & container images
 
-Audit events are delivered in batched mode, multiple events in one webhook `POST` request. Currently audit events are configured to be emitted at `Metadata` level. See: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/auditing.md#levels
+### `network`
 
-### `cloud`
-
-Specify cloud provider. Kontena Pharos supports a concept of [cloud providers](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider configuration file. For example:
+Specify networking options. For example:
 
 ```yaml
-cloud:
-  provider: openstack
-  config: ./cloud-config
+network:
+  provider: weave
+  service_cidr: 172.31.0.0/16
+  pod_network_cidr: 172.32.0.0/16
+  weave:
+    trusted_subnets:
+      - 10.10.0.0/16
 ```
 
 The supported configuration options:
 
-* `provider` - specify used cloud provider (default: no cloud provider)
-* `config` - path to provider specific cloud configuration file (default: no configuration file)
-
-See [using cloud providers](#using-cloud-providers) below for more details.
+* `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`
+* `service_cidr` - IP address range for service VIPs. (default `10.96.0.0/12`)
+* `pod_network_cidr` - IP address range for the pod network. (default `10.32.0.0/12`)
+* `weave` - Provide additional configuration options if `weave` is selected as networking provider. The supported configuration options:
+  * `trusted_subnets` - Array of trusted subnets where overlay network can be used without IPSEC (optional)
+* `calico` - Provide additional configuration options if `calico` is selected as networking provider. The supported configuration options:
+  * `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
 
 ### `kube_proxy`
 
@@ -246,6 +253,18 @@ kube_proxy:
 The supported configuration options:
 
 * `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
+
+### `pod_security_policy`
+
+Specify the default [pod security policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/). Built-in policies are:
+
+- `00-pharos-privileged` - no restrictions (default), always used for kubernetes/pharos system level pods
+- `99-pharos-restricted` - no host namespace and root rights
+
+```yaml
+pod_security_policy:
+  default_policy: "00-pharos-privileged"
+```
 
 ### `telemetry`
 
@@ -269,16 +288,6 @@ The supported configuration options:
     "customer_token": "<token to identify paying customers>"
 }
 ```
-
-### `addons`
-
-Specify add-ons and their configuration options. [Learn more about add-ons](/addons/README.md).
-
-### `addon_paths`
-
-Specify path for custom add-ons. [Learn more about add-ons](/addons/README.md).
-
-
 
 ## Examples
 
