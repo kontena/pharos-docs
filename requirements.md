@@ -2,32 +2,35 @@
 
 ### Supported Host Operating Systems
 
-- Ubuntu 16.04
-    - architectures: amd64, arm64
-    - container runtimes: docker (amd64, arm64), cri-o (amd64)
-- Ubuntu 18.04
-    - architectures: amd64, arm64
-    - container runtimes: docker (amd64, arm64), cri-o (amd64)
+- Debian 9
+    - architectures: amd64
+    - container runtimes: cri-o
 - CentOS 7.4 - 7.5
     - architectures: amd64
     - container runtimes: docker, cri-o
 - Redhat Enterprise Linux 7.4 - 7.5
     - architectures: amd64
     - container runtimes: docker, cri-o
+- Ubuntu 16.04
+    - architectures: amd64, arm64
+    - container runtimes: docker (amd64, arm64), cri-o (amd64)
+- Ubuntu 18.04
+    - architectures: amd64, arm64
+    - container runtimes: docker (amd64, arm64), cri-o (amd64)
 
 ### Other Requirements
 
 - hosts need SSH access
 - a user with passwordless sudo permission (`echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER`)
 - host operating system specific requirements
-    - Ubuntu 16.04
-        - `universe` (xenial-updates) apt repository enabled for docker.io package
-    - Ubuntu 18.04
-        - `universe` apt repository enabled for docker.io package
     - CentOS 7.4 - 7.5
         - `extras` repository enabled for docker package
     - Redhat Enterprise Linux 7.4 - 7.5
         - `rhel-7-server-extras-rpms` repository enabled for docker package
+    - Ubuntu 16.04
+        - `universe` (xenial-updates) apt repository enabled for docker.io package
+    - Ubuntu 18.04
+        - `universe` apt repository enabled for docker.io package
 
 ### Required Open Ports
 
