@@ -17,6 +17,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [network](#network) - Specify networking options
   * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
   * [telemetry](#telemetry) - Telemetry options
+  * [admission_plugins](#admissionplugins) - Enable / disable admission plugins
 * [Examples](#examples)
 
 ## Configuration File Reference
@@ -66,6 +67,11 @@ audit:
   server: "http://webhook.site/c700f7c0-cf9e-4a2b-b110-8777809b520b"
 kube_proxy:
   mode: ipvs
+admission_plugins:
+  - name: AlwaysPullImages
+    enabled: true
+  - name: LimitRanger
+    enabled: false
 addons:
   ingress-nginx:
     enabled: true
@@ -288,6 +294,42 @@ The supported configuration options:
     "customer_token": "<token to identify paying customers>"
 }
 ```
+
+### `admission_plugins`
+
+Specify [admission plugins](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers) used in Kubernetes API server.
+
+> An admission controller is a piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object, but after the request is authenticated and authorized.
+
+By default Pharos comes with these plugins enabled:
+- [PodSecurityPolicy](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#podsecuritypolicy)
+- [NodeRestriction](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction)
+- [NamespaceLifecycle](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#namespacelifecycle)
+- [LimitRanger](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#limitranger)
+- [ServiceAccount](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#serviceaccount)
+- [DefaultStorageClass](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass)
+- [DefaultTolerationSeconds](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaulttolerationseconds)
+- [MutatingAdmissionWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook)
+- [ValidatingAdmissionWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook)
+- [ResourceQuota](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#resourcequota)
+- [Priority](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#priority)
+
+
+To enable a admission plugin, use:
+```
+admission_plugins:
+  - name: AlwaysPullImages
+    enabled: true
+```
+
+To disable a admission plugin use:
+```
+admission_plugins:
+  - name: AlwaysPullImages
+    enabled: false
+```
+
+**Note:** Pharos currently supports enabling/disabling only admission plugins that do **NOT** require any extra configuration.
 
 ## Examples
 
