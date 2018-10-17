@@ -218,6 +218,7 @@ The supported configuration options:
 - `private_interface` - Discover `private_address` from the configured network interface (optional)
 - `user` - Username with sudo permission to use for logging in
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
+- `ssh_proxy_command` - Specifies the command to use to connect to the host. In the command string, `%h` will be substituted by the host name to connect and `%p` by the port. See [example](#bastion_jump-host-configuration)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
 - `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
@@ -456,3 +457,18 @@ hosts:
       HTTP_PROXY: http://user:password@proxy-server.example.com:3128
       NO_PROXY: localhost,127.0.0.1,docker-registry.example.com
 ```
+
+### Bastion/Jump Host Configuration
+
+Bastion (aka jump host) configuration is needed if a host is behind a private network and cannot be accessed directly from the `pharos` tool.
+
+```yaml
+hosts:
+  - address: 10.10.1.1
+    user: root
+    ssh_key_path: ~/.ssh/my_key
+    ssh_proxy_command: ssh -i ~/.ssh/my_key -W %h:22 root@example.bastion.host.com
+    role: master
+```
+
+See ssh config [man page](https://linux.die.net/man/5/ssh_config) for more info.
