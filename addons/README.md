@@ -11,10 +11,11 @@ Pharos Cluster includes common functionality as addons. Addons can be enabled by
 Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are tested to work with the Kubernetes version that Kontena Pharos ships.
 
 * [Cert Manager](cert-manager.md)
-* [Pharos Host Upgrades](host-upgrades.md)
 * [Helm](helm.md)
 * [Ingress NGINX](ingress-nginx.md)
+* [Kontena Storage](kontena-storage.md)
 * [OpenEBS](openebs.md)
+* [Pharos Host Upgrades](host-upgrades.md)
 
 ## Using External Addons
 

@@ -10,6 +10,7 @@
   * [Cert Manager](addons/cert-manager.md)
   * [Helm](addons/helm.md)
   * [Ingress NGINX](addons/ingress-nginx.md)
+  * [Kontena Storage](kontena-storage.md)
   * [OpenEBS](addons/openebs.md)
   * [Pharos Host Upgrades](addons/host-upgrades.md)
 * [Upgrade Cluster](upgrade.md)
