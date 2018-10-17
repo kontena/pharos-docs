@@ -19,7 +19,7 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 
 ## Using External Addons
 
-External addons are loaded by default from the `addons` folder which is located in the same path as `cluster.yml`. It's possible to load external addons from other paths by defining `addon_paths`. These paths are also relative to the `cluster.yml`.
+External addons are loaded by default from the `pharos-addons` folder which is located in the same path as `cluster.yml`. It's possible to load external addons from other paths by defining `addon_paths`. These paths are also relative to the `cluster.yml`.
 
 ```yaml
 addon_paths:
@@ -46,7 +46,7 @@ Validation rules can be defined in the `config_schema` block. Block uses [dry-va
 
 ### Example
 
-`addons/hello-world/addon.rb`:
+`pharos-addons/hello-world/addon.rb`:
 ```ruby
 Pharos.addon 'hello-world' do
   version '1.0.0'
@@ -77,7 +77,7 @@ Pharos.addon 'hello-world' do
 end
 ```
 
-`addons/hello-world/resources/deployment.yml.erb`:
+`pharos-addons/hello-world/resources/deployment.yml.erb`:
 ```erb
 apiVersion: apps/v1
 kind: Deployment
@@ -107,7 +107,7 @@ spec:
               memory: "64Mi"
 ```
 
-`addons/hello-world/resources/service.yml.erb`:
+`pharos-addons/hello-world/resources/service.yml.erb`:
 ```erb
 apiVersion: v1
 kind: Service
@@ -122,7 +122,7 @@ spec:
     app: <%= name %>
 ```
 
-`addons/hello-world/resources/ingress.yml.erb`:
+`pharos-addons/hello-world/resources/ingress.yml.erb`:
 
 ```erb
 apiVersion: extensions/v1beta1
