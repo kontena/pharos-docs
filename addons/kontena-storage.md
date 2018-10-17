@@ -2,7 +2,7 @@
 
 Kontena Storage is a unified, distributed storage system designed for excellent performance, reliability and scalability. Kontena Storage is built on top of [Rook](https://rook.io) and it uses [Ceph](https://ceph.com/) as underlying storage system.
 
-- version: `2.0.0`
+- version: `0.8.3+kontena.1`
 - maturity: `beta`
 - available in: `Pro`, `EE`
 
