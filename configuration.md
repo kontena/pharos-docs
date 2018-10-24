@@ -11,6 +11,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [audit](#audit) - Specify audit webhook for external audit events collection
   * [authentication](#authentication) - Specify webhook token authentication
   * [cloud](#cloud) - Specify cloud provider
+  * [container_runtime](#container_runtime) - Specify container runtime settings
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
@@ -167,6 +168,20 @@ The supported configuration options:
 * `config` - path to provider specific cloud configuration file (default: no configuration file)
 
 See [using cloud providers](#using-cloud-providers) below for more details.
+
+### `container_runtime`
+
+Container runtime specific configuration options. For example:
+
+```yaml
+container_runtime:
+  insecure_registries:
+    - "registry.acme.local:5000"
+```
+
+The supported configuration options:
+
+- `insecure_registries` - array of insecure registry addresses
 
 ### `etcd`
 
