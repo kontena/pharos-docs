@@ -4,6 +4,7 @@ Kontena Backup provides unified and simple tools to backup cluster resources and
 
 - version: `0.9.6+kontena.1`
 - maturity: `beta`
+- architectures: `amd64`
 - available in: `Pro`, `EE`
 
 ## Features

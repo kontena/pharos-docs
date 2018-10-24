@@ -4,6 +4,8 @@ Automatic host operating system security updates provided by [Pharos Host Upgrad
 
 - version: `0.2.0`
 - maturity: `stable`
+- architectures: `amd64`, `arm64`
+- available in: `OSS`, `Pro`, `EE`
 
 ## Configuration
 

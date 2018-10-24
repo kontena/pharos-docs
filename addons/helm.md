@@ -4,6 +4,8 @@
 
 - version: `2.11.0`
 - maturity: `stable`
+- architectures: `amd64`
+- available in: `OSS`, `Pro`, `EE`
 
 ## Configuration
 

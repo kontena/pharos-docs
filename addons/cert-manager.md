@@ -4,6 +4,7 @@
 
 - version: `0.5.0`
 - maturity: `alpha`
+- available in: `OSS`, `Pro`, `EE`
 
 ## Configuration
 

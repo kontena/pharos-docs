@@ -4,6 +4,7 @@ Kontena Storage is a unified, distributed storage system designed for excellent 
 
 - version: `0.8.3+kontena.1`
 - maturity: `beta`
+- architectures: `amd64`
 - available in: `Pro`, `EE`
 
 ## Features
