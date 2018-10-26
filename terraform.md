@@ -56,7 +56,7 @@ hosts:
     private_address: "..."
     role: "worker"
     user: "ubuntu"
-    label:
+    labels:
       ingress: "nginx"
 ```
 
