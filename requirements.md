@@ -3,8 +3,8 @@
 ### Supported Host Operating Systems
 
 - Debian 9
-    - architectures: amd64
-    - container runtimes: cri-o
+    - architectures: amd64, arm64
+    - container runtimes: docker (amd64, arm64), cri-o (amd64)
 - CentOS 7.4 - 7.5
     - architectures: amd64
     - container runtimes: docker, cri-o
