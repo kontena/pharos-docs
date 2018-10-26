@@ -238,6 +238,10 @@ The supported configuration options:
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
 - `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
 - `http_proxy` - A http(s) proxy address that is used for downloading packages & container images
+- `bastion` - A bastion (proxy) configuration used to connect to the host. If bastion is specified for a `master` host then also Kubernetes API calls are proxied through bastion ssh tunnel
+    - `address` - IP address or hostname
+    - `user` - Username for ssh connection
+    - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 
 ### `network`
 
