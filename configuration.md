@@ -65,7 +65,13 @@ authentication:
         client_certificate: /path/to/cert.pem
     cache_ttl: 5m
 audit:
-  server: "http://webhook.site/c700f7c0-cf9e-4a2b-b110-8777809b520b"
+  file:
+    path: /var/log/kube_audit/audit.json
+    max_size: 100
+    max_age: 30
+    max_backups: 20
+  webhook:
+    server: "http://webhook.site/c700f7c0-cf9e-4a2b-b110-8777809b520b"
 kube_proxy:
   mode: ipvs
 admission_plugins:
@@ -120,18 +126,47 @@ The supported configuration options:
 
 ### `audit`
 
+ Currently audit events are configured to be emitted at `Metadata` level for both `file` and `webhook` backends. See: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/auditing.md#levels
+
+ By default Pharos configures file auditing.
+
+#### `file`
+
+Specify where audit logs are written on disk.
+
+```yaml
+audit:
+  file:
+    path: /var/log/kube_audit/audit.json
+    max_size: 100
+    max_age: 30
+    max_backups: 20
+```
+
+The supported configuration options:
+
+- `path` - path of the file where audit logs are written (default `/var/log/kubernetes/audit.json`)
+- `max_size` - defines the maximum size in megabytes of the audit log file before it gets rotated (default `100`)
+- `max_age` - defines the maximum number of days to retain old audit log files (default `30`)
+- `max_backups` - defines the maximum number of audit log files to retain (default `20`)
+
+The defaults mean, that audit logs might consume ~2GB of disk space.
+
+#### `webhook`
+
 Specify audit webhook for external audit events collection. For example:
 
 ```yaml
 audit:
-  server: "http://audit.example.com/webhook"
+  webhook:
+    server: "http://audit.example.com/webhook"
 ```
 
 The supported configuration options:
 
 - `server` - audit webhook receiver URL
 
-Audit events are delivered in batched mode, multiple events in one webhook `POST` request. Currently audit events are configured to be emitted at `Metadata` level. See: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/auditing.md#levels
+Audit events are delivered in batched mode, multiple events in one webhook `POST` request.
 
 ### `authentication`
 
