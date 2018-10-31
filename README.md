@@ -14,7 +14,7 @@
 ## Features at a Glance
 
 - Easy to setup, maintain and upgrade
-- [Kubernetes](https://kubernetes.io/) v1.11.3
+- [Kubernetes](https://kubernetes.io/) v1.11.4
 - Bare metal friendly, infrastructure agnostic
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
@@ -32,9 +32,9 @@ We believe setting up and maintaining a complex platform like Kubernetes from sc
 
 Kontena Pharos is always up-to-date and built from the latest upstream Kubernetes, including a standardized set of essential features. It is easy to install and maintain with the dedicated CLI tool. The standard deployment may be extended with ready made [add-ons](addons/README.md) for most common use cases, or any extras from the Kubernetes ecosystem!
 
-## 100% Open Source, Support Available
+## Open Source, Support Available
 
-The Kontena Pharos project and tools are open source and released under Apache 2 license. You can use it for free, for any purpose: personal or commercial. You can always find the latest version from our [Github repository](https://github.com/kontena/pharos-cluster). For businesses, we offer [commercial subscriptions](https://pharos.sh/#pricing) with support and SLA agreements.
+The Kontena Pharos project core and many tools around it are open source and released under Apache 2 license. You can use OSS version for free, for any purpose: personal or commercial. Pro and EE versions are licensed under [Kontena License](https://github.com/kontena/pharos-cluster/blob/master/licenses/KONTENA.md). For businesses, we offer [commercial subscriptions](https://kontena.io/pharos/#pricing) with support and SLA agreements.
 
 ## Documentation License
 
