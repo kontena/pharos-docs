@@ -1,0 +1,12 @@
+code[class*="language-"], pre[class*="language-"] {
+    text-shadow: 0 0;
+}
+
+#book-search-input {
+    background-color: transparent;
+}
+
+.color-theme-2 li.versions-select select {
+    background-color: transparent;
+    color: #c1c6d7;
+}

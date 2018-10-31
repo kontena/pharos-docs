@@ -5,6 +5,9 @@ module.exports = {
     "mikxpanel@git+https://github.com/kontena/gitbook-plugin-mikxpanel.git"
   ],
   pluginsConfig: {
+    fontsettings: {
+      "theme": "night"
+    },
     "edit-link": {
       base: "https://github.com/kontena/pharos-docs/tree/master",
       label: "Edit This Page"
