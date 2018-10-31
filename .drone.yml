@@ -20,7 +20,7 @@ pipeline:
     tags:
       - ${DRONE_BRANCH}
     when:
-      branch: ['master', '1-1', '1-2', '1-3']
+      branch: ['2-0']
       event: ['push']
   deploy:
     image: quay.io/kontena/mortar:0.2
@@ -29,7 +29,7 @@ pipeline:
     commands:
       - mortar fire -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" _deploy/template/ "pharos-docs-${DRONE_BRANCH}"
     when:
-      branch: ['master', '1-1', '1-2', '1-3']
+      branch: ['2-0']
       event: ['push']
   default_ingress:
     image: quay.io/kontena/mortar:0.2
