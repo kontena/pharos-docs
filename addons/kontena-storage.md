@@ -21,9 +21,22 @@ kontena-storage:
   data_dir: /var/lib/kontena-storage
   storage:
     use_all_nodes: true
-  dashboard:
+  pool: # optional
+    replicated:
+      size: 3
+  dashboard: # optional
     enabled: true
+  filesystem: # optional
+    enabled: true
+    pool:
+      replicated:
+        size: 3
 ```
+
+## Storage Classes
+
+- `kontena-storage-block` - Ceph block storage. Default storage class.
+- `kontena-storage-fs` - Shared filesystem. Only available if filesystem is enabled.
 
 ### Options
 
@@ -36,9 +49,17 @@ kontena-storage:
         - `config` - Config settings applied to all OSDs on the node unless overridden by devices or directories. See the [config settings](#ceph-osd-configuration) below.
     - [Storage selection settings](#storage-selection-settings)
 - `dashboard` - Storage dashboard settings
-    - `enabled` - `true` or `false`, indicating if dashboard service should be enabled for the storage cluster.
+    - `enabled` - `true` or `false`, indicating if dashboard service should be enabled for the storage cluster. Default: `false`
+- `filesystem` - Storage shared filesystem settings
+    - `enabled` - `true` or `false`, indicating if shared filesystem should be enabled for the storage cluster. Default: `false`
+    - `pool` - Filesystem storage pool settings.
+        - `replicated` - Settings for the replicated pool.
+            - `size` - The number of copies of the data in the pool.
 - `placement` - Placement configuration for the cluster services. See [placement configuration](#placement-configuration-settings) below.
 - `resources` - Resource configuration for the cluster services. See [resource configuration](#resources-configuration-settings) below.
+- `pool` - Storage pool settings.
+    - `replicated` - Settings for the replicated pool.
+        - `size` - The number of copies of the data in the pool.
 
 #### Storage Selection Settings
 
