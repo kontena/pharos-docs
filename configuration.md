@@ -344,9 +344,13 @@ The supported configuration options:
 
 ```json
 {
+    "uuid": "<cluster identifier>",
     "kube_version": "<kubernetes version>",
     "pharos_version": "<pharos version>",
-    "customer_token": "<token to identify paying customers>"
+    "customer_token": "<token to identify paying customers>",
+    "license_token": "<token to identify license for the paying customer>",
+    "master_node_count": "<number of master nodes in the cluster>",
+    "worker_node_count": "<number of worker nodes in the cluster>"
 }
 ```
 
