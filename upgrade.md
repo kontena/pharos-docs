@@ -8,11 +8,11 @@ Unless noted otherwise, worker and masters within a major version are forward an
 
 ### 1. Install new version of `pharos` CLI tool
 
-Use `chpharos` to install and use new version of `pharos` CLI tool. For example install and use version 1.2.3 of Kontena Pharos:
+Use `chpharos` to install and use new version of `pharos` CLI tool. For example install and use version 2.0.1 of Kontena Pharos:
 
 ```
-$ chpharos install 1.2.3
-$ chpharos use 1.2.3
+$ chpharos install 2.0.1
+$ chpharos use 2.0.1
 ```
 
 HINT: You can see the list of all available versions using `chpharos list-remote` command.
