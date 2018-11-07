@@ -3,20 +3,20 @@
 ### Supported Host Operating Systems
 
 - Debian 9
-    - architectures: amd64, arm64
-    - container runtimes: docker (amd64, arm64), cri-o (amd64)
+    - architectures: x86-64, arm64
+    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
 - CentOS 7.4 - 7.5
-    - architectures: amd64
+    - architectures: x86-64
     - container runtimes: docker, cri-o
 - Redhat Enterprise Linux 7.4 - 7.5
-    - architectures: amd64
+    - architectures: x86-64
     - container runtimes: docker, cri-o
 - Ubuntu 16.04
-    - architectures: amd64, arm64
-    - container runtimes: docker (amd64, arm64), cri-o (amd64)
+    - architectures: x86-64, arm64
+    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
 - Ubuntu 18.04
-    - architectures: amd64, arm64
-    - container runtimes: docker (amd64, arm64), cri-o (amd64)
+    - architectures: x86-64, arm64
+    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
 
 ### Other Requirements
 
