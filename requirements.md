@@ -8,7 +8,7 @@
 - CentOS 7.4 - 7.5
     - architectures: x86-64
     - container runtimes: docker, cri-o
-- Redhat Enterprise Linux 7.4 - 7.5
+- Redhat Enterprise Linux 7.4 - 7.6
     - architectures: x86-64
     - container runtimes: docker, cri-o
 - Ubuntu 16.04
@@ -25,7 +25,7 @@
 - host operating system specific requirements
     - CentOS 7.4 - 7.5
         - `extras` repository enabled for docker package
-    - Redhat Enterprise Linux 7.4 - 7.5
+    - Redhat Enterprise Linux 7.4 - 7.6
         - `rhel-7-server-extras-rpms` repository enabled for docker package
     - Ubuntu 16.04
         - `universe` (xenial-updates) apt repository enabled for docker.io package
