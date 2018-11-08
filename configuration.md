@@ -92,13 +92,42 @@ addons:
     enabled: true
     issuer:
       name: letsencrypt-staging
-      server: https://acme-staging.api.letsencrypt.org/directory
+      server: https://acme-staging-v02.api.letsencrypt.org/directory
       email: me@domain.com
   host-upgrades:
     enabled: true
     interval: 7d
-  kured:
+  kontena-storage:
     enabled: true
+    data_dir: /var/lib/kontena-storage
+    storage:
+      use_all_nodes: true
+    pool:
+      replicated:
+        size: 3
+    dashboard:
+      enabled: true
+    filesystem:
+      enabled: true
+      pool:
+        replicated:
+          size: 3
+  kontena-backup:
+    enabled: true
+    cloud_credentials: /path/to/aws_credentials
+    aws:
+      bucket: pharos-backups
+      region: eu-central-1
+  kontena-lens:
+    enabled: true
+    name: 'prod-pharos-cluster'
+    host: 'https://your-cluster-dns'
+    tls:
+      email: 'le@example.org'
+    user_management:
+      enabled: true
+    persistence:
+      enabled: true
 ```
 
 In this section, we will list all supported configuration options for Kontena Pharos cluster configuration files.
