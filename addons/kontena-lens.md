@@ -24,7 +24,7 @@ Kontena Lens is a dashboard for Kontena Pharos.
 kontena-lens:
   enabled: true
   name: 'prod-pharos-cluster' # optional
-  host: 'https://your-cluster-dns' # optional
+  host: 'your-cluster-dns' # optional
   tls:
     email: 'le@example.org' # optional
   user_management:
