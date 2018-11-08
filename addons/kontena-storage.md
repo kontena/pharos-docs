@@ -119,3 +119,20 @@ For more information on resource requests/limits see the official Kubernetes doc
 - `databaseSizeMB` - The size in MB of a bluestore database. Include quotes around the size.
 - `walSizeMB` - The size in MB of a bluestore write ahead log (WAL). Include quotes around the size.
 - `journalSizeMB` - The size in MB of a filestore journal. Include quotes around the size.
+
+
+## Toolbox
+
+Kontena Storage deploys a toolbox pod by default to the `kontena-storage` namespace. Toolbox can be used to debug and test Ceph cluster.
+
+### Getting into the toolbox pod:
+
+```
+$ kubectl -n kontena-storage exec -it $(kubectl -n kontena-storage get pod -l "app=kontena-storage-tools" -o jsonpath='{.items[0].metadata.name}') bash
+```
+
+#### Common commands
+
+- `ceph status` - a birds-eye view of the cluster status.
+- `ceph osd status` - to check the storage cluster OSD (Object Storage Daemon) status.
+- `ceph df` - to check the storage cluster's data usage and distribution.
