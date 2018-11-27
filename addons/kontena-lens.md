@@ -37,6 +37,7 @@ kontena-lens:
 
 - `name` - Name of the cluster. Default `pharos-cluster`
 - `host` - DNS address that is used for Dashboard access. Default `https://lens.<worker-node-ip>.nip.io`
+- `tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Default `true`
 - `tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
