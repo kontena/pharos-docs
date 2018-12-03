@@ -16,6 +16,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
+  * [control_plane](#control_plane) - Specify control plane settings
   * [network](#network) - Specify networking options
   * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
   * [telemetry](#telemetry) - Telemetry options
@@ -379,6 +380,19 @@ kube_proxy:
 The supported configuration options:
 
 * `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
+
+### `control_plane`
+
+Configure control plane settings.
+
+```yaml
+control_plane:
+  use_proxy: true
+```
+
+The supported configuration options:
+
+- `use_proxy` - set to true to configure the control plane to use proxy settings from host environment
 
 ### `pod_security_policy`
 
