@@ -13,10 +13,10 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [authentication](#authentication) - Specify webhook token authentication
   * [cloud](#cloud) - Specify cloud provider
   * [container_runtime](#container_runtime) - Specify container runtime settings
+  * [control_plane](#control_plane) - Specify control plane settings
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
-  * [control_plane](#control_plane) - Specify control plane settings
   * [network](#network) - Specify networking options
   * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
   * [telemetry](#telemetry) - Telemetry options
@@ -284,6 +284,19 @@ The supported configuration options:
 
 - `insecure_registries` - array of insecure registry addresses
 
+### `control_plane`
+
+Configure control plane settings.
+
+```yaml
+control_plane:
+  use_proxy: true
+```
+
+The supported configuration options:
+
+- `use_proxy` - set to true to configure the control plane to use proxy settings from host environment
+
 ### `etcd`
 
 Specify external [etcd](https://github.com/etcd-io/etcd). By default, Kontena Pharos will create in-cluster etcd. This configuration option is used to describe external etcd (in-cluster etcd will be disabled). For example:
@@ -380,19 +393,6 @@ kube_proxy:
 The supported configuration options:
 
 * `mode` - one of `userspace`, `iptables` (default) or `ipvs` (experimental)
-
-### `control_plane`
-
-Configure control plane settings.
-
-```yaml
-control_plane:
-  use_proxy: true
-```
-
-The supported configuration options:
-
-- `use_proxy` - set to true to configure the control plane to use proxy settings from host environment
 
 ### `pod_security_policy`
 
