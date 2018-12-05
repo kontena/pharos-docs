@@ -13,6 +13,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [authentication](#authentication) - Specify webhook token authentication
   * [cloud](#cloud) - Specify cloud provider
   * [container_runtime](#container_runtime) - Specify container runtime settings
+  * [control_plane](#control_plane) - Specify control plane settings
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
@@ -282,6 +283,19 @@ container_runtime:
 The supported configuration options:
 
 - `insecure_registries` - array of insecure registry addresses
+
+### `control_plane`
+
+Configure control plane settings.
+
+```yaml
+control_plane:
+  use_proxy: true
+```
+
+The supported configuration options:
+
+- `use_proxy` - set to true to configure the control plane to use proxy settings from host environment
 
 ### `etcd`
 
