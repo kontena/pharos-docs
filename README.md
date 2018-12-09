@@ -16,13 +16,22 @@
 - Easy to setup, maintain and upgrade
 - [Kubernetes](https://kubernetes.io/) v1.11.4
 - Bare metal friendly, infrastructure agnostic
+- Intel (x86-64) and ARM (ARM64) architectures supported
+- Supported host operating systems: [CentOS, Debian, Redhat, Ubuntu](requirements.md)
 - Single or multi-master, workloads isolated on workers
 - On-cluster [etcd](https://coreos.com/etcd/) with TLS
 - Support for [docker](https://mobyproject.org/) and [cri-o](http://cri-o.io/) container runtimes
 - [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/) enabled
-- [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+- [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) enabled
+- [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) supported
 - Hardened configuration for enhanced security (follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
-- ARM64 support
+- [Cert-manager integration](addons/cert-manager.md) <sup>addon</sup>
+- [Helm integration](addons/helm.md) <sup>addon</sup>
+- Automated [host security updates](addons/host-upgrades.md) <sup>addon</sup>
+- [Ingress-nginx integration](addons/ingress-nginx.md) <sup>addon</sup>
+- [Kontena Lens](addons/kontena-lens.md) dashboard <sup>pro addon</sup>
+- [Kontena Storage](addons/kontena-storage.md) (integrated storage for hyper-converged clusters) <sup>pro addon</sup>
+- [Kontena Backups](addons/kontena-backup.md) <sup>pro addon</sup>
 
 ## Simple, solid and certified
 
