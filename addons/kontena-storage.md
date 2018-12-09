@@ -21,6 +21,11 @@ kontena-storage:
   data_dir: /var/lib/kontena-storage
   storage:
     use_all_nodes: true
+    # It's highly recommended to set directories and/or device_filter,
+    # otherwise expanding storage does not work properly (see https://github.com/rook/rook/issues/1957)
+    directories:
+    - path: /mnt/data1
+    device_filter: ^sd[a-d]
   pool: # optional
     replicated:
       size: 3
@@ -71,12 +76,15 @@ Below are the settings available, both at the cluster and individual node level,
     - `^sd[a-d]` - Selects devices starting with sda, sdb, sdc, and sdd if found
     - `^s` - Selects all devices that start with s
     - `^[^r]` - Selects all devices that do not start with r
-- `devices`: A list of individual device names belonging to this node to include in the storage cluster.
-    - `name`: The name of the device (e.g., sda).
-    - `config`: Device-specific config settings. See the config settings below.
-    - `directories`: A list of directory paths that will be included in the storage cluster. Note that using two directories on the same physical device can cause a negative performance impact.
-    - `path`: The path on disk of the directory (e.g., /rook/storage-dir).
-    - `config`: Directory-specific config settings. See the config settings below.
+- `devices` - A list of individual device names belonging to this node to include in the storage cluster.
+    - `name` - The name of the device (e.g., sda).
+    - `config` - Device-specific config settings. See the config settings below.
+    - `directories` - A list of directory paths that will be included in the storage cluster. Note that using two directories on the same physical device can cause a negative performance impact.
+    - `path` - The path on disk of the directory (e.g., /mnt/data1).
+    - `config` - Directory-specific config settings. See the config settings below.
+- `directories` - A list of directory paths that will be included in the storage cluster. Note that using two directories on the same physical device can cause a negative performance impact.
+    - `path` - The path on disk of the directory (e.g., /mnt/data1).
+    - `config` - Directory-specific config settings. See the config settings below.
 
 #### Placement Configuration Settings
 
@@ -133,6 +141,6 @@ $ kubectl -n kontena-storage exec -it $(kubectl -n kontena-storage get pod -l "a
 
 #### Common commands
 
-- `ceph status` - a birds-eye view of the cluster status.
+- `ceph status` - a birds-eye view of cluster status.
 - `ceph osd status` - to check the storage cluster OSD (Object Storage Daemon) status.
 - `ceph df` - to check the storage cluster's data usage and distribution.
