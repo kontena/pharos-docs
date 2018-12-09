@@ -14,7 +14,7 @@
 ## Features at a Glance
 
 - Easy to setup, maintain and upgrade
-- [Kubernetes](https://kubernetes.io/) v1.11.4
+- [Kubernetes](https://kubernetes.io/) v1.11.5
 - Bare metal friendly, infrastructure agnostic
 - Intel (x86-64) and ARM (ARM64) architectures supported
 - Supported host operating systems: [CentOS, Debian, Redhat, Ubuntu](requirements.md)
