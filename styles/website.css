@@ -10,3 +10,8 @@ code[class*="language-"], pre[class*="language-"] {
     background-color: transparent;
     color: #c1c6d7;
 }
+
+.markdown-section sup {
+    font-size: 0.7em;
+    font-style: italic;
+}
