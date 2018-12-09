@@ -7,9 +7,8 @@
                     "text": "HEAD"
                 },
                 {
-                    "value": "https://pharos.sh/docs/master/",
-                    "text": "Version 2.1.x",
-                    "selected": true
+                    "value": "https://pharos.sh/docs/2-1/",
+                    "text": "Version 2.1.x"
                 },
                 {
                     "value": "https://pharos.sh/docs/2-0/",
