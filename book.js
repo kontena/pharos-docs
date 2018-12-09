@@ -1,7 +1,7 @@
 module.exports = {
   title: "Kontena Pharos",
   plugins: [
-    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions",
+    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions-select",
     "mikxpanel@git+https://github.com/kontena/gitbook-plugin-mikxpanel.git"
   ],
   pluginsConfig: {
@@ -28,30 +28,8 @@ module.exports = {
         ]
     },
     versions: {
-        //gitbookConfigURL: "https://raw.githubusercontent.com/rackt/history/gh-pages/book.json",
-        options: [
-            {
-                "value": "https://pharos.sh/docs/master/",
-                "text": "Version 2.0.x",
-                "selected": true
-            },
-            {
-                "value": "https://pharos.sh/docs/1-3/",
-                "text": "Version 1.3.x",
-            },
-            {
-                "value": "https://pharos.sh/docs/1-2/",
-                "text": "Version 1.2.x"
-            },
-            {
-                "value": "https://pharos.sh/docs/1-1/",
-                "text": "Version 1.1.x"
-            },
-            {
-                "value": "https://pharos.sh/docs/1-0/",
-                "text": "Version 1.0.x"
-            }
-        ]
+        gitbookConfigURL: "https://raw.githubusercontent.com/kontena/pharos-docs/master/versions.json",
+        options: []
     }
   },
   variables: {
