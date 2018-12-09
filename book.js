@@ -32,8 +32,12 @@ module.exports = {
         options: [
             {
                 "value": "https://pharos.sh/docs/master/",
-                "text": "Version 2.0.x",
+                "text": "Version 2.1.x",
                 "selected": true
+            },
+            {
+                "value": "https://pharos.sh/docs/2-0/",
+                "text": "Version 2.0.x"
             },
             {
                 "value": "https://pharos.sh/docs/1-3/",
