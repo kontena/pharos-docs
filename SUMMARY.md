@@ -15,6 +15,7 @@
   * [Kontena Lens](addons/kontena-lens.md)
   * [OpenEBS](addons/openebs.md)
   * [Pharos Host Upgrades](addons/host-upgrades.md)
+  * [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
 * [Upgrade Cluster](upgrade.md)
 
 ----

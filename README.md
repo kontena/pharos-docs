@@ -32,6 +32,7 @@
 - [Kontena Lens](addons/kontena-lens.md) dashboard <sup>pro addon</sup>
 - [Kontena Storage](addons/kontena-storage.md) (integrated storage for hyper-converged clusters) <sup>pro addon</sup>
 - [Kontena Backups](addons/kontena-backup.md) <sup>pro addon</sup>
+- [Kontena Network Loadbalancer](addons/kontena-network-lb.md) <sup>pro addon</sup>
 
 ## Simple, solid and certified
 
