@@ -2,7 +2,7 @@
 
 [Helm](https://www.helm.sh/) is the defacto package manager for Kubernetes.
 
-- version: `2.11.0`
+- version: `2.12.1`
 - maturity: `stable`
 - architectures: `x86-64`
 - available in: `OSS`, `Pro`, `EE`
