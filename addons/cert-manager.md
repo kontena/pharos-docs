@@ -2,7 +2,7 @@
 
 [Cert Manager](https://github.com/jetstack/cert-manager), TLS certificate automation (including Let's Encrypt).
 
-- version: `0.5.0`
+- version: `0.5.2`
 - maturity: `alpha`
 - available in: `OSS`, `Pro`, `EE`
 
