@@ -12,12 +12,12 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 
 * [Cert Manager](cert-manager.md)
 * [Helm](helm.md)
+* [Host Upgrades](host-upgrades.md)
 * [Ingress NGINX](ingress-nginx.md)
+* [Kontena Backup](kontena-backup.md)
 * [Kontena Lens](kontena-lens.md)
 * [Kontena Storage](kontena-storage.md)
-* [Kontena Backup](kontena-backup.md)
 * [OpenEBS](openebs.md)
-* [Pharos Host Upgrades](host-upgrades.md)
 
 ## Using External Addons
 
