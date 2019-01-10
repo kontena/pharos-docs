@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Getting Started](getting-started.md)
 * [Install CLI Toolchain](install.md)
 * [Deploy Cluster](deploy.md)
   * [Host Requirements](requirements.md)
