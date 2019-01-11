@@ -380,6 +380,7 @@ The supported configuration options:
   * `trusted_subnets` - Array of trusted subnets where overlay network can be used without IPSEC (optional)
 * `calico` - Provide additional configuration options if `calico` is selected as networking provider. The supported configuration options:
   * `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
+  * `nat_outgoing` - Whether or not calico should apply NAT on the kubernetes nodes to outgoing packets from pods. Supported options: `true` (default), `false`
 
 ### `kube_proxy`
 
