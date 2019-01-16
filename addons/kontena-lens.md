@@ -59,6 +59,18 @@ Kontena Lens defines couple of handy RBAC roles that can be bound to users and g
 - `devops` - Admin access to namespace resources
 - `user-manager` - Access to create and modify users and groups
 
+#### How to Reset Admin Password
+
+If you've forgot the admin password you can create Service Account with cluster-admin rights with `kubectl` and sign-in to Kontena Lens and change `admin` user's password in the User management section.
+
+Another option is to reset Lens configuration with kubectl and fire pharos up command:
+```
+$ kubectl delete configmap config -n kontena-lens
+$ kubectl delete users admin
+$ pharos up
+```
+
+
 ### Embedded Terminal
 
 Kontena Lens comes with embedded terminal giving users access to your cluster from everywhere. You can find terminal on the bottom of Kontena Lens dashboard and open it with single mouse click.
