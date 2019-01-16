@@ -23,7 +23,7 @@ pipeline:
       branch: ['master']
       event: ['push']
   deploy:
-    image: quay.io/kontena/mortar:0.2
+    image: quay.io/kontena/mortar:0.3
     pull: true
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
@@ -32,7 +32,7 @@ pipeline:
       branch: ['master']
       event: ['push']
   default_ingress:
-    image: quay.io/kontena/mortar:0.2
+    image: quay.io/kontena/mortar:0.3
     secrets: [ kube_token, kube_ca, kube_server ]
     commands:
       - mortar fire -d _deploy/ingress.yml "pharos-docs-default-ingress"
