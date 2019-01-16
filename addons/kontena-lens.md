@@ -24,23 +24,28 @@ Kontena Lens is a dashboard for Kontena Pharos.
 kontena-lens:
   enabled: true
   name: 'prod-pharos-cluster' # optional
-  host: 'your-cluster-dns' # optional
+  host: 'lens.my-domain.com' # optional
   tls:
     email: 'le@example.org' # optional
   user_management:
     enabled: true # optional
   persistence:
     enabled: true # optional
+  shell:
+    image: 'my-org/kontena-lens-terminal:latest' # optional
+    skip_refresh: false # optional
 ```
 
 ### Options
 
 - `name` - Name of the cluster. Default `pharos-cluster`
-- `host` - DNS address that is used for Dashboard access. Default `https://lens.<worker-node-ip>.nip.io`
+- `host` - DNS address that is used for Dashboard access. Default `lens.<worker-node-ip>.nip.io`
 - `tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Default `true`
 - `tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
+- `shell.image` - Custom Docker image used for embedded terminal.
+- `shell.skip_refresh` - `true` or `false`. Are Helm repositories refreshed on terminal start. Use `true` if no public Internet access. Default `false`.
 
 ## Using Kontena Lens
 
