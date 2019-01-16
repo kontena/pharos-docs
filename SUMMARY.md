@@ -1,12 +1,12 @@
 # Summary
 
 * [Introduction](README.md)
-* [Getting Started](getting-started.md)
-* [Install CLI Toolchain](install.md)
-* [Deploy Cluster](deploy.md)
+* [Installation](getting-started.md)
   * [Host Requirements](requirements.md)
   * [Using Terraform](terraform.md)
-* [Configure Cluster](configuration.md)
+* [Managing](deploy.md)
+* [Upgrades](upgrade.md)
+* [Configuration Reference](configuration.md)
 * [Addons](addons/README.md)
   * [Cert Manager](addons/cert-manager.md)
   * [Helm](addons/helm.md)
@@ -17,10 +17,10 @@
   * [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
   * [Kontena Storage](addons/kontena-storage.md)
   * [OpenEBS](addons/openebs.md)
-* [Upgrade Cluster](upgrade.md)
+  * [Creating an Addon](addons/external.md)
 
 ----
-
+* [CLI Toolchain](install-toolchain.md)
 * [CLI Tools Reference](tools/README.md)
   * [chpharos](tools/chpharos.md)
   * [pharos](tools/pharos.md)

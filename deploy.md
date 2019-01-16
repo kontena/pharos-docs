@@ -1,6 +1,6 @@
-# Deploy Kontena Pharos Cluster
+# Managing Kontena Pharos Cluster
 
-> **Prerequisites:** Spin up machines for your cluster. You can use machines from any infrastructure. These machines must meet the [host system requirements](/requirements.md) and they must be accessible via SSH. Additionally, you will need `pharos` CLI tool that is part of [Kontena Pharos CLI Toolchain](/install.md).
+> **Prerequisites:** Spin up machines for your cluster. You can use machines from any infrastructure. These machines must meet the [host system requirements](/requirements.md) and they must be accessible via SSH. Additionally, you will need `pharos` CLI tool that is part of [Kontena Pharos CLI Toolchain](/install-toolchain.md).
 
 Kontena Pharos cluster is deployed using `pharos` CLI tool. The [cluster configuration](/configuration.md) is described in `cluster.yml` file.
 

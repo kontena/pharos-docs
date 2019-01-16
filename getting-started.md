@@ -1,17 +1,17 @@
-# Getting Started with Kontena Pharos
+# Installing Kontena Pharos
 
 Pharos allows you to bootstrap and manage your Kubernetes clusters super easily. You can get started in few minutes by following these steps.
 
-1. Setup Pharos CLI Tooling
-2. Prepare the Nodes for the Kubernetes Cluster
-3. Creating the Cluster Configuration File
-4. Bootstrapping Kubernetes Cluster Using Pharos
-5. Interacting with your Kubernetes Cluster
+1. [Setup Pharos CLI Tooling](#setup-pharos-cli-tooling)
+2. [Prepare the Nodes for the Kubernetes Cluster](#prepare-nodes-for-kubernetes-cluster)
+3. [Creating the Cluster Configuration File](#create-the-cluster-configuration-file)
+4. [Bootstrapping Kubernetes Cluster Using Pharos](#bootstrap-your-first-pharos-kubernetes-cluster)
+5. [Interacting with your Kubernetes Cluster](#interact-with-the-cluster)
 
 
 ## Setup Pharos CLI Tooling
 
-Follow these easy steps to setup Pharos CLI tooling. For more detailed instructions and explanations, see [CLI installation docs](install.md).
+Follow these easy steps to setup Pharos CLI tooling. For more detailed instructions and explanations, see [CLI installation docs](install-toolchain.md).
 
 First we need to install our Pharos version switcher tool:
 ```
