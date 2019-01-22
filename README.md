@@ -11,6 +11,31 @@
 - **Extend with addons** of your own or from any Kubernetes ecosystem project.
 - **Enterprise subscriptions** with SLA and support [available](https://kontena.io/pharos#pricing).
 
+## Editions
+
+|                       | OSS | Pro | EE |
+| --------------------- | --- | --- | -- |
+| License               | Apache 2  | Kontena | Kontena |
+| Certified Kubernetes  | ●   | ●   | ● |
+| High-Availability | ● | ● | ● |
+| Support for x86-64 & ARM64 Architectures | ● | ● | ● |
+| Docker & CRI-O Runtimes Available | ● | ● | ● |
+| RBAC | ● | ● | ● |
+| Pod Security Policies | ● | ● | ● |
+| Rolling Cluster Updates       | -   | ●   | ● |
+| Cert-manager | ● | ● | ● |
+| Ingress-NGINX | ● | ● | ● |
+| Helm | ● | ● | ● |
+| Automatic Host Security Updates | ● | ● | ● |
+| Kontena Lens          |     | ●   | ● |
+| Kontena Backup        |     | ●   | ● |
+| Kontena Storage       |     | ●   | ● |
+| Kontena Network Loadbalancer |     | ●   | ● |
+| Air Gapped Setup      |     | ●   | ● |
+| Kontena Magneto       |     |     | ● |
+| Multi-cluster Manager |     |     | ● |
+| Custom License Management |     |     | ● |
+
 ## Features at a Glance
 
 - Easy to setup, maintain and upgrade
