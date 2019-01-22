@@ -2,7 +2,7 @@
 
 Kontena Lens is a dashboard for Kontena Pharos.
 
-- version: `1.3.4`
+- version: `1.4.0`
 - maturity: `beta`
 - architectures: `x86-64`
 - available in: `Pro`, `EE`
@@ -11,7 +11,8 @@ Kontena Lens is a dashboard for Kontena Pharos.
 ## Features
 
 - `Dashboard` - Overview of resources and status of your Kubernetes cluster
-- `Embedded terminal` - Kubectl and Helm access to your cluster from the dashboard.
+- `Helm charts` - Easy way to browse and install Helm charts.
+- `Embedded terminal` - Kubectl access to your cluster from the dashboard.
 - `Built-in user management` - Authentication + users, groups and RBAC rules management.
 
 ## Requirements
@@ -31,6 +32,10 @@ kontena-lens:
     enabled: true # optional
   persistence:
     enabled: true # optional
+  charts:
+    repositories:
+      - name: stable
+        url: https://kubernetes-charts.storage.googleapis.com
   shell:
     image: 'my-org/kontena-lens-terminal:latest' # optional
     skip_refresh: false # optional
@@ -44,10 +49,28 @@ kontena-lens:
 - `tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
+- `charts.repositories` - Array of Helm repository objects with `name`, `url`. Default: `stable` Helm repository
 - `shell.image` - Custom Docker image used for embedded terminal.
 - `shell.skip_refresh` - `true` or `false`. Are Helm repositories refreshed on terminal start. Use `true` if no public Internet access. Default `false`.
 
 ## Using Kontena Lens
+
+### Helm Charts
+
+Kontena Lens comes with integrated Helm charts. Used Helm repositories can be configured under `charts.repositories` option. `stable` Helm repository is enabled by default if nothing is configured. If you want to configure additional repositories, `stable` repository **must** be explicitly configured too. For example:
+
+```yaml
+charts:
+  repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com/
+  - name: incubator
+    url: https://kubernetes-charts-incubator.storage.googleapis.com/
+```
+
+**Note** Only unauthenticated repositories are supported at this moment.
+
+By default only cluster admins can install Helm charts. The easiest way to give access to other users to install charts is to bind users to `lens-helm-user` role in `kontena-lens-tiller` namespace.
 
 ### User Management
 
@@ -63,6 +86,7 @@ Kontena Lens defines couple of handy RBAC roles that can be bound to users and g
 - `developer` - Read access to namespace resources
 - `devops` - Admin access to namespace resources
 - `user-manager` - Access to create and modify users and groups
+- `lens-helm-user` (in `kontena-lens-tiller` namespace) - Access to integrated Helm charts.
 
 #### How to Reset Admin Password
 
