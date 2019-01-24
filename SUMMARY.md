@@ -7,6 +7,7 @@
 * [Managing](deploy.md)
 * [Upgrades](upgrade.md)
 * [Configuration Reference](configuration.md)
+  * [Cloud Providers](cloud_providers/README.md)
   * [Networking](networking/README.md)
     * [Custom Networking](networking/custom_networking.md)
 * [Addons](addons/README.md)
