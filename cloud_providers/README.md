@@ -19,6 +19,7 @@ The supported configuration options:
 - [AWS](#aws-cloud-provider)
 - [Azure](#azure-cloud-provider)
 - [OpenStack](#openstack-cloud-provider)
+- [VSphere](#vsphere-cloud-provider)
 
 ### AWS Cloud Provider
 
@@ -116,3 +117,39 @@ domain-id=2a73b8f597c04551a0fdc8e95544be8a
 ```
 
 For more details see [Kubernetes cloud.conf](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/#cloud-conf) documentation.
+
+### VSphere Cloud Provider
+
+```yaml
+cloud:
+  provider: vsphere
+  config: ./vsphere.conf
+```
+
+#### Example VSphere Cloud Configuration
+
+```ini
+[Global]
+user = "Administrator1@vsphere.local"
+password = "password"
+port = "443"
+insecure-flag = "1"
+datacenters = "us-east"
+
+[VirtualCenter "1.1.1.1"]
+
+[Workspace]
+server = "1.1.1.1"
+datacenter = "us-east"
+default-datastore="sharedVmfs-0"
+resourcepool-path="cluster-folder/cluster-name/Resources"
+folder = "kubernetes"
+
+[Disk]
+scsicontrollertype = pvscsi
+
+[Network]
+public-network = "VM Network"
+```
+
+For more details see [VSphere cloud.conf](https://vmware.github.io/vsphere-storage-for-kubernetes/documentation/) documentation.
