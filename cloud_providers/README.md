@@ -126,6 +126,15 @@ cloud:
   config: ./vsphere.conf
 ```
 
+#### Prerequisites
+
+- All node VMs must be placed in vSphere VM folder. Create a VM folder following the instructions mentioned in [this link](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.vcenterhost.doc/GUID-031BDB12-D3B2-4E2D-80E6-604F304B4D0C.html) and move Kubernetes Node VMs to this folder.
+- The disk UUID on the node VMs must be enabled: the `disk.EnableUUID` value must be set to True. This step is necessary so that the VMDK always presents a consistent UUID to the VM, thus allowing the disk to be mounted properly. For each of the virtual machine nodes that will be participating in the cluster, follow the steps below using `govc`
+    - Find Node VM Paths `govc ls /datacenter/vm/<vm-folder-name>`
+    - Set `disk.EnableUUID` to true for all VMs `govc vm.change -e="disk.enableUUID=1" -vm='VM Path'`
+
+    Note: If Kubernetes Node VMs are created from template VM then `disk.EnableUUID=1` can be set on the template VM. VMs cloned from this template, will automatically inherit this property.
+
 #### Example VSphere Cloud Configuration
 
 ```ini
@@ -142,7 +151,6 @@ datacenters = "us-east"
 server = "1.1.1.1"
 datacenter = "us-east"
 default-datastore="sharedVmfs-0"
-resourcepool-path="cluster-folder/cluster-name/Resources"
 folder = "kubernetes"
 
 [Disk]
