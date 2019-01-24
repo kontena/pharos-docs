@@ -359,7 +359,7 @@ The supported configuration options:
 
 ### `network`
 
-Specify networking options. For example:
+Specify [networking](networking/README.md) options. For example:
 
 ```yaml
 network:
@@ -370,20 +370,6 @@ network:
     trusted_subnets:
       - 10.10.0.0/16
 ```
-
-The supported configuration options:
-
-* `provider` - Select the network backend to use. Supported providers: `weave` (default), `calico`, `custom`
-* `service_cidr` - IP address range for service VIPs. (default `10.96.0.0/12`)
-* `pod_network_cidr` - IP address range for the pod network. (default `10.32.0.0/12`)
-* `weave` - Provide additional configuration options if `weave` is selected as networking provider. The supported configuration options:
-  * `trusted_subnets` - Array of trusted subnets where overlay network can be used without IPSEC (optional)
-* `calico` - Provide additional configuration options if `calico` is selected as networking provider. The supported configuration options:
-  * `ipip_mode` - configure usage of IP-IP tunneling for traffic between nodes, see [Calico docs](https://docs.projectcalico.org/v3.1/usage/configuration/ip-in-ip). Supported options: `Never`, `CrossSubnet`, `Always` (default)
-* `custom` - Provide configuration for [custom networking](networking/custom_networking.md) configuration
-  * `manifest_path` - Path to the deployment manifests. As with [addons](addons/), the manifests can be either plain yaml files or ERB templated with the `.yml.erb` suffix. See more detail at [custom networking](networking/custom_networking.md) page.
-  * `options` - Options for the custom networking
-  * `nat_outgoing` - Whether or not calico should apply NAT on the kubernetes nodes to outgoing packets from pods. Supported options: `true` (default), `false`
 
 ### `kube_proxy`
 

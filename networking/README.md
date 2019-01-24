@@ -56,3 +56,7 @@ network:
 * `CrossSubnet` - IP-in-IP encapsulation can also be performed selectively, only for traffic crossing subnet boundaries. This provides better performance in AWS multi-AZ deployments, and in general when deploying on networks where pools of nodes with L2 connectivity are connected via a router.
 
 For more details on IP-in-IP configration and usability see https://docs.projectcalico.org/v3.3/usage/configuration/ip-in-ip.
+
+#### `nat_outgoing` (optional)
+
+Whether or not calico should apply NAT on the kubernetes nodes to outgoing packets from pods. Supported options: `true` (default), `false`
