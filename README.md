@@ -22,11 +22,12 @@
 | Docker & CRI-O Runtimes Available | ● | ● | ● |
 | RBAC | ● | ● | ● |
 | Pod Security Policies | ● | ● | ● |
-| Rolling Cluster Updates       | -   | ●   | ● |
+| Cluster Firewall | ● | ● | ● |
 | Cert-manager | ● | ● | ● |
 | Ingress-NGINX | ● | ● | ● |
 | Helm | ● | ● | ● |
 | Automatic Host Security Updates | ● | ● | ● |
+| Rolling Cluster Updates       | -   | ●   | ● |
 | Kontena Lens          |     | ●   | ● |
 | Kontena Backup        |     | ●   | ● |
 | Kontena Storage       |     | ●   | ● |
@@ -49,6 +50,7 @@
 - [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/) enabled
 - [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) enabled
 - [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) supported
+- [Cluster Firewall](networking/README.md#firewalld) supported
 - Hardened configuration for enhanced security (follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
 - [Cert-manager integration](addons/cert-manager.md) <sup>addon</sup>
 - [Helm integration](addons/helm.md) <sup>addon</sup>

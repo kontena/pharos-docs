@@ -2,13 +2,17 @@
 
 [Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/) in Kubernetes clusters is an abstracted implementation that can be configured per cluster basis. Pharos supports few different options how to configure the networking provider.
 
+- [Supported Network Providers](#supported-network-providers)
+- [Firewalld](#firewalld)
+
+
 ## Supported Network Providers
 
 * [Weave](#weave)
 * [Calico](#calico)
 * [Custom](custom_networking.md)
 
-## Weave
+### Weave
 
 [Weave](https://github.com/weaveworks/weave) is the default networking provider in Pharos clusters. Weave Net creates a virtual network that connects containers across multiple hosts and enables their automatic discovery. Weave also supports network policies.
 
@@ -17,7 +21,7 @@ If the cluster is deployed on multiple regions/data centers*, Weave networking i
 
 *) Nodes region is determined by `failure-domain.beta.kubernetes.io/region` annotations value.
 
-### Configuration
+#### Configuration
 
 ```yaml
 network:
@@ -29,16 +33,16 @@ network:
       - 10.10.0.0/16
 ```
 
-#### `trusted_subnets` (optional)
+##### `trusted_subnets` (optional)
 
 An array of trusted subnets where overlay network can be used without IPSEC. By default Weave creates secure tunnels between nodes with IPSEC. In environments where the node-to-node networking is secure and trusted you can disable the IPSEC tunneling for better performance.
 
 
-## Calico
+### Calico
 
 [Calico](https://github.com/projectcalico/calico/) creates and manages a flat layer 3 network, assigning each workload a fully routable IP address. Workloads can communicate without IP encapsulation or network address translation for bare metal performance, easier troubleshooting, and better interoperability. In environments that require an overlay, Calico uses IP-in-IP tunneling
 
-### Configuration
+#### Configuration
 
 ```yaml
 network:
@@ -49,7 +53,7 @@ network:
     ipip_mode: CrossSubnet
 ```
 
-#### `ipip_mode` (optional)
+##### `ipip_mode` (optional)
 
 * `Always` (default) - Calico will route using IP-in-IP for all traffic originating from a Calico enabled host to all Calico networked containers and VMs within the IP Pool.
 * `Never` - Never use IP-in-IP encapsulation.
@@ -57,6 +61,68 @@ network:
 
 For more details on IP-in-IP configration and usability see https://docs.projectcalico.org/v3.3/usage/configuration/ip-in-ip.
 
-#### `nat_outgoing` (optional)
+##### `nat_outgoing` (optional)
 
 Whether or not calico should apply NAT on the kubernetes nodes to outgoing packets from pods. Supported options: `true` (default), `false`
+
+
+## Firewalld
+
+[Firewalld](https://firewalld.org/) provides a dynamically managed firewall with support for network/firewall zones that define the trust level of network connections or interfaces.
+
+By default Kontena Pharos does not enable any firewalld rules. Firewalls rules are only applied to cluster hosts if `network.firewalld` is enabled. When enabled following rules are applied by default:
+
+- `22/tcp` - ssh is opened to all hosts
+- `80/tcp` - http is opened to all hosts
+- `443/tcp` - https is opened to all hosts
+- `6443/tcp` - kubernetes api is opened to master hosts
+- `30000-32767tcp+udp` - nodeports are opened to all hosts
+
+Traffic between the cluster hosts is whitelisted automatically.
+
+### Configuration
+
+```yaml
+network:
+  firewalld:
+    enabled: true
+    open_ports: # these are the defaults if firewalld is enabled
+    - port: "22"
+      protocol: tcp
+      roles:
+      - "*"
+    - port: "80"
+      protocol: tcp
+      roles:
+      - worker
+    - port: "443"
+      protocol: tcp
+      roles:
+      - worker
+    - port: "6443"
+      protocol: tcp
+      roles:
+      - master
+    - port: "30000-32767"
+      protocol: tcp
+      roles:
+      - "*"
+    - port: "30000-32767"
+      protocol: udp
+      roles:
+      - "*"
+    trusted_subnets:
+      - "192.168.10.0/24"
+```
+
+#### `enabled` (optional)
+
+Specify if firewalld rules are applied. Supported options: `false` (default), `true`.
+
+#### `open_ports` (optional)
+
+Specify ports that are opened to the outside world.
+
+#### `trusted_subnets` (optional)
+
+An array of trusted subnets which can access all ports.

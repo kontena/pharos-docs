@@ -359,6 +359,8 @@ network:
   provider: weave
   service_cidr: 172.31.0.0/16
   pod_network_cidr: 172.32.0.0/16
+  firewalld:
+    enabled: true
   weave:
     trusted_subnets:
       - 10.10.0.0/16
