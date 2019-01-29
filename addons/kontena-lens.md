@@ -25,9 +25,11 @@ Kontena Lens is a dashboard for Kontena Pharos.
 kontena-lens:
   enabled: true
   name: 'prod-pharos-cluster' # optional
-  host: 'lens.my-domain.com' # optional
-  tls:
-    email: 'le@example.org' # optional
+  ingress:
+    host: 'lens.my-domain.com' # optional
+    tls:
+      enabled: true # optional
+      email: 'le@example.org' # optional
   user_management:
     enabled: true # optional
   persistence:
@@ -44,9 +46,9 @@ kontena-lens:
 ### Options
 
 - `name` - Name of the cluster. Default `pharos-cluster`
-- `host` - DNS address that is used for Dashboard access. Default `lens.<worker-node-ip>.nip.io`
-- `tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Default `true`
-- `tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
+- `ingress.host` - DNS address that is used for Dashboard access. Default `lens.<worker-node-ip>.nip.io`
+- `ingress.tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Default `true`
+- `ingress.tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
 - `charts.repositories` - Array of Helm repository objects with `name`, `url`. Default: `stable` Helm repository
