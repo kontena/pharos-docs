@@ -31,12 +31,16 @@ network:
   weave:
     trusted_subnets:
       - 10.10.0.0/16
+    no_masq_local: true
 ```
 
 ##### `trusted_subnets` (optional)
 
 An array of trusted subnets where overlay network can be used without IPSEC. By default Weave creates secure tunnels between nodes with IPSEC. In environments where the node-to-node networking is secure and trusted you can disable the IPSEC tunneling for better performance.
 
+##### `no_masq_local` (optional, default: `false`)
+
+Whether to preserve the client source IP address when accessing Service annotated with `service.spec.externalTrafficPolicy=Local`. For more information look here: https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-nodeport
 
 ### Calico
 
