@@ -1,6 +1,6 @@
 # Kontena Pharos Cluster Configuration
 
-Kontena Pharos cluster configuration is described in a file that is in [YAML](http://yaml.org/) format. You can create and modify these files using your favorite text editor. The default name for this file is `cluster.yml`, although other file names could be used.
+Kontena Pharos cluster configuration is described in a file that is in [YAML](http://yaml.org/) format. You can create and modify these files using your favorite text editor. The default name for this file is `cluster.yml`, although other file names could be used. The configuration can include [ERB templating code](#erb-templating) when the filename ends with `.erb`.
 
 **Learn more:**
 
@@ -486,3 +486,25 @@ hosts:
 ```
 
 See ssh config [man page](https://linux.die.net/man/5/ssh_config) for more info.
+
+### ERB templating
+
+It's possible to use [ERB code](https://en.wikipedia.org/wiki/ERuby) in the configuration file when the configuration filename ends in `.erb`. 
+
+```yaml
+# cluster.yml.erb
+hosts:
+# Configure 20 nodes
+  <%- (100..120).each do |ip_d| -%>
+  - address: 10.0.0.<%= ip_d %>
+    user: root
+    ssh_key_path: ~/.ssh/my_key
+# The first 5 are masters
+    role: <%= ip_d < 105 ? 'master' : 'worker' %>
+    environment:
+# The proxy configuration is copied from local machine.
+      <%- ENV.select { |k,_| k.downcase.end_with?('_proxy') }.each do |key, value| -%>
+      <%= key %>: <%= value %>
+      <%- end -%>
+  <%- end -%>  
+```
