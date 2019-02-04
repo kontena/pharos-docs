@@ -236,7 +236,7 @@ Audit events are delivered in batched mode, multiple events in one webhook `POST
 
 ### `authentication`
 
-Specify [Webhook Token Authentication](https://kubernetes.io/docs/admin/authentication/#webhook-token-authentication). For example:
+Specify [authentication](authentication.md) configuration. For example:
 
 ```yaml
 authentication:
@@ -245,13 +245,14 @@ authentication:
       cluster:
         name: token-reviewer
         server: http://localhost:9292/token
-        certificate_authority: /path/to/ca.pem # optional
+        certificate_authority: /path/to/ca.pem
       user:
         name: kube-apiserver
-        client_key: /path/to/key.pem # optional
-        client_certificate: /path/to/cert.pem # optional
-    cache_ttl: 5m # optional
+        client_key: /path/to/key.pem
+        client_certificate: /path/to/cert.pem
+    cache_ttl: 5m
 ```
+
 
 ### `cloud`
 
