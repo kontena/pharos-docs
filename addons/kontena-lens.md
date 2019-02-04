@@ -35,6 +35,7 @@ kontena-lens:
   persistence:
     enabled: true # optional
   charts:
+    enabled: true # optional
     repositories:
       - name: stable
         url: https://kubernetes-charts.storage.googleapis.com
@@ -51,6 +52,7 @@ kontena-lens:
 - `ingress.tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
+- `charts.enabled` - `true` or `false`. Are Helm charts enabled. Default `true`.
 - `charts.repositories` - Array of Helm repository objects with `name`, `url`. Default: `stable` Helm repository
 - `shell.image` - Custom Docker image used for embedded terminal.
 - `shell.skip_refresh` - `true` or `false`. Are Helm repositories refreshed on terminal start. Use `true` if no public Internet access. Default `false`.
@@ -63,6 +65,7 @@ Kontena Lens comes with integrated Helm charts. Used Helm repositories can be co
 
 ```yaml
 charts:
+  enabled: true
   repositories:
   - name: stable
     url: https://kubernetes-charts.storage.googleapis.com/
