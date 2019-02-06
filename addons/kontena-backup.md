@@ -29,11 +29,11 @@ Kontena Backup provides unified and simple tools to backup cluster resources and
 - `cloud_credentials` - The path to cloud credentials used when storing the backup artefacts to configured object storage. See [cloud credentials](#cloud-credentials) for details.
 - `aws` - Configure backups to be stored in AWS S3 buckets or in S3 compatible object stores (e.g. Minio, Wasabi, etc.)
     - `region` - The region of the bucket
-    - `bucket` - Name of the bucket. Kontena Backup addon will also automatically create & use <name>-restic bucket to store persistent volume backups
+    - `bucket` - Name of the bucket. Kontena Backup addon will also automatically create & use `<name>-restic` bucket to store persistent volume backups
     - `s3_force_path_style` - Set this to true if you are using a S3 compatible storage service other than AWS itself
     - `s3_url` - You can specify the S3 URL here for explicitness, but Ark can already generate it from region, and bucket. This field is primarily for other storage services like Minio.
 - `gcp` - Configure bacups to be stored on GCP object storage
-    - `bucket` - Name of the bucket. Kontena Backup addon will also automatically create & use <name>-restic bucket to store persistent volume backups
+    - `bucket` - Name of the bucket. Kontena Backup addon will also automatically create & use `<name>-restic` bucket to store persistent volume backups
 
 
 #### Cloud Credentials
