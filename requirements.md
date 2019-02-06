@@ -39,16 +39,18 @@ The following ports are used by the `pharos` management tool, as well as between
 | Protocol    | Port        | Service         | Direction               | Notes
 |-------------|-------------|-----------------|-------------------------|-------
 | TCP         | 22          | SSH             | CLI => Host             | authenticated management channel for `pharos` operations using SSH keys
-| TCP         | 2379        | etcd clients    | Master <=> Master       | authenticated etcd client API using TLS client certs
-| TCP         | 2380        | etcd peers      | Master <=> Master       | authenticated etcd peers API using TLS client certs
+| TCP         | 2379        | etcd clients    | Master <=> Master `*`   | authenticated etcd client API using TLS client certs
+| TCP         | 2380        | etcd peers      | Master <=> Master `*`   | authenticated etcd peers API using TLS client certs
 | TCP         | 6443        | kube-apiserver  | Worker, CLI => Master   | authenticated kube API using kube TLS client certs, ServiceAccount tokens with RBAC
-| TCP         | 6783        | weave control   | Host <=> Host           | authenticated Weave peer control connections using the shared weave secret
-| UDP         | 6783        | weave dataplane | Host <=> Host           | authenticated Weave `sleeve` fallback using the shared weave secret
-| UDP         | 6784        | weave dataplane | Host <=> Host (trusted) | unauthenticated Weave `fastdp` (VXLAN), only used for peers on `network.trusted_subnets` networks
-| ESP (IPSec) |             | weave dataplane | Host <=> Host           | authenticated Weave `fastdp` (IPsec encapsulated UDP port 6784 VXLAN) using IPSec SAs established over the control channel
-| TCP         | 10250       | kubelet         | Master, Worker => Host  | authenticated kubelet API for the master node `kube-apiserver` (and `heapster`/`metrics-server` addons) using TLS client certs
+| TCP         | 6783        | weave control   | Host <=> Host `*`       | authenticated Weave peer control connections using the shared weave secret
+| UDP         | 6783        | weave dataplane | Host <=> Host `*`       | authenticated Weave `sleeve` fallback using the shared weave secret
+| UDP         | 6784        | weave dataplane | Host <=> Host (trusted) `*` | unauthenticated Weave `fastdp` (VXLAN), only used for peers on `network.trusted_subnets` networks
+| ESP (IPSec) |             | weave dataplane | Host <=> Host `*`       | authenticated Weave `fastdp` (IPsec encapsulated UDP port 6784 VXLAN) using IPSec SAs established over the control channel
+| TCP         | 10250       | kubelet         | Master, Worker => Host `*` | authenticated kubelet API for the master node `kube-apiserver` (and `heapster`/`metrics-server` addons) using TLS client certs
 
 If using the `ingress-nginx` addon, then TCP ports 80/443 on the worker nodes (or nodes matching `addons.ingress-nginx.node_selector`) must also be opened for public access.
+
+- `*` - public access is blocked if [firewalld](networking/README.md#firewalld) is enabled (with default rules)
 
 ### Monitoring Ports
 
@@ -56,15 +58,17 @@ The following ports serve unauthenticated monitoring/debugging information, and 
 
 | Protocol    | Port        | Service               | Hosts   | Status          | Notes
 |-------------|-------------|-----------------------|---------|-----------------|-------
-| TCP         | 6781        | weave-npc metrics     | All     | **OPEN**        | unauthenticated `/metrics`
-| TCP         | 6782        | weave metrics         | All     | **OPEN**        | unauthenticated `/metrics`
+| TCP         | 6781        | weave-npc metrics     | All     | **OPEN** `*`    | unauthenticated `/metrics`
+| TCP         | 6782        | weave metrics         | All     | **OPEN** `*`    | unauthenticated `/metrics`
 | TCP         | 10248       | kubelet               | All     | localhost-only  | ?
 | TCP         | 10249       | kube-proxy metrics    | All     | localhost-only  | ?
 | TCP         | 10251       | kube-scheduler        | Master  | localhost-only  | ?
 | TCP         | 10252       | kube-controller       | Master  | localhost-only  | ?
 | TCP         | 10255       | kubelet read-only     | All     | *disabled*      | unauthenticated read-only `/pods`, various stats metrics
-| TCP         | 10256       | kube-proxy healthz    | All     | **OPEN**        | unauthenticated `/healthz`
-| TCP         | 18080       | ingress-nginx status  | Workers | **OPEN**        | unauthenticated `/healthz`, `/nginx_status` and default backend
+| TCP         | 10256       | kube-proxy healthz    | All     | **OPEN** `*`    | unauthenticated `/healthz`
+| TCP         | 18080       | ingress-nginx status  | Workers | **OPEN** `*`    | unauthenticated `/healthz`, `/nginx_status` and default backend
+
+- `*` - public access is blocked if [firewalld](networking/README.md#firewalld) is enabled (with default rules)
 
 These ports should be restricted from external access to prevent information leaks.
 
