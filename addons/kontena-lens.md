@@ -19,36 +19,42 @@ Kontena Lens is a dashboard for Kontena Pharos.
 - Ingress Controller
 - Cert Manager
 
-## Configuration
+## Minimum Configuration
+```yaml
+  kontena-lens:
+    enabled: true
+```
+
+## Full Configuration Example
 
 ```yaml
 kontena-lens:
   enabled: true
-  name: 'prod-pharos-cluster' # optional
+  name: 'prod-pharos-cluster'
   ingress:
-    host: 'lens.my-domain.com' # optional
+    host: 'lens.my-domain.com'
     tls:
-      enabled: true # optional
-      email: 'le@example.org' # optional
+      enabled: true
+      email: 'le@example.org'
   user_management:
-    enabled: true # optional
+    enabled: true
   persistence:
-    enabled: true # optional
+    enabled: true
   charts:
     enabled: true # optional
     repositories:
       - name: stable
         url: https://kubernetes-charts.storage.googleapis.com
   shell:
-    image: 'my-org/kontena-lens-terminal:latest' # optional
-    skip_refresh: false # optional
+    image: 'my-org/kontena-lens-terminal:latest'
+    skip_refresh: false
 ```
 
 ### Options
 
 - `name` - Name of the cluster. Default `pharos-cluster`
 - `ingress.host` - DNS address that is used for Dashboard access. Default `lens.<worker-node-ip>.nip.io`
-- `ingress.tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Default `true`
+- `ingress.tls.enabled` - `true` or `false`. Is the ingress secured with TLS. Can be set to `false` if SSL is terminated on external load balancer. Default: `true`.
 - `ingress.tls.email` - Email address used while fetching Let's Encrypt certificate. If not defined, the default insecure TLS certificate will be used.
 - `user_management.enabled` - `true` or `false`. Is built-in user management enabled. Default `true`
 - `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.html) add-on. Default: `false`
@@ -77,6 +83,8 @@ charts:
 
 By default only cluster admins can install Helm charts. The easiest way to give access to other users to install charts is to bind users to `lens-helm-user` role in `kontena-lens-tiller` namespace.
 
+**Note** Updating Helm releases is not implemented yet. At this moment to update or upgrade releases, please use Helm CLI and pass `--tiller-namespace kontena-lens-tiller` option to `helm` command.
+
 ### User Management
 
 When built-in user management is enabled, Pharos will generate admin credentials for the cluster and outputs it to command line output. You can use these credentials to sign in Kontena Lens. It's recommended to change admin password after the first login.
@@ -84,6 +92,8 @@ When built-in user management is enabled, Pharos will generate admin credentials
 After signing in to Kontena Lens, admin user can create new users and groups on the User management section and give them access to the Kubernetes cluster by binding proper RBAC rules. Users can sign in to Kontena Lens and see only those resources they are allowed. They can also download Kubeconfig file and start operating with the cluster from local machines.
 
 It's also option to sign in with Service Account's token or, if configured, with external authentication provider's token.
+
+**Note** If using any other authentication method (like OIDC or token webhook) user management must be disabled.
 
 #### Pre-configured RBAC roles
 
