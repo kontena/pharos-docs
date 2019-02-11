@@ -53,6 +53,8 @@ network:
   provider: weave
   trusted_subnets:
     - 10.10.0.0/16
+kubelet:
+  read_only_port: true
 authentication:
   token_webhook:
     config:
@@ -367,6 +369,20 @@ network:
       - 10.10.0.0/16
 ```
 
+### `kubelet`
+
+Specify [kubelet](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-kubelet) configuration options.
+```yaml
+kubelet:
+  read_only_port: true
+```
+
+The supported configuration options:
+
+* `read_only_port` - when set to `true` will open read-only port `10255` for the Kubelet to serve on with no authentication/authorization. Defaults to `false`, i.e. port 10255 **NOT** open.
+
+**Note**: If you enable the Kubelet read-only port you may allow un-authorized access to sensitive data. Make sure you use other means, such as network level firewalls for example, to prevent un-wanted access.
+
 ### `kube_proxy`
 
 Specify Kubernetes network proxy (`kube-proxy`). The proxy may be configured to run in [different operating modes](https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies). If the default `iptables` mode is not appropriate, then this can also be configured to use the `userspace` or [(experimental) `ipvs`](https://github.com/kubernetes/kubernetes/tree/master/pkg/proxy/ipvs) modes.
@@ -490,7 +506,7 @@ See ssh config [man page](https://linux.die.net/man/5/ssh_config) for more info.
 
 ### ERB templating
 
-It's possible to use [ERB code](https://en.wikipedia.org/wiki/ERuby) in the configuration file when the configuration filename ends in `.erb`. 
+It's possible to use [ERB code](https://en.wikipedia.org/wiki/ERuby) in the configuration file when the configuration filename ends in `.erb`.
 
 ```yaml
 # cluster.yml.erb
@@ -507,5 +523,5 @@ hosts:
       <%- ENV.select { |k,_| k.downcase.end_with?('_proxy') }.each do |key, value| -%>
       <%= key %>: <%= value %>
       <%- end -%>
-  <%- end -%>  
+  <%- end -%>
 ```
