@@ -51,7 +51,7 @@
 - [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) enabled
 - [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) supported
 - [Cluster Firewall](networking/README.md#firewalld) supported
-- Hardened configuration for enhanced security (follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
+- Hardened configuration for enhanced security ([CIS security benchmark audit](https://www.cisecurity.org/benchmark/kubernetes/), follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
 - [Cert-manager integration](addons/cert-manager.md) <sup>addon</sup>
 - [Helm integration](addons/helm.md) <sup>addon</sup>
 - Automated [host security updates](addons/host-upgrades.md) <sup>addon</sup>
@@ -60,6 +60,7 @@
 - [Kontena Storage](addons/kontena-storage.md) (integrated storage for hyper-converged clusters) <sup>pro addon</sup>
 - [Kontena Backups](addons/kontena-backup.md) <sup>pro addon</sup>
 - [Kontena Network Loadbalancer](addons/kontena-network-lb.md) <sup>pro addon</sup>
+- The source code is available on [Github](https://github.com/kontena/pharos-cluster/)
 
 ## Simple, solid and certified
 
