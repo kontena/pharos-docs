@@ -17,6 +17,7 @@
 | --------------------- | --- | --- | -- |
 | License               | Apache 2  | Kontena | Kontena |
 | Certified Kubernetes  | ●   | ●   | ● |
+| Enhanced Security     | ●   | ●   | ● |
 | High-Availability | ● | ● | ● |
 | Support for x86-64 & ARM64 Architectures | ● | ● | ● |
 | Docker & CRI-O Runtimes Available | ● | ● | ● |

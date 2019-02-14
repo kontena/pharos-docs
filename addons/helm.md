@@ -7,6 +7,8 @@
 - architectures: `x86-64`
 - available in: `OSS`, `Pro`, `EE`
 
+**Important** If you are using Kontena Pharos Pro or EE version, do not use this add-on, unless you want to install stand-alone Helm/tiller component. With Kontena Pharos Pro and EE you can configure Helm charts through [Kontena Lens](./kontena-lens.md) add-on.
+
 ## Configuration
 
 ```yaml
