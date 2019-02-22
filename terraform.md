@@ -1,26 +1,45 @@
 # Deploying Kontena Pharos Cluster with Terraform
 
-The `pharos` CLI tool can read information from [Terraform](https://www.terraform.io/) JSON output. In this scenario `cluster.yml` contents can be partially read from Terraform JSON output.
+- [Overview](#overview)
+- [Terraform Output Configuration](#terraform-output-configuration)
+    - [Setting Hosts](#setting-hosts)
+    - [Setting Addon Values](#setting-addon-values)
+    - [Setting API Endpoint](#setting-api-endpoint)
+- [Full Examples](#full-examples)
+
+## Overview
+
+The `pharos` CLI tool can read information from [Terraform](https://www.terraform.io/) JSON output. In this scenario `cluster.yml` contents can be partially read from a Terraform JSON output file.
 
 Terraform output JSON integration can be enabled with `--tf-json` option, for example:
 
-```bash
+```
+$ terraform apply
+$ terraform output -json > tf.json
 $ pharos up -c cluster.yml --tf-json tf.json
 ```
 
-- [Setting Hosts](#setting-hosts)
-- [Setting Addons](#setting-addons)
-- [Setting API Endpoint](#setting-api-endpoint)
-- [Full Examples](#full-examples)
+This example can be also executed as a single step:
 
+```
+$ pharos tf apply -c cluster.yml
+```
 
-## Setting Hosts
+To tear-down cluster:
+
+```
+$ pharos tf destroy
+```
+
+## Terraform Output Configuration
+
+### Setting Hosts
 
 `hosts` array in Kontena Pharos `cluster.yml` can be set via `pharos_hosts` output.
 
 For example:
 
-```go
+```
 output "pharos_hosts" {
   value = {
     masters = {
@@ -62,13 +81,13 @@ hosts:
 
 in `cluster.yml`.
 
-## Setting Addons
+### Setting Addon Values
 
 It's possible to set addon values in Kontena Pharos `cluster.yml` via `pharos_addons` output.
 
 For example:
 
-```go
+```
 output "pharos_addons" {
   value = {
     my-addon = {
@@ -90,13 +109,13 @@ addons:
 
 in `cluster.yml`.
 
-## Setting API Endpoint
+### Setting API Endpoint
 
 `api.endpoint` in Kontena Pharos `cluster.yml` can be set via `pharos_api` output.
 
 For example:
 
-```go
+```
 output "pharos_api" {
   value = {
     endpoint = "my.kubernetes-api.com"
