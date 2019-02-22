@@ -11,6 +11,8 @@
   * [Cloud Providers](cloud_providers/README.md)
   * [Networking](networking/README.md)
     * [Custom Networking](networking/custom_networking.md)
+    * [Firewalld](networking/firewalld.md)
+    * [Multi-Cluster](networking/multi-cluster.md)
 * [Addons](addons/README.md)
   * [Cert Manager](addons/cert-manager.md)
   * [Helm](addons/helm.md)

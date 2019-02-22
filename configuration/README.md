@@ -355,7 +355,7 @@ The supported configuration options:
 
 ### `network`
 
-Specify [networking](networking/README.md) options. For example:
+Specify [networking](../networking/README.md) options. For example:
 
 ```yaml
 network:
