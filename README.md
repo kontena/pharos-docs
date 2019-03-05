@@ -38,30 +38,27 @@
 | Multi-cluster Manager |     |     | ● |
 | Custom License Management |     |     | ● |
 
-## Features at a Glance
+## Features
 
-- Easy to setup, maintain and upgrade
-- [Kubernetes](https://kubernetes.io/) v1.13.3
-- Bare metal friendly, infrastructure agnostic
-- Intel (x86-64) and ARM (ARM64) architectures supported
-- Supported host operating systems: [CentOS, Debian, Redhat, Ubuntu](requirements.md)
-- Single or multi-master, workloads isolated on workers
-- On-cluster [etcd](https://coreos.com/etcd/) with TLS
-- Support for [docker](https://mobyproject.org/) and [cri-o](http://cri-o.io/) container runtimes
-- [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/) enabled
-- [Pod Security Policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) enabled
-- [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) supported
-- [Cluster Firewall](networking/README.md#firewalld) supported
-- Hardened configuration for enhanced security ([CIS security benchmark audit](https://www.cisecurity.org/benchmark/kubernetes/), follows [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final) recommendations)
-- [Cert-manager integration](addons/cert-manager.md) <sup>addon</sup>
-- [Helm integration](addons/helm.md) <sup>addon</sup>
-- Automated [host security updates](addons/host-upgrades.md) <sup>addon</sup>
-- [Ingress-nginx integration](addons/ingress-nginx.md) <sup>addon</sup>
-- [Kontena Lens](addons/kontena-lens.md) dashboard <sup>pro addon</sup>
-- [Kontena Storage](addons/kontena-storage.md) (integrated storage for hyper-converged clusters) <sup>pro addon</sup>
-- [Kontena Backups](addons/kontena-backup.md) <sup>pro addon</sup>
-- [Kontena Network Loadbalancer](addons/kontena-network-lb.md) <sup>pro addon</sup>
-- The source code is available on [Github](https://github.com/kontena/pharos-cluster/)
+- **[Kubernetes Kernel](https://github.com/kubernetes/kubernetes)**: v1.13.3
+- **Cluster Upgrade Strategies:** rolling zero-downtime, instant
+- **Supported Infrastructure:** private datacenter, public cloud, hybrid, edge
+- **Supported Machine Types:** bare metal, VM
+- **Supported Machine Architectures:** Intel (x86-64), ARM (ARM64)
+- **Supported Host Operating Systems:** [CentOS, Debian, Redhat, Ubuntu](requirements.md)
+- **Supported Cluster Data Store Options:** in-cluster elastic etcd with TLS, external [etcd](https://coreos.com/etcd/) with TLS
+- **Supported Control Plane Availability Options:** single master, multi-master
+- **Supported Workload Isolation Options:** worker nodes only, all nodes
+- **Supported Container Runtimes:** [docker](https://mobyproject.org/), [cri-o](http://cri-o.io/)
+- **Supported CNI Plugins:** weave, calico, custom 
+- **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md), AWS, GCP, Azure, OpenStack, VMWare, Custom
+- **Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
+- **Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/README.md#firewalld), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md)
+- **Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
+- **Applications Management Features:** [Helm](addons/helm.md)
+- **Management UI:** [Kontena Lens](addons/kontena-lens.md)
+- **Backup & Disaster Recovery Features:** [Kontena Backups](addons/kontena-backup.md)
+- **Source Code:** available on [Github](https://github.com/kontena/pharos-cluster/)
 
 ## Simple, solid and certified
 
