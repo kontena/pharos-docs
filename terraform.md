@@ -115,6 +115,6 @@ in `cluster.yml`.
 
 ## Full Examples
 
-- [AWS HA setup](https://github.com/kontena/pharos-cluster/tree/master/examples/terraform-aws)
-- [DigitalOcean](https://github.com/kontena/pharos-cluster/tree/master/examples/terraform-do)
-- [Packet (Bare Metal)](https://github.com/kontena/pharos-cluster/tree/master/examples/terraform-packet)
+- [AWS HA setup](https://github.com/kontena/pharos-cluster/tree/v2.2/examples/terraform-aws)
+- [DigitalOcean](https://github.com/kontena/pharos-cluster/tree/v2.2/examples/terraform-do)
+- [Packet (Bare Metal)](https://github.com/kontena/pharos-cluster/tree/v2.2/examples/terraform-packet)
