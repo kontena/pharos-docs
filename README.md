@@ -53,7 +53,7 @@
 - **Supported CNI Plugins:** weave, calico, custom 
 - **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md), AWS, GCP, Azure, OpenStack, VMWare, Custom
 - **Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
-- **Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/README.md#firewalld), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md)
+- **Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/README.md#firewalld), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option
 - **Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
 - **Applications Management Features:** [Helm](addons/helm.md)
 - **Management UI:** [Kontena Lens](addons/kontena-lens.md)
