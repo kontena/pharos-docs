@@ -41,7 +41,7 @@ Most of the Kubernetes cluster components are launched using containers (Docker 
 
 ## Create the Cluster Configuration File
 
-With Pharos, the cluster is [configured](configuration.md) using a yaml file. In this example we setup simple 1+1 cluster, one node acts as the control plane and one as pure worker node.
+With Pharos, the cluster is [configured](configuration/README.md) using a yaml file. In this example we setup simple 1+1 cluster, one node acts as the control plane and one as pure worker node.
 
 So open up your favourite editor, and type something similar as in the example below. Once done, save the file as `cluster.yml`. Naturally you need to adjust the example to match your infrastructure at hand.
 
