@@ -70,6 +70,10 @@ network:
   #service_cidr: 172.32.0.0/16
   #calico:
   #  ipip_mode: CrossSubnet
+  #  environment:
+  #    FELIX_PROMETHEUSMETRICSENABLED: true
+  #    FELIX_PROMETHEUSMETRICSPORT: 9999
+
 ```
 
 ##### `ipip_mode` (optional)
@@ -83,3 +87,13 @@ For more details on IP-in-IP configration and usability see https://docs.project
 ##### `nat_outgoing` (optional)
 
 Whether or not calico should apply NAT on the kubernetes nodes to outgoing packets from pods. Supported options: `true` (default), `false`
+
+##### `environment` (optional)
+
+Optional environment variables to set for Calico node daemonset. For possible values see Calico reference docs: https://docs.projectcalico.org/v3.5/reference/
+
+#### Enabling Prometheus metrics
+
+Enabling Prometheus metrics happens via environment variables as specified in the example. This also automatically creates a "headless" service for metrics discovery.
+
+**Note:** Calico node daemonset runs in host network space so make sure the port you choose is free on all the hosts.
