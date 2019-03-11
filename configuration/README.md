@@ -17,6 +17,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
   * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
+  * [name](#name) - Specify cluster name
   * [network](#network) - Specify networking options
   * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
   * [telemetry](#telemetry) - Telemetry options
@@ -27,6 +28,7 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
 The complete `cluster.yml` file may look something like this:
 
 ```yaml
+name: prod-pharos-cluster
 hosts:
   - address: 1.1.1.1
     private_interface: eth1
@@ -352,6 +354,10 @@ The supported configuration options:
     - `address` - IP address or hostname
     - `user` - Username for ssh connection
     - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
+
+### `name`
+
+Specify the name of the cluster. If not specified, a generated name will be used.
 
 ### `network`
 
