@@ -40,7 +40,7 @@
 
 ## Features
 
-- **[Kubernetes Kernel](https://github.com/kubernetes/kubernetes)**: v1.13.3
+- **[Kubernetes Kernel](https://github.com/kubernetes/kubernetes)**: v1.13.4
 - **Cluster Upgrade Strategies:** rolling zero-downtime, instant
 - **Supported Infrastructure:** private datacenter, public cloud, hybrid, edge
 - **Supported Machine Types:** bare metal, VM
@@ -50,7 +50,7 @@
 - **Supported Control Plane Availability Options:** single master, multi-master
 - **Supported Workload Isolation Options:** worker nodes only, all nodes
 - **Supported Container Runtimes:** [docker](https://mobyproject.org/), [cri-o](http://cri-o.io/)
-- **Supported CNI Plugins:** weave, calico, custom 
+- **Supported CNI Plugins:** weave, calico, custom
 - **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md), AWS, GCP, Azure, OpenStack, VMWare, Custom
 - **Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
 - **Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/README.md#firewalld), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option
