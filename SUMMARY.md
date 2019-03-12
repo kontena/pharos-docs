@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Editions](editions.md)
 * [Installation](getting-started.md)
   * [Host Requirements](requirements.md)
   * [Using Terraform](terraform.md)
