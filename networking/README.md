@@ -70,6 +70,7 @@ network:
   #service_cidr: 172.32.0.0/16
   #calico:
   #  ipip_mode: CrossSubnet
+  #  mtu: 1500
   #  environment:
   #    FELIX_PROMETHEUSMETRICSENABLED: true
   #    FELIX_PROMETHEUSMETRICSPORT: 9999
@@ -83,6 +84,10 @@ network:
 * `CrossSubnet` - IP-in-IP encapsulation can also be performed selectively, only for traffic crossing subnet boundaries. This provides better performance in AWS multi-AZ deployments, and in general when deploying on networks where pools of nodes with L2 connectivity are connected via a router.
 
 For more details on IP-in-IP configration and usability see https://docs.projectcalico.org/v3.3/usage/configuration/ip-in-ip.
+
+##### `mtu` (optional)
+
+Depending on the environment Pharos and Calico is being deployed into it may be helpful or even necessary to configure the MTU of the Pod networking managed by Calico. To figure out what MTU size to use you need to consult your networking provider documentation. Calico MTU defaults to conservative `1500` which should work in most environments although might not provide optimal performance. For further info see also [Calico MTU docs](https://docs.projectcalico.org/v3.6/networking/mtu).
 
 ##### `nat_outgoing` (optional)
 
