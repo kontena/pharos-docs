@@ -1,4 +1,4 @@
-# Install Kontena Pharos CLI Toolchain
+# Kontena Pharos CLI Toolchain
 
 Kontena Pharos clusters are deployed, managed and maintained with the `pharos` CLI tool. This tool is updated regularly. Often, the tool is updated when new version of Kubernetes "kernel" is released. The tool is also updated when new Kontena Pharos distro specific features are added.
 

@@ -1,38 +1,30 @@
-## Host System Requirements
+# System Requirements
 
-### Supported Host Operating Systems
+## Minimum System Requirements
 
-- Debian 9
-    - architectures: x86-64, arm64
-    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
-- CentOS 7.4 - 7.5
-    - architectures: x86-64
-    - container runtimes: docker, cri-o
-- Redhat Enterprise Linux 7.4 - 7.6
-    - architectures: x86-64
-    - container runtimes: docker, cri-o
-- Ubuntu 16.04
-    - architectures: x86-64, arm64
-    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
-- Ubuntu 18.04
-    - architectures: x86-64, arm64
-    - container runtimes: docker (x86-64, arm64), cri-o (x86-64)
+The minimum size for a cluster is 1 machine (node). In this case, a single machine will act as control plane (master) and will accept container workloads (worker). This kind of setup might work well for testing purposes, but might be too limited for production.
 
-### Other Requirements
+In the ideal world, master and worker nodes are separated. It is also possible to create multi-master setups for high availability cluster deployments. When Kontena Pharos cluster is installed and running, it will consume some amount of system resources. See below the minimum system requirements: 
 
-- hosts need SSH access
-- a user with passwordless sudo permission (`echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER`)
-- host operating system specific requirements
-    - CentOS 7.4 - 7.5
-        - `extras` repository enabled for docker package
-    - Redhat Enterprise Linux 7.4 - 7.6
-        - `rhel-7-server-extras-rpms` repository enabled for docker package
-    - Ubuntu 16.04
-        - `universe` (xenial-updates) apt repository enabled for docker.io package
-    - Ubuntu 18.04
-        - `universe` apt repository enabled for docker.io package
+* **Master Nodes**: 2GB of memory, 40GB disk
+* **Worker Nodes**: 2GB of memory, 40GB disk
 
-### Required Open Ports
+**Note!** The system requirements listed in here are just bare minimum for getting the Kontena Pharos cluster up and running. In reality, the amount of memory and disk required is based on the use case and actual workloads.
+
+## Supported Machines & Operating Systems
+
+Kontena Pharos cluster may be run on any machine (bare metal or virtual) that is capable of running one of the following operating systems on any of the supported architectures: 
+
+| Operating System                  | Architectures
+|:----------------------------------|:------------------------------------------------ 
+| CentOS 7.4 - 7.5                  | [x86-64](https://en.wikipedia.org/wiki/X86-64)
+| Debian 9                          | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
+| Redhat Enterprise Linux 7.4 - 7.6 | [x86-64](https://en.wikipedia.org/wiki/X86-64) 
+| Ubuntu 16.04 & 18.04              | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
+
+**Note!** If you are using ARM64 architecture, cri-o container runtime is not (yet) supported. In this case, configure your cluster machines to use docker container runtime instead.
+
+## Required Open Ports
 
 The following ports are used by the `pharos` management tool, as well as between nodes in the same cluster. These ports are all authenticated, and can safely be left open for public access if desired.
 
@@ -52,7 +44,7 @@ If using the `ingress-nginx` addon, then TCP ports 80/443 on the worker nodes (o
 
 - `*` - public access is blocked if [firewalld](networking/README.md#firewalld) is enabled (with default rules)
 
-### Monitoring Ports
+## Monitoring Ports
 
 The following ports serve unauthenticated monitoring/debugging information, and are either disabled, limited to localhost-only or only expose relatively harmless information.
 
@@ -72,7 +64,7 @@ The following ports serve unauthenticated monitoring/debugging information, and 
 
 These ports should be restricted from external access to prevent information leaks.
 
-### Restricted Ports
+## Restricted Ports
 
 The following restricted services are only accessible via localhost the nodes, and must not be exposed to any untrusted access.
 

@@ -1,10 +1,10 @@
 # Summary
 
 * [Introduction](README.md)
-* [Editions](editions.md)
-* [Installation](getting-started.md)
-  * [Host Requirements](requirements.md)
+* [Getting Started](getting-started.md)
+  * [System Requirements](requirements.md)
   * [Using Terraform](terraform.md)
+  * [Compare Editions](editions.md)
 * [Managing](deploy.md)
 * [Upgrades](upgrade.md)
 * [Configuration Reference](configuration/README.md)
@@ -25,8 +25,10 @@
   * [Kontena Storage](addons/kontena-storage.md)
   * [OpenEBS](addons/openebs.md)
   * [Creating an Addon](addons/external.md)
+* [Troubleshooting](troubleshooting.md)
 
 ----
+
 * [CLI Toolchain](install-toolchain.md)
 * [CLI Tools Reference](tools/README.md)
   * [chpharos](tools/chpharos.md)

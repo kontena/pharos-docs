@@ -1,10 +1,9 @@
 ## Kontena Pharos Editions
 
-Kontena Pharos is made available with open core licensing model. The core contains all essential features and is 100% open source under Apache 2 license. You can use it for free, for any purpose.
+Kontena Pharos is made available with open core licensing model:
 
-For businesses, we offer [commercial version](https://kontena.io/pharos/#pricing) with more functionality under [Kontena License](https://github.com/kontena/pharos-cluster/blob/master/licenses/KONTENA.md). Additionally, we offer consulting, support and managed services to take full advantage of Kubernetes at any scale, on any infrastructure!
-
-See the comparison of Kontena Pharos **Kontena Pharos OSS** and **Kontena Pharos PRO** versions in the table below: 
+* **Kontena Pharos OSS** is the core version and contains all essential features for taking full advantage of Kubernetes at any scale, on any infrastructure. It is 100% open source under Apache 2 license. You can use it for free, for any purpose.
+* **Kontena Pharos PRO** is based on Kontena Pharos OSS, but has more features and advanced functionality. It is [commercial](https://kontena.io/pharos/#pricing), but you can evaluate it for free, as long you need!
 
 |                                           | OSS | PRO |
 | ----------------------------------------- |:---:|:---:|
