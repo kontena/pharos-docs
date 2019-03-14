@@ -25,27 +25,27 @@ Pharos.addon 'hello-world' do
   license 'Apache License 2.0'
 
   # config schema is optional, it provides validation rules for user configurable options
-  config_schema {
+  config_schema do
     required(:replicas).filled(:int?)
     optional(:virtualhost).filled(:str?)
     optional(:tls_secret).filled(:str?)
-  }
+  end
 
   # Install is optional, it can be used to customize the installation process if needed
   #
-  # install {
+  # install do
   #   logger.info "this happens before resources are applied to Kubernetes API"
   #   apply_resources
   #   logger.info "this happens after resources are applied to Kubernetes API"
-  # }
+  # end
 
   # Uninstall is optional, it can be used to customize the uninstall process if needed
   #
-  # uninstall {
+  # uninstall do
   #   logger.info "this happens before resources are deleted from Kubernetes API"
   #   delete_resources
   #   logger.info "this happens after resources are deleted from Kubernetes API"
-  # }
+  # end
 end
 ```
 
