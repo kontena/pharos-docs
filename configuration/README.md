@@ -4,22 +4,23 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
 
 **Learn more:**
 
-* [Configuration File Reference](#configuration-file-reference)
+* [Configuration File Reference](#configurationfilereference)
   * [addons](#addons) - Specify add-ons and their configuration options
-  * [addon_paths](#addon_paths) - Specify path for custom add-ons
+  * [addon_paths](#addonpaths) - Specify path for custom add-ons
   * [admission_plugins](#admissionplugins) - Enable / disable admission plugins
   * [api](#api) - Specify Kubernetes API endpoint
   * [audit](#audit) - Specify audit webhook for external audit events collection
   * [authentication](#authentication) - Specify webhook token authentication
   * [cloud](#cloud) - Specify cloud provider
-  * [container_runtime](#container_runtime) - Specify container runtime settings
-  * [control_plane](#control_plane) - Specify control plane settings
+  * [container_runtime](#containerruntime) - Specify container runtime settings
+  * [control_plane](#controlplane) - Specify control plane settings
   * [etcd](#etcd) - Specify external etcd.
   * [hosts](#hosts) - Specify cluster machines
-  * [kube_proxy](#kube_proxy) - Specify Kubernetes network proxy
+  * [kubelet](#kubelet) - Specify kubelet options
+  * [kube_proxy](#kubeproxy) - Specify Kubernetes network proxy
   * [name](#name) - Specify cluster name
   * [network](#network) - Specify networking options
-  * [pod_security_policy](#pod_security_policy) - Specify pod security policy settings
+  * [pod_security_policy](#podsecuritypolicy) - Specify pod security policy settings
   * [telemetry](#telemetry) - Telemetry options
 * [Examples](#examples)
 
@@ -289,11 +290,15 @@ Configure control plane settings.
 ```yaml
 control_plane:
   use_proxy: true
+  feature_gates:
+    CSIDriverRegistry: true
+    CSINodeInfo: true
 ```
 
 The supported configuration options:
 
 - `use_proxy` - set to true to configure the control plane to use proxy settings from host environment
+- `feature_gates` - specify [feature gates](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) used in Kubernetes control plane components
 
 ### `etcd`
 
@@ -381,11 +386,15 @@ Specify [kubelet](https://kubernetes.io/docs/reference/glossary/?fundamental=tru
 ```yaml
 kubelet:
   read_only_port: true
+  feature_gates:
+    CSIDriverRegistry: true
+    CSINodeInfo: true
 ```
 
 The supported configuration options:
 
 * `read_only_port` - when set to `true` will open read-only port `10255` for the Kubelet to serve on with no authentication/authorization. Defaults to `false`, i.e. port 10255 **NOT** open.
+* `feature_gates` - specify [feature gates](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) used in kubelet configuration.
 
 **Note**: If you enable the Kubelet read-only port you may allow un-authorized access to sensitive data. Make sure you use other means, such as network level firewalls for example, to prevent un-wanted access.
 
