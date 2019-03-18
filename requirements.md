@@ -4,7 +4,7 @@
 
 The minimum size for a cluster is 1 machine (node). In this case, a single machine will act as control plane (master) and will accept container workloads (worker). This kind of setup might work well for testing purposes, but might be too limited for production.
 
-In the ideal world, master and worker nodes are separated. It is also possible to create multi-master setups for high availability cluster deployments. When Kontena Pharos cluster is installed and running, it will consume some amount of system resources. See below the minimum system requirements: 
+In the ideal world, master and worker nodes are separated. It is also possible to create multi-master setups for high availability cluster deployments. When Kontena Pharos cluster is installed and running, it will consume some amount of system resources. See below the minimum system requirements:
 
 * **Master Nodes**: 2GB of memory, 40GB disk
 * **Worker Nodes**: 2GB of memory, 40GB disk
@@ -13,16 +13,14 @@ In the ideal world, master and worker nodes are separated. It is also possible t
 
 ## Supported Machines & Operating Systems
 
-Kontena Pharos cluster may be run on any machine (bare metal or virtual) that is capable of running one of the following operating systems on any of the supported architectures: 
+Kontena Pharos cluster may be run on any machine (bare metal or virtual) that is capable of running one of the following operating systems on any of the supported architectures:
 
 | Operating System                  | Architectures
-|:----------------------------------|:------------------------------------------------ 
+|:----------------------------------|:------------------------------------------------
 | CentOS 7.4 - 7.5                  | [x86-64](https://en.wikipedia.org/wiki/X86-64)
 | Debian 9                          | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
-| Redhat Enterprise Linux 7.4 - 7.6 | [x86-64](https://en.wikipedia.org/wiki/X86-64) 
+| Redhat Enterprise Linux 7.4 - 7.6 | [x86-64](https://en.wikipedia.org/wiki/X86-64)
 | Ubuntu 16.04 & 18.04              | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
-
-**Note!** If you are using ARM64 architecture, cri-o container runtime is not (yet) supported. In this case, configure your cluster machines to use docker container runtime instead.
 
 ## Required Open Ports
 
