@@ -6,6 +6,32 @@
 - [Firewalld](firewalld.md)
 - [Multi-Cluster](multi-cluster.md)
 
+## Common networking options
+
+```yaml
+network:
+  provider: weave
+  node_local_dns_cache: true
+  service_cidr: 172.31.0.0/16
+  pod_network_cidr: 172.32.0.0/16
+  firewalld:
+    enabled: true
+  weave:
+    trusted_subnets:
+      - 10.10.0.0/16
+```
+
+#### `node_local_dns_cache` (optional, default `true`)
+
+Whether or not to run a node local DNS cache as a `DaemonSet`.
+
+#### `service_cidr` (optional, default: `10.96.0.0/12`)
+
+IP Block to use for [Service](https://kubernetes.io/docs/concepts/services-networking/service/) VIPs.
+
+#### `pod_network_cidr` (optional, default: `10.32.0.0/12`)
+
+IP Block to use for [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/) networking.
 
 ## Supported Network Providers
 
