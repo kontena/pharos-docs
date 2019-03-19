@@ -350,6 +350,7 @@ The supported configuration options:
 - `private_interface` - Discover `private_address` from the configured network interface (optional)
 - `user` - Username with sudo permission to use for logging in
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
+- `ssh_port` - Host's ssh port (default: `22`)
 - `ssh_proxy_command` - Specifies the command to use to connect to the host. In the command string, `%h` will be substituted by the host name to connect and `%p` by the port. See [example](#bastion_jump-host-configuration)
 - `container_runtime` - One of `docker`, `cri-o` (default `docker`)
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
@@ -359,6 +360,7 @@ The supported configuration options:
     - `address` - IP address or hostname
     - `user` - Username for ssh connection
     - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
+    - `ssh_port` - Host's ssh port (default: `22`)
 
 ### `name`
 
