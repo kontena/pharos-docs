@@ -17,7 +17,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 ## Features
 
 - **[Kubernetes Kernel](https://github.com/kubernetes/kubernetes)**: v1.13.4
-- **Supported Cluster Upgrade Strategies:** rolling (zero-downtime), instant
+- **Supported Cluster Upgrade Strategies:** rolling (zero-downtime)*, instant
 - **Supported Infrastructure:** private datacenter, public cloud, hybrid, edge
 - **Supported Machine Types:** bare metal, VM
 - **Supported Machine Architectures:** Intel (x86-64), ARM (ARM64)
@@ -29,12 +29,14 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Supported CNI Plugins:** weave, calico, custom
 - **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md), AWS, GCP, Azure, OpenStack, VMWare, Custom
 - **Built-In Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
-- **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/README.md#firewalld), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option
-- **Built-In Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
+- **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/firewalld.md), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option*
+- **Built-In Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)*
 - **Built-In Applications Management Features:** [Helm](addons/helm.md)
-- **Built-In Management UI:** [Kontena Lens](addons/kontena-lens.md)
-- **Built-In Backup & Disaster Recovery Features:** [Kontena Backups](addons/kontena-backup.md)
+- **Built-In Management UI:** [Kontena Lens](addons/kontena-lens.md)*
+- **Built-In Backup & Disaster Recovery Features:** [Kontena Backups](addons/kontena-backup.md)*
 - **Source Code:** available on [Github](https://github.com/kontena/pharos-cluster/)
+
+(*) [Kontena Pharos PRO edition](editions.md) feature. 
 
 ## Documentation License
 
