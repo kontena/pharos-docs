@@ -25,6 +25,7 @@
   * [Kontena Storage](addons/kontena-storage.md)
   * [OpenEBS](addons/openebs.md)
   * [Creating an Addon](addons/external.md)
+* [License Management](license-management.md)
 * [Troubleshooting](troubleshooting.md)
 
 ----
