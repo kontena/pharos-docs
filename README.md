@@ -16,25 +16,25 @@ Kontena Pharos is made available with open core licensing model. The core contai
 
 ## Features
 
-- **[Kubernetes Kernel](https://github.com/kubernetes/kubernetes)**: v1.13.4
-- **Supported Cluster Upgrade Strategies:** rolling (zero-downtime)*, instant
-- **Supported Infrastructure:** private datacenter, public cloud, hybrid, edge
-- **Supported Machine Types:** bare metal, VM
+- **Kubernetes Kernel**: [v1.13.4](https://github.com/kubernetes/kubernetes)
+- **Supported Cluster Upgrade Strategies:** Rolling (zero-downtime)*, Instant
+- **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
+- **Supported Machine Types:** Bare metal, VM
 - **Supported Machine Architectures:** Intel (x86-64), ARM (ARM64)
 - **Supported Host Operating Systems:** [CentOS, Debian, Redhat, Ubuntu](requirements.md)
-- **Supported Cluster Data Store Options:** in-cluster elastic etcd with TLS, external [etcd](https://coreos.com/etcd/) with TLS
-- **Supported Control Plane Availability Options:** single master, multi-master
-- **Supported Workload Isolation Options:** worker nodes only, all nodes
-- **Supported Container Runtimes:** [docker](https://mobyproject.org/), [cri-o](http://cri-o.io/)
-- **Supported CNI Plugins:** weave, calico, custom
-- **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md)*, AWS, GCP, Azure, OpenStack, VMWare, Custom
+- **Supported Cluster Data Store Options:** In-cluster elastic etcd with TLS, External etcd with TLS
+- **Supported Control Plane Availability Options:** Single master, Multi-master
+- **Supported Workload Isolation Options:** Worker nodes only, All nodes
+- **Supported Container Runtimes:** [Docker](https://mobyproject.org/), [Cri-o](http://cri-o.io/)
+- **Supported CNI Plugins:** Weave, Calico, [Custom](networking/custom_networking.md)
+- **Supported Storage Providers:** [Kontena Storage (rook/ceph)](addons/kontena-storage.md)*, AWS, GCP, Azure, OpenStack, VMWare, Custom
 - **Built-In Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
-- **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/firewalld.md), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option*
-- **Built-In Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)*
-- **Built-In Applications Management Features:** [Helm](addons/helm.md)
+- **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [Pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [Cluster firewall (firewalld)](networking/firewalld.md), [Host OS security updates](addons/host-upgrades.md), [Cert-manager](addons/cert-manager.md), Air gapped setup supported
+- **Built-In Networking Features:** [Ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer (metallb)](addons/kontena-network-lb.md)*
+- **Built-In Applications Management Features:** [Helm](https://helm.sh/)
 - **Built-In Management UI:** [Kontena Lens](addons/kontena-lens.md)*
-- **Built-In Backup & Disaster Recovery Features:** [Kontena Backups](addons/kontena-backup.md)*
-- **Source Code:** available on [Github](https://github.com/kontena/pharos-cluster/)
+- **Built-In Backup & Disaster Recovery Features:** [Kontena Backup (ark)](addons/kontena-backup.md)*
+- **Source Code:** Available on [Github](https://github.com/kontena/pharos-cluster/)
 
 (*) [Kontena Pharos PRO edition](editions.md) feature. 
 
