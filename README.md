@@ -27,7 +27,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Supported Workload Isolation Options:** worker nodes only, all nodes
 - **Supported Container Runtimes:** [docker](https://mobyproject.org/), [cri-o](http://cri-o.io/)
 - **Supported CNI Plugins:** weave, calico, custom
-- **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md), AWS, GCP, Azure, OpenStack, VMWare, Custom
+- **Supported Storage Providers:** [Kontena Storage](addons/kontena-storage.md)*, AWS, GCP, Azure, OpenStack, VMWare, Custom
 - **Built-In Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
 - **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [cluster firewall](networking/firewalld.md), [host OS security updates](addons/host-upgrades.md), [cert-manager](addons/cert-manager.md), air gapped setup option*
 - **Built-In Networking Features:** [ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer](addons/kontena-network-lb.md)*
