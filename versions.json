@@ -4,11 +4,15 @@
             "options": [
                 {
                     "value": "https://pharos.sh/docs/",
-                    "text": "Latest (2.2.x)"
+                    "text": "Latest (2.3.x)"
                 },
                 {
                     "value": "https://pharos.sh/docs/master/",
                     "text": "HEAD"
+                },
+                {
+                    "value": "https://pharos.sh/docs/2-3/",
+                    "text": "Version 2.3.x"
                 },
                 {
                     "value": "https://pharos.sh/docs/2-2/",
@@ -25,18 +29,6 @@
                 {
                     "value": "https://pharos.sh/docs/1-3/",
                     "text": "Version 1.3.x"
-                },
-                {
-                    "value": "https://pharos.sh/docs/1-2/",
-                    "text": "Version 1.2.x"
-                },
-                {
-                    "value": "https://pharos.sh/docs/1-1/",
-                    "text": "Version 1.1.x"
-                },
-                {
-                    "value": "https://pharos.sh/docs/1-0/",
-                    "text": "Version 1.0.x"
                 }
             ]
         }
