@@ -20,7 +20,7 @@ pipeline:
     tags:
       - ${DRONE_BRANCH}
     when:
-      branch: ['master']
+      branch: ['2-3']
       event: ['push']
   deploy:
     image: quay.io/kontena/mortar:0.3
@@ -29,13 +29,5 @@ pipeline:
     commands:
       - mortar fire -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" _deploy/template/ "pharos-docs-${DRONE_BRANCH}"
     when:
-      branch: ['master']
-      event: ['push']
-  default_ingress:
-    image: quay.io/kontena/mortar:0.3
-    secrets: [ kube_token, kube_ca, kube_server ]
-    commands:
-      - mortar fire -d _deploy/ingress.yml "pharos-docs-default-ingress"
-    when:
-      branch: ['master']
+      branch: ['2-3']
       event: ['push']
