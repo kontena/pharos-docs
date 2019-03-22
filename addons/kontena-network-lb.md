@@ -16,35 +16,33 @@ Kontena Network Loadbalancer is built on top of [MetalLB](https://metallb.univer
 ## Configuration
 
 ```yaml
-kontena-network-lb:
+addons:
+  kontena-network-lb:
     enabled: true
-    node_selector:
-      node-role.kubernetes.io/worker: ""
-    tolerations:
-      - operator: "Exists"
-        effect: "NoSchedule"
     address_pools:
       - name: default
         protocol: bgp
         addresses:
           - 147.75.84.224/27
-    peers:
-      - peer_address: "10.80.119.142"
-        peer_asn: 65530
-        my_asn: 65000
-        node_selectors:
-          - match-expressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values: ["metallb-cluster-worker-0"]
-      - peer_address: "10.80.119.140"
-        peer_asn: 65530
-        my_asn: 65000
-        node_selectors:
-          - match-expressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values: ["metallb-cluster-worker-1"]
+    # node_selector: {}
+    # tolerations: []
+    # peers:
+    #   - peer_address: "10.80.119.142"
+    #     peer_asn: 65530
+    #     my_asn: 65000
+    #     node_selectors:
+    #       - match-expressions:
+    #         - key: kubernetes.io/hostname
+    #           operator: In
+    #           values: ["metallb-cluster-worker-0"]
+    #  - peer_address: "10.80.119.140"
+    #    peer_asn: 65530
+    #    my_asn: 65000
+    #    node_selectors:
+    #      - match-expressions:
+    #        - key: kubernetes.io/hostname
+    #          operator: In
+    #          values: ["metallb-cluster-worker-1"]
 ```
 
 In this example there's a two worker cluster where each of the workers are connected to a different router, hence there's two BGP peers defined targeting each node separately.

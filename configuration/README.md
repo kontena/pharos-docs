@@ -26,10 +26,9 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
 
 ## Configuration File Reference
 
-The complete `cluster.yml` file may look something like this:
+The complete `cluster.yml` reference:
 
 ```yaml
-name: prod-pharos-cluster
 hosts:
   - address: 1.1.1.1
     private_interface: eth1
@@ -39,101 +38,105 @@ hosts:
     container_runtime: cri-o
   - address: 2.2.2.2
     private_interface: eth1
+    user: root
+    ssh_key_path: ~/.ssh/my_key
     role: worker
-    container_runtime: cri-o
-    labels:
-      disk: hdd
-  - address: 3.3.3.3
-    private_address: 10.10.1.3
-    role: worker
-    container_runtime: cri-o
-    labels:
-      disk: ssd
-network:
-  dns_replicas: 3
-  service_cidr: 10.96.0.0/12
-  pod_network_cidr: 10.32.0.0/12
-  provider: weave
-  trusted_subnets:
-    - 10.10.0.0/16
-kubelet:
-  read_only_port: true
-authentication:
-  token_webhook:
-    config:
-      cluster:
-        name: token-reviewer
-        server: http://localhost:9292/token
-        certificate_authority: /path/to/ca.pem
-      user:
-        name: kube-apiserver
-        client_key: /path/to/key.pem
-        client_certificate: /path/to/cert.pem
-    cache_ttl: 5m
-audit:
-  file:
-    path: /var/log/kube_audit/audit.json
-    max_size: 100
-    max_age: 30
-    max_backups: 20
-  webhook:
-    server: "http://webhook.site/c700f7c0-cf9e-4a2b-b110-8777809b520b"
-kube_proxy:
-  mode: ipvs
-admission_plugins:
-  - name: AlwaysPullImages
-    enabled: true
-  - name: LimitRanger
-    enabled: false
-addons:
-  ingress-nginx:
-    enabled: true
-    node_selector:
-      # only provision to nodes having the label "zone: dmz"
-      zone: dmz
-    configmap:
-      # see all supported options: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/configmap.md
-      load-balance: least_conn
-  cert-manager:
-    enabled: true
-    issuer:
-      name: letsencrypt-staging
-      server: https://acme-staging-v02.api.letsencrypt.org/directory
-      email: me@domain.com
-  host-upgrades:
-    enabled: true
-    interval: 7d
-  kontena-storage:
-    enabled: true
-    data_dir: /var/lib/kontena-storage
-    storage:
-      use_all_nodes: true
-    pool:
-      replicated:
-        size: 3
-    dashboard:
-      enabled: true
-    filesystem:
-      enabled: true
-      pool:
-        replicated:
-          size: 3
-  kontena-backup:
-    enabled: true
-    cloud_credentials: /path/to/aws_credentials
-    aws:
-      bucket: pharos-backups
-      region: eu-central-1
-  kontena-lens:
-    enabled: true
-    name: 'prod-pharos-cluster'
-    host: 'https://your-cluster-dns'
-    tls:
-      email: 'le@example.org'
-    user_management:
-      enabled: true
-    persistence:
-      enabled: true
+#   - address: 3.3.3.3
+#     private_address: 10.10.1.3
+#     private_interface: eth1
+#     role: master
+#     user: root
+#     ssh_key_path: ~/.ssh/id_rsa
+#     ssh_port: 22
+#     ssh_proxy_command: ""
+#     container_runtime: docker
+#     labels: {}
+#     taints: []
+#     environment: {}
+#     bastion:
+#       address: 3.3.3.3
+#       user: root
+#       ssh_key_path: ~/.ssh/id_rsa
+#       ssh_port: 22
+# name: prod-pharos-cluster
+# network:
+#   provider: weave
+#   dns_replicas: 3
+#   node_local_dns_cache: true
+#   service_cidr: 10.96.0.0/12
+#   pod_network_cidr: 10.32.0.0/12
+#   firewalld:
+#     enabled: false
+#     open_ports: []
+#     trusted_subnets: []
+#   weave:
+#     trusted_subnets: []
+#     known_peers: []
+#     password: "./path/to/password_file"
+#     ipalloc_default_subnet: 10.33.0.0/16
+#     no_masq_local: false
+#   calico:
+#     ipip_mode: Always
+#     nat_outgoing: true
+#     environment: {}
+#     mtu: 1500
+#   custom:
+#     manifest_path: "./path/to/manifests"
+#     options: {}
+# etcd:
+#   endpoints: []
+#   certificate: "./path/to/cert"
+#   ca_certificate: "./path/to/ca"
+#   key: "./path/to/key"
+# authentication:
+#   token_webhook:
+#     config:
+#       cluster:
+#         name: token-reviewer
+#         server: http://localhost:9292/token
+#         certificate_authority: /path/to/ca.pem
+#       user:
+#         name: kube-apiserver
+#         client_key: /path/to/key.pem
+#         client_certificate: /path/to/cert.pem
+#     cache_ttl: 5m
+#   oidc:
+#     issuer_url: ""
+#     client_id: ""
+#     username_claim: ""
+#     username_prefix: ""
+#     groups_claim: ""
+#     groups_prefix: ""
+#     ca_file: ""
+# cloud:
+#   provider: ""
+#   config: ""
+# audit:
+#   file:
+#     path: /var/log/kube_audit/audit.json
+#     max_size: 100
+#     max_age: 30
+#     max_backups: 20
+#   webhook:
+#     server: "http://webhook.site/c700f7c0-cf9e-4a2b-b110-8777809b520b"
+# kubelet:
+#   read_only_port: false
+#   feature_gates: {}
+# kube_proxy:
+#   mode: iptables
+# control_plane:
+#   use_proxy: false
+#   feature_gates: {}
+# telemetry:
+#   enabled: true
+# image_repository: "registry.pharos.sh/kontenapharos"
+# pod_security_policy:
+#   default_policy: "00-pharos-privileged"
+# admission_plugins: []
+# container_runtime:
+#   insecure_registries: []
+# addon_paths: []
+# addons: {}
 ```
 
 In this section, we will list all supported configuration options for Kontena Pharos cluster configuration files.
@@ -167,14 +170,14 @@ By default Pharos comes with these plugins enabled:
 
 
 To enable a admission plugin, use:
-```
+```yaml
 admission_plugins:
   - name: AlwaysPullImages
     enabled: true
 ```
 
 To disable a admission plugin use:
-```
+```yaml
 admission_plugins:
   - name: AlwaysPullImages
     enabled: false

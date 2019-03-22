@@ -9,14 +9,15 @@
 ## Configuration
 
 ```yaml
-cert-manager:
+addons:
+  cert-manager:
   enabled: true
   issuer:
     name: letsencrypt-staging
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: me@domain.com
-  ca_issuer:
-    enabled: true
+  # ca_issuer:
+  #   enabled: false
 ```
 
 #### Options

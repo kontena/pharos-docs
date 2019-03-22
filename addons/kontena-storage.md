@@ -16,26 +16,27 @@ Kontena Storage is a unified, distributed storage system designed for excellent 
 ## Configuration
 
 ```yaml
-kontena-storage:
-  enabled: true
-  data_dir: /var/lib/kontena-storage
-  storage:
-    use_all_nodes: true
-    # It's highly recommended to set directories and/or device_filter,
-    # otherwise expanding storage does not work properly (see https://github.com/rook/rook/issues/1957)
-    directories:
-    - path: /mnt/data1
-    device_filter: ^sd[a-d]
-  pool: # optional
-    replicated:
-      size: 3
-  dashboard: # optional
+addons:
+  kontena-storage:
     enabled: true
-  filesystem: # optional
-    enabled: true
-    pool:
-      replicated:
-        size: 3
+    data_dir: /var/lib/kontena-storage
+    storage:
+      use_all_nodes: true
+      # It's highly recommended to set directories and/or device_filter,
+      # otherwise expanding storage does not work properly (see https://github.com/rook/rook/issues/1957)
+      directories:
+      - path: /mnt/data1
+      # device_filter: ^sd[a-d]
+    # pool:
+    #   replicated:
+    #     size: 3
+    # dashboard:
+    #   enabled: true
+    # filesystem:
+    #   enabled: true
+    #   pool:
+    #     replicated:
+    #       size: 3
 ```
 
 ## Storage Classes

@@ -13,21 +13,16 @@
 addons:
   ingress-nginx:
     enabled: true
-    node_selector:
-      disk: ssd
-    configmap:
-      load-balance: least_conn
-    default_backend:
-      image: my-custom-image:latest
-    tolerations:
-      tolerations:
-        - key: "key"
-          operator: "Equal"
-          value: "value"
-          effect: "NoSchedule"
-    extra_args:
-      - --enable-dynamic-certificates
-      - --enable-ssl-chain-completion=false
+    # node_selector: {}
+    # configmap: {}
+    # default_backend:
+    #   image: my-custom-image:latest
+    # tolerations:
+    # - key: "key"
+    #   operator: "Equal"
+    #   value: "value"
+    #   effect: "NoSchedule"
+    # extra_args: []
 
 ```
 #### Options
