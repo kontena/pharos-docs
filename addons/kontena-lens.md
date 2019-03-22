@@ -1,4 +1,4 @@
-# Add-on: Kontena Lens
+# Addon: Kontena Lens
 
 Kontena Lens is a dashboard for Kontena Pharos.
 
@@ -8,6 +8,7 @@ Kontena Lens is a dashboard for Kontena Pharos.
 - available in: `Pro`, `EE`
 
 ![Lens Dashboard](/images/lens-dashboard.png)
+
 ## Features
 
 - `Dashboard` - Overview of resources and status of your Kubernetes cluster
@@ -16,38 +17,33 @@ Kontena Lens is a dashboard for Kontena Pharos.
 - `Built-in user management` - Authentication + users, groups and RBAC rules management.
 
 ## Requirements
-- Ingress Controller
-- Cert Manager
+- Ingress Controller, for example [Ingress-NGINX addon](./ingress-nginx.md)
+- Cert Manager (if `ingress.tls` is enabled), for example [Cert-manager addon](./cert-manager.md)
 
-## Minimum Configuration
+## Configuration
+
 ```yaml
+addons:
   kontena-lens:
     enabled: true
-```
-
-## Full Configuration Example
-
-```yaml
-kontena-lens:
-  enabled: true
-  name: 'prod-pharos-cluster'
-  ingress:
-    host: 'lens.my-domain.com'
-    tls:
-      enabled: true
-      email: 'le@example.org'
-  user_management:
-    enabled: true
-  persistence:
-    enabled: true
-  charts:
-    enabled: true # optional
-    repositories:
-      - name: stable
-        url: https://kubernetes-charts.storage.googleapis.com
-  shell:
-    image: 'my-org/kontena-lens-terminal:latest'
-    skip_refresh: false
+    # name: 'prod-pharos-cluster'
+    # ingress:
+    #   host: 'lens.my-domain.com'
+    #   tls:
+    #     enabled: true
+    #     email: 'le@example.org'
+    # user_management:
+    #   enabled: true
+    # persistence:
+    #   enabled: true
+    # charts:
+    #   enabled: true # optional
+    #   repositories:
+    #     - name: stable
+    #       url: https://kubernetes-charts.storage.googleapis.com
+    # shell:
+    #   image: 'my-org/kontena-lens-terminal:latest'
+    #   skip_refresh: false
 ```
 
 ### Options

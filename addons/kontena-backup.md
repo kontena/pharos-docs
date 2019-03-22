@@ -1,4 +1,4 @@
-# Add-on: Kontena Backup
+# Addon: Kontena Backup
 
 Kontena Backup provides unified and simple tools to backup cluster resources and persistent volumes. Kontena Backup is built on top of [Ark](https://github.com/heptio/ark).
 
@@ -16,12 +16,17 @@ Kontena Backup provides unified and simple tools to backup cluster resources and
 ## Configuration
 
 ```yaml
+addons:
   kontena-backup:
     enabled: true
     cloud_credentials: /path/to/aws_credentials
     aws:
       bucket: pharos-backups
       region: eu-central-1
+      # s3_force_path_style: false
+      # s3_url: ""
+    # gcp:
+    #   bucket: ""
 ```
 
 ### Options

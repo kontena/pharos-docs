@@ -10,11 +10,13 @@ Automatic host operating system security updates provided by [Pharos Host Upgrad
 ## Configuration
 
 ```yaml
-host-upgrades:
-  enabled: true
-  schedule: "30 6 * * *"
-  schedule_window: 1h
-  reboot: true
+addons:
+  host-upgrades:
+    enabled: true
+    schedule: "30 6 * * *"
+    # schedule_window: 1h
+    # reboot: false
+    # drain: true
 ```
 
 If `reboot` is enabled, then the host nodes also reboot with the lock held, ensuring that the host upgrades do not resume until the host node has succesfully rebooted and restarted the kube pods. When rebooting, `drain` is also enabled by default, evicing kube workload pods from the kube node before rebooting, and uncordoning the kube node once the reboot is complete.
