@@ -10,8 +10,8 @@ Custom networking can be enabled by setting the network provider to `custom` and
 ```yaml
 network:
   provider: custom
-  pod_network_cidr: 172.31.0.0/16
-  service_cidr: 172.32.0.0/16
+  pod_network_cidr: 172.30.0.0/16
+  service_cidr: 172.31.0.0/16
   custom:
     manifest_path: ./network-manifests/
     options: {}
@@ -35,8 +35,8 @@ In the cluster configuration, you set the provider into `custom` and point Pharo
 ```yaml
 network:
   provider: custom
-  pod_network_cidr: 172.31.0.0/16
-  service_cidr: 172.32.0.0/16
+  pod_network_cidr: 172.30.0.0/16
+  service_cidr: 172.31.0.0/16
   custom:
     manifest_path: ./flannel/
 ```

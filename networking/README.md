@@ -12,8 +12,8 @@
 network:
   provider: weave
   node_local_dns_cache: true
-  service_cidr: 172.31.0.0/16
-  pod_network_cidr: 172.32.0.0/16
+  service_cidr: 172.30.0.0/16
+  pod_network_cidr: 172.31.0.0/16
   firewalld:
     enabled: true
   weave:
@@ -53,8 +53,8 @@ If the cluster is deployed on multiple regions/data centers*, Weave networking i
 ```yaml
 network:
   provider: weave
-  #service_cidr: 172.31.0.0/16
-  #pod_network_cidr: 172.32.0.0/16
+  #service_cidr: 172.30.0.0/16
+  #pod_network_cidr: 172.31.0.0/16
   #weave:
   #  trusted_subnets:
   #    - 10.10.0.0/16
@@ -92,8 +92,8 @@ A subnet that is used for pod ip-address allocation. The specified subnet needs 
 ```yaml
 network:
   provider: calico
-  #pod_network_cidr: 172.31.0.0/16
-  #service_cidr: 172.32.0.0/16
+  #pod_network_cidr: 172.30.0.0/16
+  #service_cidr: 172.31.0.0/16
   #calico:
   #  ipip_mode: CrossSubnet
   #  mtu: 1500

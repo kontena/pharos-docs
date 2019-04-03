@@ -377,8 +377,8 @@ Specify [networking](../networking/README.md) options. For example:
 network:
   provider: weave
   node_local_dns_cache: true
-  service_cidr: 172.31.0.0/16
-  pod_network_cidr: 172.32.0.0/16
+  service_cidr: 172.30.0.0/16
+  pod_network_cidr: 172.31.0.0/16
   firewalld:
     enabled: true
   weave:
