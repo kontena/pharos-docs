@@ -23,8 +23,8 @@ steps:
       password:
         from_secret: docker_password
       repo: kontena/pharos-docs
-    tags:
-      - ${DRONE_BRANCH}
+      tags:
+        - ${DRONE_BRANCH}
     when:
       branch: ['master']
       event: ['push']
