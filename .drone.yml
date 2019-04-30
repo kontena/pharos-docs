@@ -1,39 +1,57 @@
-pipeline:
-  build_book:
+kind: pipeline
+name: default
+steps:
+  - name: build_book
     image: node:8.11
     environment:
-      - GA_CODE=UA-60024048-1
-      - MIXPANEL_TOKEN=94fbb49ee4dd0cbee68e6a4c057d3ced
+      GA_CODE: UA-60024048-1
+      MIXPANEL_TOKEN: 94fbb49ee4dd0cbee68e6a4c057d3ced
     commands:
       - npm i -g gitbook-cli
       - gitbook install
       - gitbook build
-  test_build:
+  - name: test_build
     image: alpine:3.7
     commands:
-      - cat _book/index.html
-  build_image:
+      - "cat _book/index.html | grep 'simple, solid, certified'"
+  - name: build_image
     image: plugins/docker
-    storage_driver: overlay
-    secrets: [ docker_username, docker_password ]
-    repo: kontena/pharos-docs
+    settings:
+      storage_driver: overlay
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: kontena/pharos-docs
     tags:
       - ${DRONE_BRANCH}
     when:
       branch: ['master']
       event: ['push']
-  deploy:
+  - name: deploy
     image: quay.io/kontena/mortar:0.3
     pull: true
-    secrets: [ kube_token, kube_ca, kube_server ]
+    environment:
+      KUBE_TOKEN:
+        from_secret: kube_token
+      KUBE_CA:
+        from_secret: kube_ca
+      KUBE_SERVER:
+        from_secret: kube_server
     commands:
       - mortar fire -d --var "git_branch=${DRONE_BRANCH}" --var "build_number=${DRONE_BUILD_NUMBER}" _deploy/template/ "pharos-docs-${DRONE_BRANCH}"
     when:
       branch: ['master']
       event: ['push']
-  default_ingress:
+  - name: default_ingress
     image: quay.io/kontena/mortar:0.3
-    secrets: [ kube_token, kube_ca, kube_server ]
+    environment:
+      KUBE_TOKEN:
+        from_secret: kube_token
+      KUBE_CA:
+        from_secret: kube_ca
+      KUBE_SERVER:
+        from_secret: kube_server
     commands:
       - mortar fire -d _deploy/ingress.yml "pharos-docs-default-ingress"
     when:
