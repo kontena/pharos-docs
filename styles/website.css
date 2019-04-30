@@ -26,3 +26,7 @@ code[class*="language-"], pre[class*="language-"] {
     border-left: 10px solid #4686c54f;
     color: inherit;
 }
+
+.markdown-section blockquote p {
+    margin-bottom: 0;
+}

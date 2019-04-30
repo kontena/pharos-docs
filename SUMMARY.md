@@ -34,11 +34,11 @@
 * [CLI Tools Reference](tools/README.md)
   * [chpharos](tools/chpharos.md)
   * [pharos](tools/pharos.md)
-* [Comparisons](comparisons.md)
 
 ----
 
-* [View on Github](https://github.com/kontena/pharos-cluster)
+* [Github](https://github.com/kontena/pharos-cluster)
 * [Issues](https://github.com/kontena/pharos-cluster/issues)
 * [Community Slack](https://slack.kontena.io)
 * [Website](https://pharos.sh)
+* [Kontena Account](https://account.kontena.io)

@@ -16,4 +16,4 @@ To buy Kontena Pharos PRO licenses, please contact [sales@kontena.io](mailto:sal
 
 All Kontena Pharos licenses are visible at [Kontena Account](https://account.kontena.io) service. To assign the license to the cluster, user need first to obtain the license key from Kontena Account. Then user can assign the license with Pharos CLI tool and execute `pharos license assign` command and enter the license key. Alternatively, the license key can be entered on Kontena Lens dashboard.
 
-**Note** User can assign the same license only to one cluster at a time. To transfer the license to other cluster user must unassign the license at Kontena Account before assigning it to a new cluster.
+> **Note:** User can assign the same license only to one cluster at a time. To transfer the license to other cluster user must unassign the license at Kontena Account before assigning it to a new cluster.
