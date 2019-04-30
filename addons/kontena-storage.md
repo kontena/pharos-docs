@@ -145,3 +145,14 @@ $ kubectl -n kontena-storage exec -it $(kubectl -n kontena-storage get pod -l "a
 - `ceph status` - a birds-eye view of cluster status.
 - `ceph osd status` - to check the storage cluster OSD (Object Storage Daemon) status.
 - `ceph df` - to check the storage cluster's data usage and distribution.
+
+
+## Accessing Dashboard
+
+If dashboard is enabled it can be accessed using the following command:
+
+```
+$ kubectl port-forward -n kontena-storage svc/rook-ceph-mgr-dashboard 7000
+```
+
+Then open browser at [localhost:7000](http://localhost:7000)

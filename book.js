@@ -1,12 +1,13 @@
 module.exports = {
   title: "Kontena Pharos",
   plugins: [
-    "edit-link", "prism", "-highlight", "github", "anchorjs", "ga", "scripts", "versions-select",
+    "edit-link", "prism", "-highlight", "github", "anchorjs",
+    "ga", "scripts", "versions-select", "insert-logo",
     "mikxpanel@git+https://github.com/kontena/gitbook-plugin-mikxpanel.git"
   ],
   pluginsConfig: {
     fontsettings: {
-      "theme": "night"
+      "theme": "white"
     },
     "edit-link": {
       base: "https://github.com/kontena/pharos-docs/tree/master",
@@ -31,6 +32,10 @@ module.exports = {
         gitbookConfigURL: "https://raw.githubusercontent.com/kontena/pharos-docs/master/versions.json",
         options: [
         ]
+    },
+    "insert-logo": {
+        "url": "https://kontena.io/images/kontena-logo-solid-horizontal.svg",
+        "style": "background: none;"
     }
   },
   variables: {

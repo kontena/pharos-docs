@@ -22,7 +22,9 @@ Kontena Pharos cluster may be run on any machine (bare metal or virtual) that is
 | Redhat Enterprise Linux 7.4 - 7.6 | [x86-64](https://en.wikipedia.org/wiki/X86-64)
 | Ubuntu 16.04 & 18.04              | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
 
-## Required Open Ports
+## Network
+
+### Required Open Ports
 
 The following ports are used by the `pharos` management tool, as well as between nodes in the same cluster. These ports are all authenticated, and can safely be left open for public access if desired.
 
@@ -42,7 +44,7 @@ If using the `ingress-nginx` addon, then TCP ports 80/443 on the worker nodes (o
 
 - `*` - public access is blocked if [firewalld](networking/README.md#firewalld) is enabled (with default rules)
 
-## Monitoring Ports
+### Monitoring Ports
 
 The following ports serve unauthenticated monitoring/debugging information, and are either disabled, limited to localhost-only or only expose relatively harmless information.
 
@@ -62,7 +64,7 @@ The following ports serve unauthenticated monitoring/debugging information, and 
 
 These ports should be restricted from external access to prevent information leaks.
 
-## Restricted Ports
+### Restricted Ports
 
 The following restricted services are only accessible via localhost the nodes, and must not be exposed to any untrusted access.
 
