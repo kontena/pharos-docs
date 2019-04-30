@@ -12,11 +12,11 @@ Kontena Pharos is always up-to-date and built from the latest upstream Kubernete
 
 ## Open Source, Support Available
 
-Kontena Pharos is made available with open core licensing model. The core contains all essential features and is 100% open source on [Github](https://github.com/kontena/pharos-cluster) under Apache 2 license. You can use it for free, for any purpose. For businesses, we offer [commercial version](https://kontena.io/pharos/#pricing) with more functionality under [Kontena License](https://github.com/kontena/pharos-cluster/blob/master/licenses/KONTENA.md). Compare [Kontena Pharos editions](editions.md). 
+Kontena Pharos is made available with open core licensing model. The core contains all essential features and is 100% open source on [Github](https://github.com/kontena/pharos-cluster) under Apache 2 license. You can use it for free, for any purpose. For businesses, we offer [commercial version](https://kontena.io/pharos/#pricing) with more functionality under [Kontena License](https://github.com/kontena/pharos-cluster/blob/master/licenses/KONTENA.md). Compare [Kontena Pharos editions](editions.md).
 
 ## Features
 
-- **Kubernetes Kernel:** [v1.13.4](https://github.com/kubernetes/kubernetes)
+- **Kubernetes Kernel:** [v1.13.5](https://github.com/kubernetes/kubernetes)
 - **Supported Cluster Upgrade Strategies:** Rolling (zero-downtime)*, Instant
 - **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
 - **Supported Machine Types:** Bare metal, VM
@@ -27,7 +27,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Supported Workload Isolation Options:** Worker nodes only, All nodes
 - **Supported Container Runtimes:** [Docker](https://mobyproject.org/), [Cri-o](http://cri-o.io/)
 - **Supported CNI Plugins:** Weave, Calico, [Custom](networking/custom_networking.md)
-- **Supported Storage Providers:** 
+- **Supported Storage Providers:**
   - **Public Cloud:** AWS, GCP, Azure, Custom
   - **Private Cloud / On-Premises:** [Kontena Storage (rook/ceph)](addons/kontena-storage.md)*, OpenStack, VMWare VSphere, Custom
 - **Built-In Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
@@ -40,7 +40,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Built-In Backup & Disaster Recovery Features:** [Kontena Backup (ark)](addons/kontena-backup.md)*
 - **Source Code:** Available on [Github](https://github.com/kontena/pharos-cluster/)
 
-(*) [Kontena Pharos PRO edition](editions.md) feature. 
+(*) [Kontena Pharos PRO edition](editions.md) feature.
 
 ## Documentation License
 
