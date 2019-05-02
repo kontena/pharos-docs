@@ -391,16 +391,18 @@ network:
 Specify [kubelet](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-kubelet) configuration options.
 ```yaml
 kubelet:
-  read_only_port: true
+  read_only_port: false
   feature_gates:
     CSIDriverRegistry: true
     CSINodeInfo: true
+  extra_args: []
 ```
 
 The supported configuration options:
 
 * `read_only_port` - when set to `true` will open read-only port `10255` for the Kubelet to serve on with no authentication/authorization. Defaults to `false`, i.e. port 10255 **NOT** open.
 * `feature_gates` - specify [feature gates](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) used in kubelet configuration.
+* `extra_args` - extra arguments for kubelet.
 
 **Note**: If you enable the Kubelet read-only port you may allow un-authorized access to sensitive data. Make sure you use other means, such as network level firewalls for example, to prevent un-wanted access.
 
