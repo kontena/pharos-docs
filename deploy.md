@@ -67,6 +67,17 @@ Once you've determined that it is safe to remove a master node, and its etcd pee
 
 Adding worker nodes is as simple as adding them into the `cluster.yml`. Re-running `pharos up ...` will configure everything on the new node and joins it into the cluster.
 
+For advanced use-cases such as auto-scaling, a new worker node can be initialized and joined to an existing cluster by using the `pharos worker up` command.
+
+1. On a host with access to your cluster and `cluster.yml`, run `pharos exec -r master -f sudo kubeadm token create --print-join-command | tail -1` to get a value for the `JOIN_COMMAND` parameter. The join command normally looks like: `kubeadm join localhost:6443 --token ??? --discovery-token-ca-cert-hash ???`
+2. Install the `pharos` command-line tool on the new worker node.
+3. Run `pharos worker up` with the join command and a master address as parameters: `pharos worker up "kubeadm join localhost:6443 --token ??? --discovery-token-ca-cert-hash ???" master-address.example.com`. There are several extra options that can be defined for the workers, see `pharos worker up --help` or the [CLI tool reference](tools/pharos.md#initialize-or-upgrade-a-worker-node-in-an-existing-pharos-cluster) for more information.
+
+#### Caveats for `pharos worker up`
+
+- The node won't be upgraded with the other nodes when using `pharos up` unless you add it to your `cluster.yml`.
+- Firewalld can't currently be configured via `pharos worker up`.
+
 ### Removing Worker Nodes
 
 Removing a worker node is currently a multi step process:
