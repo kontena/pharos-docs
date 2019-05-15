@@ -10,6 +10,8 @@
 * [Configuration Reference](configuration/README.md)
   * [Authentication](configuration/authentication.md)
   * [Cloud Providers](cloud_providers/README.md)
+    * [Kubernetes in-tree providers](cloud_providers/kube-in-tree.md)
+    * [Pharos in-tree providers](cloud_providers/pharos-in-tree.md)
   * [Networking](networking/README.md)
     * [Custom Networking](networking/custom_networking.md)
     * [Firewalld](networking/firewalld.md)
