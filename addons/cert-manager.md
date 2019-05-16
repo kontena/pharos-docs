@@ -18,6 +18,7 @@ addons:
     email: me@domain.com
   # ca_issuer:
   #   enabled: false
+  # extra_args: []
 ```
 
 #### Options
@@ -26,6 +27,7 @@ addons:
 - `issuer.server`-  ACME server url
 - `issuer.email` - email address used for ACME registration
 - `ca_issuer.enabled` - Enable cluster internal CA issuer using Kubernetes CA
+- `extra_args` - Extra [arguments](https://docs.cert-manager.io/en/latest/tasks/acme/configuring-dns01/) for (external) dns-resolvers for split-horizon dns.
 
 By default Pharos Cluster will create an [Issuer](http://docs.cert-manager.io/en/release-0.5/reference/issuers.html) to the `default` namespace. This can be used to obtain Let's Encrypt certificates using `HTTP-01` challenge. For `HTTP-01` challenge to work you need to enable ingress controller, for example [Ingress-NGINX](./ingress-nginx.md).
 
