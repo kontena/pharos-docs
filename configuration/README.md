@@ -396,6 +396,8 @@ kubelet:
     CSIDriverRegistry: true
     CSINodeInfo: true
   extra_args: []
+  cpu_cfs_quota: true
+  cpu_cfs_quota_period: 10ms
 ```
 
 The supported configuration options:
@@ -403,8 +405,16 @@ The supported configuration options:
 * `read_only_port` - when set to `true` will open read-only port `10255` for the Kubelet to serve on with no authentication/authorization. Defaults to `false`, i.e. port 10255 **NOT** open.
 * `feature_gates` - specify [feature gates](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) used in kubelet configuration.
 * `extra_args` - extra arguments for kubelet.
+* `cpu_cfs_quota` - Enable CPU CFS quota enforcement for containers that specify CPU limits. `true` by default.
+* `cpu_cfs_quota_period` - CFS period, i.e. how often the CPU quota is enforced. `100ms` by default.
 
 **Note**: If you enable the Kubelet read-only port you may allow un-authorized access to sensitive data. Make sure you use other means, such as network level firewalls for example, to prevent un-wanted access.
+
+#### CFS Quota
+
+By default the CFS quota settings in Linux & Kubernetes are pretty agressive and might result in aggressive CPU throttling in applications. If running trusted workloads it might be best to completely disable the quota as discussed in [this](https://github.com/kubernetes/kubernetes/issues/51135) issue. The CFS period depends on the application requirements but generally `5ms` seems to be good generic period for low latency applications as per discussion in [this](https://github.com/kubernetes/kubernetes/issues/67577) issue.
+
+**Note:** Setting these on existing cluster will not affect existing pods, the changed settings are applied only for newly created pods.
 
 ### `kube_proxy`
 
