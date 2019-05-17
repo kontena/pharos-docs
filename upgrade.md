@@ -2,7 +2,9 @@
 
 When new versions of Kontena Pharos are released, you can upgrade your existing cluster to apply the latest enhancements and bug fixes. This includes upgrading from previous minor versions, such as release 2.2.x to 2.3.y, and applying asynchronous errata updates within a minor version (2.3.z releases). See the [Kontena Pharos Release Notes](https://github.com/kontena/pharos-cluster/releases) to review the latest changes.
 
-Unless noted otherwise, worker and masters within a major version are forward and backward compatible across one minor version, so upgrading your cluster should go smoothly. Please note: downgrades are NOT supported!
+Unless noted otherwise, worker and masters within a major version are forward and backward compatible across one minor version, so upgrading your cluster should go smoothly. Please note: downgrades are **NOT** supported!
+
+> Upgrades are done in parallel unless `pharos` notices unsafe operations (like a container runtime upgrade). In those cases upgrade will be rolled out so that ~90% of hosts will be available.
 
 ## Upgrade Steps
 
