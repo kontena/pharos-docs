@@ -2,7 +2,7 @@
 
 Kontena Storage is a unified, distributed storage system designed for excellent performance, reliability and scalability. Kontena Storage is built on top of [Rook](https://rook.io) and it uses [Ceph](https://ceph.com/) as underlying storage system.
 
-- version: `0.8.3+kontena.1`
+- version: `0.9.3+kontena.1`
 - maturity: `beta`
 - architectures: `x86-64`
 - available in: `Pro`
@@ -24,6 +24,7 @@ addons:
       use_all_nodes: true
       # It's highly recommended to set directories and/or device_filter,
       # otherwise expanding storage does not work properly (see https://github.com/rook/rook/issues/1957)
+      # Devices should be preferred over directories (better performance)
       directories:
       - path: /mnt/data1
       # device_filter: ^sd[a-d]
