@@ -5,7 +5,7 @@
 - version: `0.21.0`
 - maturity: `stable`
 - architectures: `x86-64`, `arm64`
-- available in: `OSS`, `Pro`, `EE`
+- available in: `OSS`, `Pro`
 
 ## Configuration
 

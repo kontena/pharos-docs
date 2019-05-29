@@ -5,7 +5,7 @@ Kontena Network Loadbalancer is a load-balancer implementation for Kubernetes cl
 - version: `0.7.3`
 - maturity: `beta`
 - architectures: `x86-64`
-- available in: `Pro`, `EE`
+- available in: `Pro`
 
 ## Concepts
 

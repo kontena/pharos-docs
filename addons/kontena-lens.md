@@ -5,7 +5,7 @@ Kontena Lens is a dashboard for Kontena Pharos.
 - version: `1.5.0`
 - maturity: `beta`
 - architectures: `x86-64`
-- available in: `Pro`, `EE`
+- available in: `Pro`
 
 ![Lens Dashboard](/images/lens-dashboard.png)
 

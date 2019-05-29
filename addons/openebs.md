@@ -7,7 +7,7 @@
 - version: `0.5.3`
 - maturity: `alpha`
 - architectures: `x86-64`
-- available in: `OSS`, `Pro`, `EE`
+- available in: `OSS`, `Pro`
 
 ## Configuration
 
