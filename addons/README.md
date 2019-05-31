@@ -16,7 +16,6 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 * [Kontena Lens](kontena-lens.md)
 * [Kontena Storage](kontena-storage.md)
 * [Kontena Backup](kontena-backup.md)
-* [OpenEBS](openebs.md)
 * [Pharos Host Upgrades](host-upgrades.md)
 * [Kontena Network Loadbalancer](kontena-network-lb.md)
 

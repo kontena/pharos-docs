@@ -25,7 +25,6 @@
   * [Kontena Lens](addons/kontena-lens.md)
   * [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
   * [Kontena Storage](addons/kontena-storage.md)
-  * [OpenEBS](addons/openebs.md)
   * [Creating an Addon](addons/external.md)
 * [License Management](license-management.md)
 * [Troubleshooting](troubleshooting.md)
