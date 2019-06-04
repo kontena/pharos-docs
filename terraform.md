@@ -2,6 +2,7 @@
 
 - [Overview](#overview)
 - [Terraform Output Configuration](#terraform-output-configuration)
+- [Legacy Terraform Output Configuration](#legacy-terraform-output-configuration)
     - [Setting Hosts](#setting-hosts)
     - [Setting Addon Values](#setting-addon-values)
     - [Setting API Endpoint](#setting-api-endpoint)
@@ -32,6 +33,38 @@ $ pharos tf destroy
 ```
 
 ## Terraform Output Configuration
+
+This output format works only with Terraform >= 0.12.
+
+Full cluster.yml configuration can be generated via `pharos_cluster` output. Output value will be merged to `cluster.yml` contents so it's possible to generate only partial configuration via Terraform (usually `hosts`).
+
+Example:
+
+```
+output "pharos_cluster" {
+    value = {
+        hosts = [
+            for host in concat(aws_instance.pharos_master, aws_instance.pharos_worker)  : {
+                address           = host.public_ip
+                private_address   = host.private_ip
+                role              = host.tags["role"]
+                user              = "root"
+                container_runtime = "${var.container_runtime}"
+            }
+        ]
+        addons = {
+            ingress-nginx = {
+                enabled = true
+            }
+        }
+    }
+}
+```
+
+
+## Legacy Terraform Output Configuration
+
+This output format works only with Terraform < 0.12.x.
 
 ### Setting Hosts
 
