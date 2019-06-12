@@ -18,6 +18,7 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 * [Kontena Backup](kontena-backup.md)
 * [Pharos Host Upgrades](host-upgrades.md)
 * [Kontena Network Loadbalancer](kontena-network-lb.md)
+* [Kontena Universal Loadbalancer](kontena-universal-lb.md)
 
 ## Using External Addons
 

@@ -20,10 +20,11 @@ Kontena Pharos is made available with open core licensing model:
 | Ingress-NGINX                             |  ●  |  ●  |
 | Helm                                      |  ●  |  ●  |
 | Automatic Host Security Updates           |  ●  |  ●  |
-| Rolling Cluster Updates                   |     |  ●  |
+| Rolling Cluster Updates                   |  ●  |  ●  |
 | Kontena Lens                              |     |  ●  |
 | Kontena Backup                            |     |  ●  |
 | Kontena Storage                           |     |  ●  |
 | Kontena Network Loadbalancer              |     |  ●  |
+| Kontena Universal Loadbalancer            |     |  ●  |
 | Air Gapped Setup                          |     |  ●  |
 

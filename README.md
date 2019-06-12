@@ -16,7 +16,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 
 ## Features
 
-- **Kubernetes Kernel:** [v1.14.1](https://github.com/kubernetes/kubernetes)
+- **Kubernetes Kernel:** [v1.14.3](https://github.com/kubernetes/kubernetes)
 - **Supported Cluster Upgrade Strategies:** Rolling (zero-downtime), Instant
 - **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
 - **Supported Machine Types:** Bare metal, VM
@@ -25,7 +25,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Supported Cluster Data Store Options:** In-cluster elastic etcd with TLS, External etcd with TLS
 - **Supported Control Plane Availability Options:** Single master, Multi-master
 - **Supported Workload Isolation Options:** Worker nodes only, All nodes
-- **Supported Container Runtimes:** [Docker](https://mobyproject.org/), [Cri-o](http://cri-o.io/)
+- **Supported Container Runtimes:** [Docker](https://mobyproject.org/), [CRI-O](http://cri-o.io/)
 - **Supported CNI Plugins:** Weave, Calico, [Custom](networking/custom_networking.md)
 - **Supported Storage Providers:**
   - **Public Cloud:** AWS, GCP, Azure, Custom
@@ -34,7 +34,8 @@ Kontena Pharos is made available with open core licensing model. The core contai
 - **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [Pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [Cluster firewall (firewalld)](networking/firewalld.md), [Host OS security updates](addons/host-upgrades.md), [Cert-manager](addons/cert-manager.md), Air gapped setup supported
 - **Built-In Networking Features:**
   - **Public Cloud:** [Ingress-nginx](addons/ingress-nginx.md), AWS, GCP, Azure, Custom
-  - **Private Cloud / On-Premises:** [Ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer (metallb)](addons/kontena-network-lb.md)*, Custom
+  - **Private Cloud / On-Premises:** [Ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer (metallb)](addons/kontena-network-lb.md)*, [Kontena Universal Loadbalancer (akrobateo)](addons/kontena-universal-lb.md)&ast;, Custom
+  - **Hybrid / Edge:** Intelligent Network Mesh, Multi-cluster Networking
 - **Built-In Applications Management Features:** [Helm](https://helm.sh/)
 - **Built-In Management UI:** [Kontena Lens](addons/kontena-lens.md)*
 - **Built-In Backup & Disaster Recovery Features:** [Kontena Backup (ark)](addons/kontena-backup.md)*
