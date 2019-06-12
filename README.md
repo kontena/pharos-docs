@@ -16,7 +16,7 @@ Kontena Pharos is made available with open core licensing model. The core contai
 
 ## Features
 
-- **Kubernetes Kernel:** [v1.13.5](https://github.com/kubernetes/kubernetes)
+- **Kubernetes Kernel:** [v1.13.6](https://github.com/kubernetes/kubernetes)
 - **Supported Cluster Upgrade Strategies:** Rolling (zero-downtime)*, Instant
 - **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
 - **Supported Machine Types:** Bare metal, VM
