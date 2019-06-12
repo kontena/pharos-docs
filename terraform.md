@@ -36,7 +36,7 @@ $ pharos tf destroy
 
 This output format works only with Terraform >= 0.12.
 
-Full cluster.yml configuration can be generated via `pharos_cluster` output. Output value will be merged to `cluster.yml` contents so it's possible to generate only partial configuration via Terraform (usually `hosts`).
+Full cluster.yml configuration can be generated via `pharos_cluster` output. It's also possible to generate partial configuration which is then merged to `cluster.yml` contents (using deep-merge).
 
 Example:
 
@@ -64,7 +64,7 @@ output "pharos_cluster" {
 
 ## Legacy Terraform Output Configuration
 
-This output format works only with Terraform < 0.12.x.
+This output format works only with Terraform < 0.12.x. Output value will be merged to `cluster.yml` contents so it's possible to generate only partial configuration via Terraform (usually `hosts`).
 
 ### Setting Hosts
 
