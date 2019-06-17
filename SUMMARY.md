@@ -24,6 +24,7 @@
   * [Kontena Backup](addons/kontena-backup.md)
   * [Kontena Lens](addons/kontena-lens.md)
   * [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
+  * [Kontena Stats](addons/kontena-stats.md)
   * [Kontena Storage](addons/kontena-storage.md)
   * [Kontena Universal Loadbalancer](addons/kontena-universal-lb.md)
   * [Creating an Addon](addons/external.md)

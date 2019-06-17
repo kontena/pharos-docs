@@ -2,7 +2,7 @@
 
 Kontena Lens is a dashboard for Kontena Pharos.
 
-- version: `1.5.0`
+- version: `1.6.0`
 - maturity: `beta`
 - architectures: `x86-64`
 - available in: `Pro`
@@ -11,12 +11,14 @@ Kontena Lens is a dashboard for Kontena Pharos.
 
 ## Features
 
-- `Dashboard` - Overview of resources and status of your Kubernetes cluster
+- `Dashboard` - Overview of resources and status of your Kubernetes cluster.
+- `Metrics` - Multi-tenant metrics visualizations.
 - `Helm charts` - Easy way to browse and install Helm charts.
 - `Embedded terminal` - Kubectl access to your cluster from the dashboard.
 - `Built-in user management` - Authentication + users, groups and RBAC rules management.
 
 ## Requirements
+- [Kontena Stats](./kontena-stats.md) addon
 - Ingress Controller, for example [Ingress-NGINX addon](./ingress-nginx.md)
 - Cert Manager (if `ingress.tls` is enabled), for example [Cert-manager addon](./cert-manager.md)
 

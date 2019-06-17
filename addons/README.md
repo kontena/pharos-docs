@@ -14,6 +14,7 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 * [Helm](helm.md)
 * [Ingress NGINX](ingress-nginx.md)
 * [Kontena Lens](kontena-lens.md)
+* [Kontena Stats](kontena-stats.md)
 * [Kontena Storage](kontena-storage.md)
 * [Kontena Backup](kontena-backup.md)
 * [Pharos Host Upgrades](host-upgrades.md)
