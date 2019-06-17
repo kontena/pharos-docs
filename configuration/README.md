@@ -364,6 +364,23 @@ The supported configuration options:
     - `user` - Username for ssh connection
     - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
     - `ssh_port` - Host's ssh port (default: `22`)
+- `repositories` - A list of custom package repositories to use. See [repositories](#repositories) for details.
+
+##### `repositories`
+
+A list of custom package repositories to use
+
+```yaml
+repositories:
+  - name: foofoo.list
+    key_url: https://example.com/key
+    contents: |
+      deb https://dl.bintray.com/kontena/pharos-debian stretch main
+```
+
+- `name` - Name of the repository
+- `key_url` - URL where to download and configure the repository key from (optional)
+- `contents` - Contents of the package repository configuration. Consult your OS distribution documentation for details.
 
 ### `name`
 
