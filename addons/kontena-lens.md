@@ -1,13 +1,13 @@
 # Addon: Kontena Lens
 
-Kontena Lens is a dashboard for Kontena Pharos.
+> NOTE: [Kontena Lens](https://www.kontena.io/lens) standalone product contain features such as cluster essentials, universal authentication and built-in prometheus. These features are not installed as part of this add on. This add-on is used only for UI component configuration and installation..
 
 - version: `1.6.0`
 - maturity: `beta`
 - architectures: `x86-64`
 - available in: `Pro`
 
-![Lens Dashboard](/images/lens-dashboard.png)
+![Kontena Lens Dashboard](https://www.kontena.io/images/lens/screenshot.png)
 
 ## Features
 

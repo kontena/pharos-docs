@@ -1,8 +1,8 @@
 # Kontena Pharos
 
-> The simple, solid, certified Kubernetes distribution that just works.
+> The simple, solid, certified Kubernetes distribution that just works. Deploy and run containers at any scale on any infrastructure. All batteries included.
 
-![Lens Dashboard](/images/lens-dashboard.png)
+![Kontena Lens Dashboard](https://www.kontena.io/images/lens/screenshot.png)
 
 We believe setting up and maintaining a complex platform like Kubernetes from scratch is not where the race is won. Just like with Linux, building it once is a good educational experience but not for real use. Kontena Pharos is the complete, maintained and certified Kubernetes distribution that works on-premises, on any cloud and beyond!
 
