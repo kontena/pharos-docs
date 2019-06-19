@@ -11,21 +11,23 @@
 ```yaml
 addons:
   cert-manager:
-  enabled: true
-  # issuers:
-  # - kind: ClusterIssuer
-  #   metadata:
-  #     name: le-issuer
-  #   spec:
-  #     acme:
-  #     server: https://acme-staging-v02.api.letsencrypt.org/directory
-  #     email: foo@bar.com
-  #     privateKeySecretRef:
-  #       name: le-issuer
-  #     http01: {}
-  # ca_issuer:
-  #   enabled: false
-  # extra_args: []
+    enabled: true
+    # webhook:
+    #   enabled: true
+    # issuers:
+    # - kind: ClusterIssuer
+    #   metadata:
+    #     name: le-issuer
+    #   spec:
+    #     acme:
+    #     server: https://acme-staging-v02.api.letsencrypt.org/directory
+    #     email: foo@bar.com
+    #     privateKeySecretRef:
+    #       name: le-issuer
+    #     http01: {}
+    # ca_issuer:
+    #   enabled: false
+    # extra_args: []
 ```
 
 #### Options
@@ -33,6 +35,7 @@ addons:
 - `issuers`- optional cert-manager `ClusterIssuer` or `Issuer` objects
 - `ca_issuer.enabled` - Enable cluster internal CA issuer using Kubernetes CA
 - `extra_args` - Extra [arguments](https://docs.cert-manager.io/en/latest/tasks/acme/configuring-dns01/) for (external) dns-resolvers for split-horizon dns.
+- `webhook` - Whether to enable the [webhook admission controller](https://docs.cert-manager.io/en/latest/getting-started/webhook.html).
 
 It's possible to add issuers directly from the addon (cluster wide [ClusterIssuer](http://docs.cert-manager.io/en/release-0.7/reference/clusterissuers.html) or namespaced [Issuer](http://docs.cert-manager.io/en/release-0.7/reference/issuers.html) via `issuers` array. For example if you want to have cluster-wide Let's Encrypt issuer using `HTTP-01` challenge, you can add following configuration:
 
