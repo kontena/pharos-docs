@@ -19,13 +19,15 @@ Kontena Stats provides cluster wide metrics and alerting. Kontena Stats is built
 addons:
   kontena-stats:
     enabled: true
+    # replicas: 1
     # node_selector: {}
     # tolerations: []
     # retention:
     #   size: 1GB
     #   time: 90d
     # persistence:
-    #   enabled: true
+    #   enabled: false
+    #   size: 5Gi
     # node_exporter:
     #   enabled: true
     # kube_state_metrics:
@@ -34,11 +36,13 @@ addons:
 
 ## Options
 
+* `replicas` - number of prometheus replicas. Default: `1`
 * `node_selector` - where the prometheus pods are deployed. Given as hash of standard [nodeSelector](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector)
 * `tolerations` - tolerations for prometheus pods. Given as array of standard [toleration](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) objects.
 * `retention.size` - configures the maximum number of bytes that storage blocks can use. The oldest data will be removed first. Default: `1GB`
-* `retention.time` - determines when to remove old data. Defaults to 90d.
+* `retention.time` - determines when to remove old data. Default: `30d`.
 * `persistence.enabled` - `true` or `false`. Is persistent volumes used to maintain state. If yes, cluster must provide default storage class. You can enable this, for example, by using [kontena-storage](./kontena-storage.md) add-on. Default: `false`
+* `persistence.size` - persistent volume claim size for each replica. Default: `5Gi`
 * `node_exporter.enabled` - `true` or `false`. Is Node Exporter DaemonSet enabled. You should only disable this if you already have Node Exporter deployed. Default: `true`
 * `kube_state_metrics.enabled` - `true` or `false`. Is Kube State Metrics enabled. You should only disable this if you already have Kube State Metrics deployed. Default: `true`
 
