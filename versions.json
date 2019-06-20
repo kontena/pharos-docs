@@ -11,6 +11,10 @@
                     "text": "HEAD"
                 },
                 {
+                    "value": "https://pharos.sh/docs/2-4/",
+                    "text": "Version 2.4.x"
+                },
+                {
                     "value": "https://pharos.sh/docs/2-3/",
                     "text": "Version 2.3.x"
                 },
