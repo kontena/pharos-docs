@@ -4,11 +4,15 @@
             "options": [
                 {
                     "value": "https://pharos.sh/docs/",
-                    "text": "Latest (2.3.x)"
+                    "text": "Latest (2.4.x)"
                 },
                 {
                     "value": "https://pharos.sh/docs/master/",
                     "text": "HEAD"
+                },
+                {
+                    "value": "https://pharos.sh/docs/2-4/",
+                    "text": "Version 2.4.x"
                 },
                 {
                     "value": "https://pharos.sh/docs/2-3/",
