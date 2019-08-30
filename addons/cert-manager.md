@@ -2,7 +2,7 @@
 
 [Cert-manager](https://docs.cert-manager.io/en/release-0.7/) is a native Kubernetes certificate management controller. It can help with issuing certificates from a variety of sources, such as [Let’s Encrypt](https://letsencrypt.org/), [HashiCorp Vault](https://www.vaultproject.io/), [Venafi](https://www.venafi.com/), a simple signing keypair, or self signed.
 
-- version: `0.7.2`
+- version: `0.8.1`
 - maturity: `alpha`
 - available in: `OSS`, `Pro`
 
@@ -20,11 +20,11 @@ addons:
     #     name: le-issuer
     #   spec:
     #     acme:
-    #     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    #     email: foo@bar.com
-    #     privateKeySecretRef:
-    #       name: le-issuer
-    #     http01: {}
+    #       server: https://acme-staging-v02.api.letsencrypt.org/directory
+    #       email: foo@bar.com
+    #       privateKeySecretRef:
+    #         name: le-issuer
+    #       http01: {}
     # ca_issuer:
     #   enabled: false
     # extra_args: []
