@@ -37,7 +37,6 @@ Kontena Pharos is made available with open core licensing model. The core contai
   - **Private Cloud / On-Premises:** [Ingress-nginx](addons/ingress-nginx.md), [Kontena Network Loadbalancer (metallb)](addons/kontena-network-lb.md)*, [Kontena Universal Loadbalancer (akrobateo)](addons/kontena-universal-lb.md)&ast;, Custom
   - **Hybrid / Edge:** Intelligent Network Mesh, Multi-cluster Networking
 - **Built-In Applications Management Features:** [Helm](https://helm.sh/)
-- **Built-In Management UI:** [Kontena Lens](addons/kontena-lens.md)*
 - **Built-In Metrics:** Metrics Server, [Kontena Stats](addons/kontena-stats.md)*
 - **Built-In Backup & Disaster Recovery Features:** [Kontena Backup (ark)](addons/kontena-backup.md)*
 - **Source Code:** Available on [Github](https://github.com/kontena/pharos-cluster/)

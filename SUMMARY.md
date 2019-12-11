@@ -22,7 +22,7 @@
   * [Host Upgrades](addons/host-upgrades.md)
   * [Ingress NGINX](addons/ingress-nginx.md)
   * [Kontena Backup](addons/kontena-backup.md)
-  * [Kontena Lens](addons/kontena-lens.md)
+  * [Kontena Lens (in-cluster)](addons/kontena-lens.md)
   * [Kontena Network Loadbalancer](addons/kontena-network-lb.md)
   * [Kontena Stats](addons/kontena-stats.md)
   * [Kontena Storage](addons/kontena-storage.md)
