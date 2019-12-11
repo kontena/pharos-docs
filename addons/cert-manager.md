@@ -49,11 +49,11 @@ addons:
       name: le-issuer
     spec:
       acme:
-      server: https://acme-v02.api.letsencrypt.org/directory
-      email: user@example.com
-      privateKeySecretRef:
-        name: le-issuer
-      http01: {}
+        server: https://acme-v02.api.letsencrypt.org/directory
+        email: user@example.com
+        privateKeySecretRef:
+          name: le-issuer
+        http01: {}
 ```
 For `HTTP-01` challenge to work you need to enable ingress controller, for example [Ingress-NGINX](./ingress-nginx.md).
 

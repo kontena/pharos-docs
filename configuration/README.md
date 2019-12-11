@@ -355,7 +355,7 @@ The supported configuration options:
 - `ssh_key_path` - A local file path to an ssh private key file (default `~/.ssh/id_rsa`)
 - `ssh_port` - Host's ssh port (default: `22`)
 - `ssh_proxy_command` - Specifies the command to use to connect to the host. In the command string, `%h` will be substituted by the host name to connect and `%p` by the port. See [example](#bastion_jump-host-configuration)
-- `container_runtime` - One of `docker`, `cri-o` (default `docker`)
+- `container_runtime` - One of `docker`, `cri-o` or `custom_docker`. (default `docker`). With `custom_docker` Pharos will NOT configure the container runtime at all, it is expected that Docker is already configured on the host(s).
 - `labels` - A list of `key: value` pairs to assign to the host (optional)
 - `taints` - A list of taint objects with `key`, `effect` and optional `value`. See [examples](#using-node-taints) below for more details.
 - `http_proxy` - A http(s) proxy address that is used for downloading packages & container images
