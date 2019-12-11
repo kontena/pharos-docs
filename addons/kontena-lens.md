@@ -1,6 +1,6 @@
-# Addon: Kontena Lens
+# Addon: Kontena Lens (in-cluster)
 
-> NOTE: [Kontena Lens](https://www.kontena.io/lens) standalone product contain features such as cluster essentials, universal authentication and built-in prometheus. These features are not installed as part of this add on. This add-on is used only for UI component configuration and installation..
+> NOTE: This add-on is for running in-cluster version of [Kontena Lens](https://www.kontena.io/lens) smart dashboard. Since this version is running in-cluster, it is more restricted and limited in terms of functionality. If you need fully featured dashboard or IDE for your Kubernetes, we recommend using standard version of Kontena Lens instead.
 
 - version: `1.6.0`
 - maturity: `beta`

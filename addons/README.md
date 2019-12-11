@@ -13,7 +13,7 @@ Built-in addons are part of the Kontena Pharos Kubernetes distribution. They are
 * [Cert Manager](cert-manager.md)
 * [Helm](helm.md)
 * [Ingress NGINX](ingress-nginx.md)
-* [Kontena Lens](kontena-lens.md)
+* [Kontena Lens (in-cluster)](kontena-lens.md) 
 * [Kontena Stats](kontena-stats.md)
 * [Kontena Storage](kontena-storage.md)
 * [Kontena Backup](kontena-backup.md)
