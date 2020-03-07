@@ -2,8 +2,7 @@ module.exports = {
   title: "Kontena Pharos",
   plugins: [
     "edit-link", "prism", "-highlight", "github", "anchorjs",
-    "ga", "scripts", "versions-select", "insert-logo",
-    "mikxpanel@git+https://github.com/kontena/gitbook-plugin-mikxpanel.git"
+    "ga", "scripts", "insert-logo"
   ],
   pluginsConfig: {
     fontsettings: {
@@ -26,11 +25,6 @@ module.exports = {
     scripts: {
         files: [
             "./_scripts/menu.js"
-        ]
-    },
-    versions: {
-        gitbookConfigURL: "https://raw.githubusercontent.com/kontena/pharos-docs/master/versions.json",
-        options: [
         ]
     },
     "insert-logo": {
