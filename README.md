@@ -6,11 +6,7 @@ We believe setting up and maintaining a complex platform like Kubernetes from sc
 
 ## Easy to Install, Maintain and Extend
 
-Kontena Pharos is always up-to-date and built from the latest upstream Kubernetes, including a standardized set of essential features. It is easy to install and maintain with the dedicated CLI tool. The standard deployment may be extended with ready made [add-ons](addons/README.md) for most common use cases, or any extras from the Kubernetes ecosystem!
-
-## Open Source
-
-Kontena Pharos is 100% open source.
+Kontena Pharos is always up-to-date and built from the latest upstream Kubernetes, including a standardized set of essential features. It is easy to install and maintain with the dedicated CLI tool. The standard deployment may be extended with [Helm](https://helm.sh) charts or any custom Kubernetes yaml resources!
 
 ## Features
 
@@ -22,19 +18,22 @@ Kontena Pharos is 100% open source.
 - **Supported Host Operating Systems:** [CentOS, Debian, Redhat, Ubuntu](requirements.md)
 - **Supported Cluster Data Store Options:** In-cluster elastic etcd with TLS, External etcd with TLS
 - **Supported Control Plane Availability Options:** Single master, Multi-master
-- **Supported Workload Isolation Options:** Worker nodes only, All nodes
 - **Supported Container Runtimes:** [Docker](https://www.docker.com/products/container-runtime), [containerd](https://containerd.io/)
 - **Supported CNI Plugins:** Weave, Calico, [Custom](networking/custom_networking.md)
 - **Supported Storage Providers:**
   - **Public Cloud:** AWS, GCP, Azure, Custom
-  - **Private Cloud / On-Premises:** [Kontena Storage (rook/ceph)](addons/kontena-storage.md)*, OpenStack, VMWare VSphere, Custom
+  - **Private Cloud / On-Premises:** OpenStack, VMWare VSphere, Custom
 - **Built-In Security Conformance:** [CIS security benchmark](https://www.cisecurity.org/benchmark/kubernetes/), [NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)
 - **Built-In Security Features:** [RBAC](https://kubernetes.io/docs/admin/authorization/rbac/), [Pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/), [Network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), [Cluster firewall (firewalld)](networking/firewalld.md)
 - **Built-In Networking Features:**
   - **Hybrid / Edge:** Intelligent Network Mesh, Multi-cluster Networking
 - **Built-In Applications Management Features:** [Helm](https://helm.sh/)
-- **Built-In Metrics:** Metrics Server
+- **Built-In Metrics:** [Metrics Server](https://github.com/kubernetes-sigs/metrics-server)
 - **Source Code:** Available on [Github](https://github.com/kontena/pharos-cluster/)
+
+## Open Source
+
+Kontena Pharos is 100% open source.
 
 ## Documentation License
 

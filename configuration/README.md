@@ -5,8 +5,6 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
 **Learn more:**
 
 * [Configuration File Reference](#configurationfilereference)
-  * [addons](#addons) - Specify add-ons and their configuration options
-  * [addon_paths](#addonpaths) - Specify path for custom add-ons
   * [admission_plugins](#admissionplugins) - Enable / disable admission plugins
   * [api](#api) - Specify Kubernetes API endpoint
   * [audit](#audit) - Specify audit webhook for external audit events collection
@@ -135,19 +133,9 @@ hosts:
 # admission_plugins: []
 # container_runtime:
 #   insecure_registries: []
-# addon_paths: []
-# addons: {}
 ```
 
 In this section, we will list all supported configuration options for Kontena Pharos cluster configuration files.
-
-### `addons`
-
-Specify add-ons and their configuration options. [Learn more about add-ons](/addons/README.md).
-
-### `addon_paths`
-
-Specify path for custom add-ons. [Learn more about add-ons](/addons/README.md).
 
 ### `admission_plugins`
 
