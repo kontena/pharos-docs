@@ -28,6 +28,5 @@
 
 * [Github](https://github.com/kontena/pharos-cluster)
 * [Issues](https://github.com/kontena/pharos-cluster/issues)
-* [Community Slack](https://slack.kontena.io)
-* [Website](https://pharos.sh)
-* [Kontena Account](https://account.kontena.io)
+* [Community Slack](https://join.slack.com/t/kontenacommunity/shared_invite/enQtOTc5NjAyNjYyOTk4LWU1NDQ0ZGFkOWJkNTRhYTc2YjVmZDdkM2FkNGM5MjhiYTRhMDU2NDQ1MzIyMDA4ZGZlNmExOTc0N2JmY2M3ZGI)
+* [Website](https://k8spharos.dev)
