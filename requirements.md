@@ -4,16 +4,16 @@
 
 The minimum size for a cluster is 1 machine (node). In this case, a single machine will act as control plane (master) and will accept container workloads (worker). This kind of setup might work well for testing purposes, but might be too limited for production.
 
-In the ideal world, master and worker nodes are separated. It is also possible to create multi-master setups for high availability cluster deployments. When Kontena Pharos cluster is installed and running, it will consume some amount of system resources. See below the minimum system requirements:
+In the ideal world, master and worker nodes are separated. It is also possible to create multi-master setups for high availability cluster deployments. When Pharos cluster is installed and running, it will consume some amount of system resources. See below the minimum system requirements:
 
 * **Master Nodes**: 2GB of memory, 40GB disk
 * **Worker Nodes**: 2GB of memory, 40GB disk
 
-**Note!** The system requirements listed in here are just bare minimum for getting the Kontena Pharos cluster up and running. In reality, the amount of memory and disk required is based on the use case and actual workloads.
+**Note!** The system requirements listed in here are just bare minimum for getting the Pharos cluster up and running. In reality, the amount of memory and disk required is based on the use case and actual workloads.
 
 ## Supported Machines & Operating Systems
 
-Kontena Pharos cluster may be run on any machine (bare metal or virtual) that is capable of running one of the following operating systems on any of the supported architectures:
+Pharos cluster may be run on any machine (bare metal or virtual) that is capable of running one of the following operating systems on any of the supported architectures:
 
 | Operating System                  | Architectures
 |:----------------------------------|:------------------------------------------------

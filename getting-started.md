@@ -1,48 +1,35 @@
 # Getting Started
 
-Kontena Pharos is designed to work on any infrastructure: private datacenters, public cloud, hybrid or edge. It works on any environment that will meet the minimum [system requirements](requirements.md) and allows you to bootstrap and manage Kubernetes clusters super easily.
+Pharos is designed to work on any infrastructure: private datacenters, public cloud, hybrid or edge. It works on any environment that will meet the minimum [system requirements](requirements.md) and allows you to bootstrap and manage Kubernetes clusters super easily.
 
-Get started with Kontena Pharos by following these steps:
+Get started with Pharos by following these steps:
 
-1. [Setup Kontena Pharos CLI Toolchain](#setup-kontena-pharos-cli-toolchain)
+1. [Setup Pharos CLI Toolchain](#setup-kontena-pharos-cli-toolchain)
 2. [Prepare the Nodes for the Kubernetes Cluster](#prepare-nodes-for-kubernetes-cluster)
 3. [Creating the Cluster Configuration File](#create-the-cluster-configuration-file)
 4. [Bootstrapping Kubernetes Cluster Using Pharos](#bootstrap-your-first-pharos-kubernetes-cluster)
 5. [Interacting with your Kubernetes Cluster](#interact-with-the-cluster)
 
 
-## Setup Kontena Pharos CLI Toolchain
+## Setup Pharos CLI Toolchain
 
-Follow these easy steps to setup Kontena Pharos CLI toolchain. For more detailed instructions and installation options, see [full documentation](install-toolchain.md).
+Follow these easy steps to setup Pharos CLI toolchain. For more detailed instructions and installation options, see [full documentation](install-toolchain.md).
 
-First we need to download and install `chpharos` - the Kontena Pharos version switcher tool:
-
-```
-$ curl -s https://get.pharos.sh | bash
-```
-
-Once the download and install is complete, login with your [Kontena Account](https://account.kontena.io/). This account is required for authenticating access to `pharos` CLI tool binaries.
+First we need to download and install `chpharos` - the Pharos version switcher tool:
 
 ```
-$ chpharos login
-Log in using your Kontena Account credentials
-Visit https://account.kontena.io/ to register a new account.
-Username: adam
-Password:
-Logged in.
+$ curl -s https://get.k8spharos.dev | bash
 ```
 
-Once logged in, you can install `pharos` CLI tool binaries. Install the latest version of Kontena Pharos like this:
+Once installed, you can install `pharos` CLI tool binaries. Install the latest version of Pharos like this:
 
 ```
 $ chpharos install latest --use
 ```
 
-**NOTE!** By using the `latest` tag, you'll automatically install Kontena Pharos PRO version. If you want to use Kontena Pharos OSS version instead, use `chpharos install latest+oss --use` instead. If you can't decide which version to use, [compare editions](editions.md).
-
 ## Prepare Nodes for Kubernetes Cluster
 
-Most of the Kubernetes cluster components are launched using containers (Docker or CRI-O) on a Linux distro. You can use most common Linux distros, we [support many of them](requirements.md).
+Most of the Kubernetes cluster components are launched using containers on a Linux distro. You can use most common Linux distros, we [support many of them](requirements.md).
 
 > **Tip:** In our GitHub repo, there's ready made examples for setting up the cluster using Vagrant boxes. This is an easy way to get started if you do not have any other infrastructure available to play with. See https://github.com/kontena/pharos-cluster/tree/master/examples/vagrant/centos7
 
@@ -63,9 +50,6 @@ hosts:
     role: worker
     ssh_key_path: ~/.ssh/my_key
 network: {} # Use Weave networking with default config
-addons:
-  ingress-nginx:
-    enabled: true # Enable Nginx ingress controller
 ```
 
 For more complex cases, there's huge amount of [configuration options](configuration.md) and [addons](addons/) available.

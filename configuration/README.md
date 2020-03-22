@@ -1,12 +1,10 @@
-# Kontena Pharos Cluster Configuration
+# Pharos Cluster Configuration
 
-Kontena Pharos cluster configuration is described in a file that is in [YAML](http://yaml.org/) format. You can create and modify these files using your favorite text editor. The default name for this file is `cluster.yml`, although other file names could be used. The configuration can include [ERB templating code](#erb-templating) when the filename ends with `.erb`.
+Pharos cluster configuration is described in a file that is in [YAML](http://yaml.org/) format. You can create and modify these files using your favorite text editor. The default name for this file is `cluster.yml`, although other file names could be used. The configuration can include [ERB templating code](#erb-templating) when the filename ends with `.erb`.
 
 **Learn more:**
 
 * [Configuration File Reference](#configurationfilereference)
-  * [addons](#addons) - Specify add-ons and their configuration options
-  * [addon_paths](#addonpaths) - Specify path for custom add-ons
   * [admission_plugins](#admissionplugins) - Enable / disable admission plugins
   * [api](#api) - Specify Kubernetes API endpoint
   * [audit](#audit) - Specify audit webhook for external audit events collection
@@ -21,7 +19,6 @@ Kontena Pharos cluster configuration is described in a file that is in [YAML](ht
   * [name](#name) - Specify cluster name
   * [network](#network) - Specify networking options
   * [pod_security_policy](#podsecuritypolicy) - Specify pod security policy settings
-  * [telemetry](#telemetry) - Telemetry options
 * [Examples](#examples)
 
 ## Configuration File Reference
@@ -129,25 +126,14 @@ hosts:
 #   feature_gates: {}
 # telemetry:
 #   enabled: true
-# image_repository: "registry.pharos.sh/kontenapharos"
 # pod_security_policy:
 #   default_policy: "00-pharos-privileged"
 # admission_plugins: []
 # container_runtime:
 #   insecure_registries: []
-# addon_paths: []
-# addons: {}
 ```
 
-In this section, we will list all supported configuration options for Kontena Pharos cluster configuration files.
-
-### `addons`
-
-Specify add-ons and their configuration options. [Learn more about add-ons](/addons/README.md).
-
-### `addon_paths`
-
-Specify path for custom add-ons. [Learn more about add-ons](/addons/README.md).
+In this section, we will list all supported configuration options for Pharos cluster configuration files.
 
 ### `admission_plugins`
 
@@ -264,7 +250,7 @@ authentication:
 
 ### `cloud`
 
-Specify cloud provider. Kontena Pharos supports a concept of [cloud providers](cloud_providers/README.md). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider configuration file. For example:
+Specify cloud provider. Pharos supports a concept of [cloud providers](cloud_providers/README.md). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider configuration file. For example:
 
 ```yaml
 cloud:
@@ -305,7 +291,7 @@ The supported configuration options:
 
 ### `etcd`
 
-Specify external [etcd](https://github.com/etcd-io/etcd). By default, Kontena Pharos will create in-cluster etcd. This configuration option is used to describe external etcd (in-cluster etcd will be disabled). For example:
+Specify external [etcd](https://github.com/etcd-io/etcd). By default, Pharos will create in-cluster etcd. This configuration option is used to describe external etcd (in-cluster etcd will be disabled). For example:
 
 ```yaml
 etcd:
@@ -456,33 +442,6 @@ Specify the default [pod security policy](https://kubernetes.io/docs/concepts/po
 ```yaml
 pod_security_policy:
   default_policy: "00-pharos-privileged"
-```
-
-### `telemetry`
-
-To continuously improve the Kontena Pharos experience, the Kontena Pharos telemetry cronjob reports usage data to Kontena, Inc. This data is used to monitor the reliability of Kontena Pharos internal components and installations and to find out which features are most popular. This telemetry data is very helpful to us, so we hope that you will leave it enabled.
-
-```yaml
-telemetry:
-  enabled: true
-```
-
-The supported configuration options:
-
-* `enabled` - `true` (default) or `false`
-
-**Telemetry payload:**
-
-```json
-{
-    "uuid": "<cluster identifier>",
-    "kube_version": "<kubernetes version>",
-    "pharos_version": "<pharos version>",
-    "customer_token": "<token to identify paying customers>",
-    "license_token": "<token to identify license for the paying customer>",
-    "master_node_count": "<number of master nodes in the cluster>",
-    "worker_node_count": "<number of worker nodes in the cluster>"
-}
 ```
 
 ## Examples

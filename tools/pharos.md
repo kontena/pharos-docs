@@ -1,6 +1,6 @@
 # pharos
 
-`pharos` is a management tool for installing and upgrading Kontena Pharos clusters.
+`pharos` is a management tool for installing and upgrading Pharos clusters.
 
 ## Installation
 
@@ -29,11 +29,9 @@ $ chpharos list-remote
 
 ### Other installation methods
 
-Sometimes, for example for CI/CD tools, it's necessary to download executables manually. You can download Pharos executables from [releases](https://account.kontena.io/downloads). Binaries should work on any recent 64bit MacOS or Linux machine.
+Sometimes, for example for CI/CD tools, it's necessary to download executables manually. You can download Pharos executables from [releases](https://github.com/kontena/pharos-cluster/releases). Binaries should work on any recent 64bit MacOS or Linux machine.
 
 Once downloaded, add the binary location to your `PATH` environment or move the binary to some location already in the `PATH`. Remember to also set executable bit on the binary.
-
-**Note** When using manually downloaded version of `pharos` you must use `pharos-cluster` command instead.
 
 ## Usage
 
