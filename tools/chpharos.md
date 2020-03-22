@@ -14,13 +14,13 @@
 To install from the command-line, use:
 
 ```
-curl -s https://get.pharos.sh | bash
+curl -s https://get.k8spharos.dev | bash
 ```
 
 To view the installer command-line options, use:
 
 ```
-curl -s https://get.pharos.sh | bash -s -- -h
+curl -s https://get.k8spharos.dev | bash -s -- -h
 ```
 
 ### Via MacOS homebrew
