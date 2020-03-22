@@ -1,27 +1,27 @@
 # Getting Started
 
-Kontena Pharos is designed to work on any infrastructure: private datacenters, public cloud, hybrid or edge. It works on any environment that will meet the minimum [system requirements](requirements.md) and allows you to bootstrap and manage Kubernetes clusters super easily.
+Pharos is designed to work on any infrastructure: private datacenters, public cloud, hybrid or edge. It works on any environment that will meet the minimum [system requirements](requirements.md) and allows you to bootstrap and manage Kubernetes clusters super easily.
 
-Get started with Kontena Pharos by following these steps:
+Get started with Pharos by following these steps:
 
-1. [Setup Kontena Pharos CLI Toolchain](#setup-kontena-pharos-cli-toolchain)
+1. [Setup Pharos CLI Toolchain](#setup-kontena-pharos-cli-toolchain)
 2. [Prepare the Nodes for the Kubernetes Cluster](#prepare-nodes-for-kubernetes-cluster)
 3. [Creating the Cluster Configuration File](#create-the-cluster-configuration-file)
 4. [Bootstrapping Kubernetes Cluster Using Pharos](#bootstrap-your-first-pharos-kubernetes-cluster)
 5. [Interacting with your Kubernetes Cluster](#interact-with-the-cluster)
 
 
-## Setup Kontena Pharos CLI Toolchain
+## Setup Pharos CLI Toolchain
 
-Follow these easy steps to setup Kontena Pharos CLI toolchain. For more detailed instructions and installation options, see [full documentation](install-toolchain.md).
+Follow these easy steps to setup Pharos CLI toolchain. For more detailed instructions and installation options, see [full documentation](install-toolchain.md).
 
-First we need to download and install `chpharos` - the Kontena Pharos version switcher tool:
+First we need to download and install `chpharos` - the Pharos version switcher tool:
 
 ```
-$ curl -s https://get.pharos.sh | bash
+$ curl -s https://get.k8spharos.dev | bash
 ```
 
-Once installed, you can install `pharos` CLI tool binaries. Install the latest version of Kontena Pharos like this:
+Once installed, you can install `pharos` CLI tool binaries. Install the latest version of Pharos like this:
 
 ```
 $ chpharos install latest --use
