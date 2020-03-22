@@ -18,7 +18,7 @@ Pharos is always up-to-date and built from the latest upstream Kubernetes, inclu
 - **Supported Host Operating Systems:** [CentOS, Debian, Redhat, Ubuntu](requirements.md)
 - **Supported Cluster Data Store Options:** In-cluster elastic etcd with TLS, External etcd with TLS
 - **Supported Control Plane Availability Options:** Single master, Multi-master
-- **Supported Container Runtimes:** [Docker](https://www.docker.com/products/container-runtime), [containerd](https://containerd.io/)
+- **Supported Container Runtimes:** [Docker](https://www.docker.com/products/container-runtime)
 - **Supported CNI Plugins:** Weave, Calico, [Custom](networking/custom_networking.md)
 - **Supported Storage Providers:**
   - **Public Cloud:** AWS, GCP, Azure, Custom
