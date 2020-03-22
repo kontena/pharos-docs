@@ -6,7 +6,6 @@
 
 - A shell compatible with bash version 3 or newer
 - A tool for downloading files (currently supported: [curl](https://curl.haxx.se/) and [wget](https://www.gnu.org/software/wget/), usually already installed on compatible systems)
-- File checksum verification tool [shasum](https://linux.die.net/man/1/shasum), usually already installed on compatible systems.
 
 ## Installation
 
@@ -51,14 +50,6 @@ mkdir -p ~/.pharos/chpharos && \
 ```
 
 ## Usage and features
-
-### Log in to your Kontena Account
-
-Logging in is required for downloading binaries and listing versions.
-
-`chpharos login`
-
-Use `chpharos logout` to log out.
 
 ### List available versions
 
