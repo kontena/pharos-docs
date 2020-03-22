@@ -1,6 +1,6 @@
 # Cloud Providers
 
-Kontena Pharos supports a concept of [cloud providers](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider specific configurations. For example:
+Pharos supports a concept of [cloud providers](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/). Cloud provider is a module that provides an interface for managing load balancers, nodes (i.e. hosts) and networking routes. Optionally you can also configure the path to the cloud provider specific configurations. For example:
 
 ```yaml
 cloud:
