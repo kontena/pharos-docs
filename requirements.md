@@ -17,9 +17,8 @@ Pharos cluster may be run on any machine (bare metal or virtual) that is capable
 
 | Operating System                  | Architectures
 |:----------------------------------|:------------------------------------------------
-| CentOS 7.4 - 7.5                  | [x86-64](https://en.wikipedia.org/wiki/X86-64)
+| CentOS 7.x                        | [x86-64](https://en.wikipedia.org/wiki/X86-64)
 | Debian 9                          | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
-| Redhat Enterprise Linux 7.4 - 7.6 | [x86-64](https://en.wikipedia.org/wiki/X86-64)
 | Ubuntu 16.04 & 18.04              | [x86-64](https://en.wikipedia.org/wiki/X86-64), [ARM64](https://en.wikipedia.org/wiki/ARM_architecture)
 
 ## Network
