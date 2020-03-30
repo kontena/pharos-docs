@@ -18,9 +18,6 @@ hosts:
     role: worker
 network:
   provider: weave
-addons:
-  ingress-nginx:
-     enabled: true
 ```
 
 Once you have created `cluster.yml` file with your desired [cluster configuration](/configuration.md)  options, the cluster may be deployed simply by running command:
