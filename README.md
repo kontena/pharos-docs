@@ -15,7 +15,7 @@ Pharos is always up-to-date and built from the latest upstream Kubernetes, inclu
 - **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
 - **Supported Machine Types:** Bare metal, VM
 - **Supported Machine Architectures:** Intel (x86-64), ARM (ARM64)
-- **Supported Host Operating Systems:** [CentOS, Debian, Ubuntu](requirements.md)
+- **Supported Host Operating Systems:** [CentOS, Debian, Redhat, Ubuntu](requirements.md)
 - **Supported Cluster Data Store Options:** In-cluster elastic etcd with TLS, External etcd with TLS
 - **Supported Control Plane Availability Options:** Single master, Multi-master
 - **Supported Container Runtimes:** [Docker](https://www.docker.com/products/container-runtime)
