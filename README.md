@@ -10,7 +10,7 @@ Pharos is always up-to-date and built from the latest upstream Kubernetes, inclu
 
 ## Features
 
-- **Kubernetes Kernel:** [v1.17](https://kubernetes.io/blog/2019/12/09/kubernetes-1-17-release-announcement/)
+- **Kubernetes Kernel:** [v1.18](https://kubernetes.io/blog/2019/12/09/kubernetes-1-17-release-announcement/)
 - **Supported Cluster Upgrade Strategies:** Rolling (zero-downtime), Instant
 - **Supported Infrastructure:** Private datacenter, Public cloud, Hybrid, Edge
 - **Supported Machine Types:** Bare metal, VM
