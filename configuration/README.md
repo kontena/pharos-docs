@@ -16,6 +16,7 @@ Pharos cluster configuration is described in a file that is in [YAML](http://yam
   * [hosts](#hosts) - Specify cluster machines
   * [kubelet](#kubelet) - Specify kubelet options
   * [kube_proxy](#kubeproxy) - Specify Kubernetes network proxy
+  * [manifests](#manifests) - Specify deployed extra manifests
   * [name](#name) - Specify cluster name
   * [network](#network) - Specify networking options
   * [pod_security_policy](#podsecuritypolicy) - Specify pod security policy settings
@@ -367,6 +368,62 @@ repositories:
 - `name` - Name of the repository
 - `key_url` - URL where to download and configure the repository key from (optional)
 - `contents` - Contents of the package repository configuration. Consult your OS distribution documentation for details.
+
+### `manifests`
+
+Any file (or glob pattern) defined in `manifests` will automatically be deployed to Kubernetes in a manner similar to `kubectl apply`. For example:
+
+```yaml
+manifests:
+  - ./echoserver.yml
+```
+
+Where `echoserver.yml` has following contents:
+
+```yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: echoserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echoserver
+  namespace: echoserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echoserver
+  template:
+    metadata:
+      labels:
+        app: echoserver
+    spec:
+      containers:
+      - image: gcr.io/google_containers/echoserver:1.0
+        imagePullPolicy: Always
+        name: echoserver
+        ports:
+        - containerPort: 8080
+```
+
+
+It is also possible to deploy [Helm](https://helm.sh) [charts](https://hub.helm.sh/). Pharos supports a CRD controller for installing charts. A YAML file specification can look as following:
+
+```yaml
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: ingress-nginx
+  namespace: kube-system
+spec:
+  chart: stable/ingress-nginx
+  set:
+    controller.kind: "DaemonSet"
+```
 
 ### `name`
 
