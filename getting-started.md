@@ -52,7 +52,7 @@ hosts:
 network: {} # Use Weave networking with default config
 ```
 
-For more complex cases, there's huge amount of [configuration options](configuration.md) and [addons](addons/) available.
+For more complex cases, there's huge amount of [configuration options](configuration/) and [addons](addons/) available.
 
 ## Bootstrap your First Pharos Kubernetes Cluster
 
